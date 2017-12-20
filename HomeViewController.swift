@@ -27,12 +27,17 @@ class HomeCell: UITableViewCell {
     
 }
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
     
+    var filteredPeople = [User]()
+    var searchController = UISearchController(searchResultsController: nil)
     var user = [User]()
     var ref = Database.database().reference()
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredPeople.count
+        }
         return FriendSystem.system.userList.count
     }
     
@@ -42,30 +47,82 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! HomeCell
-        cell.nameOutlet.text = FriendSystem.system.userList[indexPath.row].name + " " + FriendSystem.system.userList[indexPath.row].surname
+        var user = FriendSystem.system.userList[indexPath.row]
+        if searchController.isActive && searchController.searchBar.text != "" {
+            user = filteredPeople[indexPath.row]
+        }
+        else
+        {
+            user = FriendSystem.system.userList[indexPath.row]
+        }
+        cell.nameOutlet.text = user.name + " " + user.surname
         cell.nameOutlet.adjustsFontSizeToFitWidth = true
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchController.searchBar.resignFirstResponder()
+        searchController.searchBar.endEditing(true)
             performSegue(withIdentifier: "segueToProfile", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToProfile" {
-            if let indexPath = self.tableViewOutlet.indexPathForSelectedRow {
+            if let indexPath = tableViewOutlet.indexPathForSelectedRow {
                 let sendUID = segue.destination as? ProfileSellerViewController
+                if searchController.isActive && searchController.searchBar.text != "" {
+                    let userID = filteredPeople[indexPath.row].id
+                    sendUID?.userID = userID!
+                } else {
                 let userID = FriendSystem.system.userList[indexPath.row].id
                 sendUID?.userID = userID!
             }
         }
         
     }
+    }
     
     @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        moveLabelOut()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        moveButtonsOut()
+        FriendSystem.system.showUser { () in
+            self.tableViewOutlet.reloadData()
+        }
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContent(searchText: self.searchController.searchBar.text!)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchController.searchBar.text = ""
+        resignFirstResponder()
+    }
+    
+    func filterContent(searchText:String) {
+        self.filteredPeople = FriendSystem.system.userList.filter { user in
+            let username = user.name + " " + user.surname
+            return(username.contains(searchText))
+            
+        }
+        tableViewOutlet.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        self.searchController.searchBar.barStyle = .blackTranslucent
+        self.searchController.searchBar.searchBarStyle = .minimal
+        self.searchController.searchBar.placeholder = "\"Name\" or \"#skill\""
         
         self.firstButtonOutlet.center = CGPoint(x: super.view.frame.width/3.78787878, y:super.view.frame.height/3.97)
         
@@ -79,9 +136,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.sixthButtonOutlet.center = CGPoint(x: super.view.frame.width/1.35869, y:super.view.frame.height/1.2876)
         
-        self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:(20 + searchBarOutlet.frame.height/2))
-        
-        self.searchButtonOutlet.center = CGPoint(x: super.view.frame.width/2, y:(20 + searchButtonOutlet.frame.height/2))
+        self.view.addSubview(self.searchController.searchBar)
+        self.searchController.searchBar.frame = CGRect(x: 0, y: 40, width: super.view.frame.width, height: 56)
+        self.searchController.searchBar.center = CGPoint(x: super.view.frame.width/2, y:54.5)
         
         super.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
         
@@ -145,11 +202,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func moveLabelIn() {
         moveButtonsOut()
-        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:(20 + self.searchBarOutlet.frame.height/2))
+        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:(20 + self.searchController.searchBar.frame.height/2))
         })
-        UIView.animate(withDuration: 0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/11.9107)
+        UIView.animate(withDuration: 0.3, animations: {self.searchController.searchBar.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/11.9107)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y:(20 + self.searchBarOutlet.frame.height/2))
+        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y:(20 + self.searchController.searchBar.frame.height/2))
         })
     }
     
@@ -157,13 +214,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         moveButtonsIn()
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/33.35)
         })
-            UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:(20 + self.searchBarOutlet.frame.height/2))
-            })
-            UIView.animate(withDuration: 0.3, delay:0.3, animations: {
-                self.searchBarOutlet.frame = CGRect(origin: CGPoint(x: 0, y:20), size: CGSize(width: super.view.frame.width, height: super.view.frame.height/11.9107))
-            })
-            UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y:-super.view.frame.height/33.35)
-            })
+        UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.searchController.searchBar.center = CGPoint(x: super.view.frame.width/2, y:54.5)
+        })
+        UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y:-super.view.frame.height/33.35)
+        })
     }
     
     func prepareButtonsForBack() {
@@ -180,12 +234,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func swipeAction (_ sender: UISwipeGestureRecognizer) {
-        searchBarOutlet.resignFirstResponder()
+        searchController.searchBar.resignFirstResponder()
         prepareButtonsForBack()
         moveLabelOut()
     }
-    
-    @IBOutlet weak var searchBarOutlet: UISearchBar!
     
     @IBOutlet weak var categoryLabelOutlet: UILabel!
     
@@ -259,8 +311,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func searchButtonAction(_ sender: UIButton) {
         performSegue(withIdentifier: "searchSegue", sender: self)
     }
-    
-    @IBOutlet weak var searchButtonOutlet: UIButton!
     
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
     

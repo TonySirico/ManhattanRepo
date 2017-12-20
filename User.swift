@@ -7,10 +7,13 @@ class User {
     var email: String!
     var id: String!
     var requestTime: Int!
+    var requestDescription: String!
+    var requestDate: String!
     
     init(userEmail: String, userID: String) {
         self.email = userEmail
         self.id = userID
+        
     }
     
     init(userEmail: String, userName: String,userSurname: String, userID: String){
@@ -20,12 +23,14 @@ class User {
         self.surname = userSurname
     }
     
-    init(userEmail: String, userName: String,userSurname: String, userID: String, userRequestTime: Int){
+    init(userEmail: String, userName: String,userSurname: String, userID: String, userRequestTime: Int, userRequestDate: String, userRequestDescription: String){
         self.email = userEmail
         self.id = userID
         self.name = userName
         self.surname = userSurname
         self.requestTime = userRequestTime
+        self.requestDate = userRequestDate
+        self.requestDescription = userRequestDescription
         
     }
     

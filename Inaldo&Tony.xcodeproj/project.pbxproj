@@ -20,15 +20,14 @@
 		0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A61FE1235F003774B1 /* SignupViewController.swift */; };
 		0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */; };
 		0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02AA1FE14279003774B1 /* RoundImageView.swift */; };
-		322189EC1FE9A737002218CC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322189EB1FE9A737002218CC /* HomeTableViewController.swift */; };
 		3242DB601FE910D3001D936B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242DB5F1FE910D3001D936B /* Singleton.swift */; };
 		3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3242DB661FE919E3001D936B /* ProfileSeller.storyboard */; };
 		3242DB6A1FE91CDE001D936B /* ProfileSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */; };
 		324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C51FDEA1B8004FF991 /* RequestsViewController.swift */; };
 		324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C71FDEA1C7004FF991 /* TasksViewController.swift */; };
 		324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C91FDEA1D9004FF991 /* ProfileViewController.swift */; };
+		328DEA8A1FEAF8320019C17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 328DEA891FEAF8310019C17A /* GoogleService-Info.plist */; };
 		32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */; };
-		32B2BEB21FEA852200D7D8CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32B2BEB11FEA852200D7D8CC /* GoogleService-Info.plist */; };
 		32B2BEB41FEAB29800D7D8CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEB31FEAB29800D7D8CC /* User.swift */; };
 		32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */; };
 		32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3C1FDE943F0006EF76 /* ViewController.swift */; };
@@ -71,15 +70,14 @@
 		0ACC02A61FE1235F003774B1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0ACC02AA1FE14279003774B1 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
-		322189EB1FE9A737002218CC /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		3242DB5F1FE910D3001D936B /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3242DB671FE919E3001D936B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/ProfileSeller.storyboard"; sourceTree = "<group>"; };
 		3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSellerViewController.swift; sourceTree = "<group>"; };
 		324910C51FDEA1B8004FF991 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		324910C71FDEA1C7004FF991 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		324910C91FDEA1D9004FF991 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		328DEA891FEAF8310019C17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		32B2BEB11FEA852200D7D8CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32B2BEB31FEAB29800D7D8CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inaldo&Tony.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				0057E3F51FDEA07B005F68D7 /* Requests.storyboard */,
 				324910C51FDEA1B8004FF991 /* RequestsViewController.swift */,
 				0057E3F21FDEA03A005F68D7 /* Home.storyboard */,
-				322189EB1FE9A737002218CC /* HomeTableViewController.swift */,
 				0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */,
 				0ACC02AA1FE14279003774B1 /* RoundImageView.swift */,
 				0ABAE99D1FE186770022E7F5 /* RoundButton.swift */,
@@ -177,7 +174,7 @@
 				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
 				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
 				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
-				32B2BEB11FEA852200D7D8CC /* GoogleService-Info.plist */,
+				328DEA891FEAF8310019C17A /* GoogleService-Info.plist */,
 				32E80C461FDE943F0006EF76 /* Info.plist */,
 			);
 			path = "Inaldo&Tony";
@@ -330,11 +327,11 @@
 			files = (
 				32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */,
 				32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */,
-				32B2BEB21FEA852200D7D8CC /* GoogleService-Info.plist in Resources */,
 				32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */,
 				0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */,
 				0057E3F61FDEA07B005F68D7 /* Requests.storyboard in Resources */,
 				0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */,
+				328DEA8A1FEAF8320019C17A /* GoogleService-Info.plist in Resources */,
 				0057E3F41FDEA03A005F68D7 /* Home.storyboard in Resources */,
 				3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */,
 			);
@@ -434,7 +431,6 @@
 				32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */,
 				324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */,
 				0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */,
-				322189EC1FE9A737002218CC /* HomeTableViewController.swift in Sources */,
 				324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */,
 				0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */,
 				0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */,

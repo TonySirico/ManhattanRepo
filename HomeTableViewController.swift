@@ -13,9 +13,11 @@ class HomeTableViewController: UITableViewController, UISearchResultsUpdating, U
     //    var allNames = listOfPeople.shared.allNames
     var filteredPeople = [User]()
     var searchController = UISearchController(searchResultsController: nil)
-    var resultsController = UITableViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true

@@ -37,6 +37,30 @@ class FriendSystem {
         return id
     }
     
+    var completedList = [User]()
+    func showUserCompleted(_ update: @escaping () -> Void) {
+        currentUserRef.child("requests").child("completedRequests").observe(DataEventType.value, with: { (snapshot) in
+            self.completedList.removeAll()
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                let id = child.key
+                self.getUser(id, { (user) in
+                    let requestTime = snapshot.childSnapshot(forPath: "\(id)/time").value as! Int
+                    let requestDate = snapshot.childSnapshot(forPath: "\(id)/date").value as! String
+                    let requestDescription = snapshot.childSnapshot(forPath: "\(id)/description").value as! String
+                    user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
+                    user.requestDate = requestDate
+                    user.requestDescription = requestDescription
+                    self.completedList.append(user)
+                    update()
+                })
+            }
+            // If there are no children, run completion here instead
+            if snapshot.childrenCount == 0 {
+                update()
+            }
+        })
+    }
+    
     func getUser(_ userID: String,_ completion: @escaping (User) -> Void) {
     userRef.child(userID).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
     let email = snapshot.childSnapshot(forPath: "email").value as! String
