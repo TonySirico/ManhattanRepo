@@ -136,9 +136,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.sixthButtonOutlet.center = CGPoint(x: super.view.frame.width/1.35869, y:super.view.frame.height/1.2876)
         
+        //settingUpSearchBar
         self.view.addSubview(self.searchController.searchBar)
         self.searchController.searchBar.frame = CGRect(x: 0, y: 40, width: super.view.frame.width, height: 56)
         self.searchController.searchBar.center = CGPoint(x: super.view.frame.width/2, y:54.5)
+        
+        let margins = view.layoutMarginsGuide
+        
+        searchController.searchBar.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        searchController.searchBar.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        
+        
+        //-----------------------------
         
         super.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
         

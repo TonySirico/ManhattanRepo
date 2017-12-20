@@ -39,6 +39,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timeTextField: RoundedUITextField!
     
     var userID = ""
+    var interval = NSDate().timeIntervalSince1970
     let uid = Auth.auth().currentUser?.uid
     
     //TextFields
@@ -57,12 +58,15 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     //BUTTONS ACTIONS
     
     @IBAction func requestAction(_ sender: Any) {
+        let date = NSDate(timeIntervalSince1970: self.interval)
+        
         guard let timeRequests = Int(self.timeTextField.text!) else {return}
+        guard let descriptionRequests = descriptionTextField.text else {return}
         FriendSystem.system.getTimeCoinsCurrentUser(uid!, { (timeCoins) in
-            print("i miei coins + \(timeCoins)")
+            
             if timeCoins >= timeRequests {
                 let uidRef = Database.database().reference().child("users").child(self.uid!)
-                FriendSystem.system.sendRequestToUser(self.userID, timeRequests)
+                FriendSystem.system.sendRequestToUser(self.userID, timeRequests, "\(date)", descriptionRequests)
                 uidRef.child("timeCoins").setValue(timeCoins-timeRequests)
             } else {
                 AlertController.showAlert(inViewController: self, title: "Missing Coins", message: "You don't have enought time")
