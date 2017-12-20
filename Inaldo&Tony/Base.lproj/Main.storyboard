@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Kh-8X-Gfv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login-->
+        <scene sceneID="zNj-Hy-4HE">
+            <objects>
+                <viewController storyboardIdentifier="loginViewSegue" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4HG-Gb-B2G" customClass="LoginViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WGw-k4-xbh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-v7-B1F" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="127.5" y="491" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="JGS-PW-CgI"/>
+                                    <constraint firstAttribute="height" constant="40" id="XPZ-ri-CaO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="4HG-Gb-B2G" eventType="touchUpInside" id="gNs-aD-9rr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EQ-9Z-NW9">
+                                <rect key="frame" x="111.5" y="571" width="152" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="EAV-Yt-vCu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Dwx-Pk-NBg" kind="show" id="APZ-zf-gq1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-ZF-5on" userLabel="appLogo" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="103" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Y0y-Rl-tod"/>
+                                    <constraint firstAttribute="width" constant="200" id="tyC-yG-lVv"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-mt-WkX" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="62" y="370" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="3dT-hd-7ur"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-g5-GrC" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="62" y="408" width="250" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BKk-v7-B1F" firstAttribute="top" secondItem="1mP-g5-GrC" secondAttribute="bottom" constant="53" id="9OQ-TN-9g8"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="bottom" secondItem="7EQ-9Z-NW9" secondAttribute="bottom" constant="66" id="Faj-LK-1dS"/>
+                            <constraint firstItem="1mP-g5-GrC" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="62" id="KLu-St-8io"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="1mP-g5-GrC" secondAttribute="trailing" constant="63" id="MBh-Ur-Aa3"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="M1P-mt-WkX" secondAttribute="trailing" constant="63" id="OMR-YI-6Fq"/>
+                            <constraint firstItem="7EQ-9Z-NW9" firstAttribute="top" secondItem="BKk-v7-B1F" secondAttribute="bottom" constant="40" id="ObD-PY-yRt"/>
+                            <constraint firstItem="7EQ-9Z-NW9" firstAttribute="centerX" secondItem="WGw-k4-xbh" secondAttribute="centerX" id="TqV-r5-Cjy"/>
+                            <constraint firstItem="M1P-mt-WkX" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="62" id="TwF-nG-lv7"/>
+                            <constraint firstItem="9lV-ZF-5on" firstAttribute="centerX" secondItem="WGw-k4-xbh" secondAttribute="centerX" id="Uae-2q-WVW"/>
+                            <constraint firstItem="9lV-ZF-5on" firstAttribute="top" secondItem="LDE-J0-tRY" secondAttribute="top" constant="39" id="a9H-fS-Dc5"/>
+                            <constraint firstItem="M1P-mt-WkX" firstAttribute="top" secondItem="9lV-ZF-5on" secondAttribute="bottom" constant="67" id="c5C-xL-SWO"/>
+                            <constraint firstItem="1mP-g5-GrC" firstAttribute="top" secondItem="M1P-mt-WkX" secondAttribute="bottom" constant="8" id="ht0-SB-ymm"/>
+                            <constraint firstItem="1mP-g5-GrC" firstAttribute="top" secondItem="M1P-mt-WkX" secondAttribute="bottom" constant="8" id="n8k-Ys-gpe"/>
+                            <constraint firstItem="BKk-v7-B1F" firstAttribute="centerX" secondItem="WGw-k4-xbh" secondAttribute="centerX" id="rL5-lv-Abt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LDE-J0-tRY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="05W-gz-urK"/>
+                    <connections>
+                        <outlet property="emailTextFieldOutlet" destination="M1P-mt-WkX" id="OVH-tB-GD5"/>
+                        <outlet property="passwordTextFieldOutlet" destination="1mP-g5-GrC" id="90n-9W-M2N"/>
+                        <segue destination="xTY-qp-AJC" kind="show" identifier="segueLoggedIn" animates="NO" id="q5t-Tu-Z7a"/>
+                        <segue destination="xTY-qp-AJC" kind="show" identifier="segueToHome" id="6uR-0s-LKl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0I7-ME-zMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3154" y="72"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="KLM-SU-pCT">
+            <objects>
+                <viewController id="Dwx-Pk-NBg" customClass="SignupViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="70A-1R-xeS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3U-bM-vvT">
+                                <rect key="frame" x="0.0" y="16" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Sign Up" id="WSi-Cb-AAG"/>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3Z-AG-pHy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-iM-3Nf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUM-GU-fe7" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="223" width="359" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPp-cK-waO" userLabel="Surname" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="261" width="359" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-lw-daE" userLabel="Email" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="337" width="359" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Badge Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcz-pd-o4B" userLabel="Badge" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="375" width="359" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-qd-nsA" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="112" y="30" width="150" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekW-KP-1BH" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="150" y="435" width="75" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Design"/>
+                                                <connections>
+                                                    <action selector="designAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="tph-2x-GUu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBc-UH-Gbw" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="270" y="435" width="75" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Business"/>
+                                                <connections>
+                                                    <action selector="businessAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="vWd-6G-DtO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-0V-rSp" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="483" width="75" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Language"/>
+                                                <connections>
+                                                    <action selector="languageAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="96W-JT-bhZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88D-6i-cdG" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="270" y="483" width="75" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Others"/>
+                                                <connections>
+                                                    <action selector="otherAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="yHl-pe-x6s"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-hg-PF0" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="435" width="75" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Coding"/>
+                                                <connections>
+                                                    <action selector="codingAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="PFf-oi-3Wa"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Select a main skill below and tap enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jn6-21-Um5" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="533" width="359" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21I-Lc-20C" userLabel="Birthday" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="299" width="359" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5a-jI-ig9" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="637" width="215" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Sign Up"/>
+                                                <connections>
+                                                    <action selector="signUpAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="zHZ-PJ-MlN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGR-8f-8dI" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="150" y="483" width="75" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Science"/>
+                                                <connections>
+                                                    <action selector="scienceAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="n5r-fs-gM4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRP-nR-n9N">
+                                                <rect key="frame" x="238" y="156" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="plusIcon"/>
+                                                <connections>
+                                                    <action selector="imageSelectionAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="U3o-Nl-7n2"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyp-Od-U8G" userLabel="Password" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="100" width="359" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="800" constant="800" id="Jaj-Mp-W1U" userLabel="height = 800"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="oGa-au-ZJx" appends="YES" id="QLu-Jo-2JM"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="d9c-iM-3Nf" firstAttribute="leading" secondItem="d3Z-AG-pHy" secondAttribute="leading" priority="800" id="AQc-m1-97A"/>
+                                    <constraint firstItem="d9c-iM-3Nf" firstAttribute="top" secondItem="d3Z-AG-pHy" secondAttribute="top" id="LW8-yP-sbK"/>
+                                    <constraint firstAttribute="bottom" secondItem="d9c-iM-3Nf" secondAttribute="bottom" constant="20" symbolic="YES" id="Q9h-rt-ZWb"/>
+                                    <constraint firstAttribute="trailing" secondItem="d9c-iM-3Nf" secondAttribute="trailing" id="hle-5N-WHg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d3Z-AG-pHy" firstAttribute="bottom" secondItem="zeq-t4-exd" secondAttribute="bottom" id="4Hc-pt-5Ty"/>
+                            <constraint firstItem="d3Z-AG-pHy" firstAttribute="trailing" secondItem="zeq-t4-exd" secondAttribute="trailing" id="WAj-4R-ChZ"/>
+                            <constraint firstItem="d3Z-AG-pHy" firstAttribute="leading" secondItem="zeq-t4-exd" secondAttribute="leading" id="bsR-sw-6Va"/>
+                            <constraint firstItem="d9c-iM-3Nf" firstAttribute="width" secondItem="70A-1R-xeS" secondAttribute="width" id="cs0-Bq-ka9"/>
+                            <constraint firstItem="d3Z-AG-pHy" firstAttribute="top" secondItem="zeq-t4-exd" secondAttribute="top" id="idz-cV-RGT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zeq-t4-exd"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="badgeTextField" destination="Zcz-pd-o4B" id="c9g-B8-Cnm"/>
+                        <outlet property="birthdayTextField" destination="21I-Lc-20C" id="dZI-xv-guz"/>
+                        <outlet property="businessButton" destination="YBc-UH-Gbw" id="Xg4-uF-qes"/>
+                        <outlet property="codingButton" destination="pKH-hg-PF0" id="lgx-OW-JGC"/>
+                        <outlet property="descriptionTextField" destination="Jn6-21-Um5" id="M7g-zG-b6h"/>
+                        <outlet property="designButton" destination="ekW-KP-1BH" id="ohf-5b-r3g"/>
+                        <outlet property="emailTextField" destination="7mn-lw-daE" id="ydD-b0-RoA"/>
+                        <outlet property="imageSelectionButton" destination="XRP-nR-n9N" id="3Vv-qS-cl7"/>
+                        <outlet property="languageButton" destination="G0U-0V-rSp" id="GSK-cI-KAH"/>
+                        <outlet property="nameTextField" destination="zUM-GU-fe7" id="Qph-fZ-vyV"/>
+                        <outlet property="navBar" destination="n3U-bM-vvT" id="AZc-4A-Mfq"/>
+                        <outlet property="otherButton" destination="88D-6i-cdG" id="uiv-jj-hGo"/>
+                        <outlet property="passwordTextField" destination="kyp-Od-U8G" id="Owi-aa-1cP"/>
+                        <outlet property="profilePhotoIV" destination="hNq-qd-nsA" id="d88-Yz-dm4"/>
+                        <outlet property="scienceButton" destination="nGR-8f-8dI" id="9xv-Je-C5M"/>
+                        <outlet property="surnameTextField" destination="PPp-cK-waO" id="Fzm-59-lWT"/>
+                        <segue destination="xTY-qp-AJC" kind="show" identifier="segueToHome" id="JAH-un-G18"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vst-uB-Cux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oGa-au-ZJx">
+                    <connections>
+                        <action selector="tapToDismissKeyboard:" destination="Dwx-Pk-NBg" id="WZG-dh-NP9"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2770.4000000000001" y="1190.1049475262371"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="NO1-Yz-DKK">
+            <objects>
+                <tabBarController id="xTY-qp-AJC" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7wo-Mj-Yze">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="selectedImageTintColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NYD-vG-qKE" kind="relationship" relationship="viewControllers" id="9Jz-vG-bmU"/>
+                        <segue destination="ZPX-88-4ed" kind="relationship" relationship="viewControllers" id="qrF-sw-X8t"/>
+                        <segue destination="xwB-Mg-Nnd" kind="relationship" relationship="viewControllers" id="Bcx-JN-wCJ"/>
+                        <segue destination="tsd-HV-C6l" kind="relationship" relationship="viewControllers" id="gCn-7B-MxY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0i-Gd-dVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2084" y="72"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="cfO-sg-mZT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="NYD-vG-qKE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" landscapeImage="Home" largeContentSizeImage="Home" id="oek-6T-GFR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DgL-zC-DtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246" y="565"/>
+        </scene>
+        <!--Requests-->
+        <scene sceneID="FbV-kF-gdT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Requests" id="ZPX-88-4ed" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Requests" image="Requests" landscapeImage="Requests" largeContentSizeImage="Requests" id="0iw-4J-HoD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUY-ZB-dSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-260" y="178"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="xPS-wC-h5d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tasks" id="xwB-Mg-Nnd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tasks" image="Tasks" landscapeImage="Tasks" largeContentSizeImage="Tasks" id="Wvk-Ed-wZX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtK-Ls-6eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242" y="-309"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="teO-Eh-UK1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="tsd-HV-C6l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" landscapeImage="Profile" largeContentSizeImage="Profile" id="fWl-lG-lw0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="idC-Dy-MCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-938" y="-1456"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yuf-jL-5Jy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Kh-8X-Gfv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SKZ-B0-HFl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.47843137254901957" green="0.72549019607843135" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4HG-Gb-B2G" kind="relationship" relationship="rootViewController" id="KE6-gt-Md4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EsW-zc-9wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4258" y="72"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Home" width="25" height="25"/>
+        <image name="Profile" width="19" height="25"/>
+        <image name="Requests" width="19" height="25"/>
+        <image name="Tasks" width="20" height="25"/>
+        <image name="dummyProfilePic" width="140" height="140"/>
+        <image name="plusIcon" width="24" height="24"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JAH-un-G18"/>
+    </inferredMetricsTieBreakers>
+</document>

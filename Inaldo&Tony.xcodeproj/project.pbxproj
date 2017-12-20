@@ -1,0 +1,764 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0057E3F41FDEA03A005F68D7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3F21FDEA03A005F68D7 /* Home.storyboard */; };
+		0057E3F61FDEA07B005F68D7 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3F51FDEA07B005F68D7 /* Requests.storyboard */; };
+		0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */; };
+		0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */; };
+		0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */; };
+		0A0167731FE29FBA00E4A57B /* RoundButtonFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */; };
+		0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */; };
+		0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */; };
+		0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAE99D1FE186770022E7F5 /* RoundButton.swift */; };
+		0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A41FE122C0003774B1 /* LoginViewController.swift */; };
+		0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A61FE1235F003774B1 /* SignupViewController.swift */; };
+		0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */; };
+		0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02AA1FE14279003774B1 /* RoundImageView.swift */; };
+		322189EC1FE9A737002218CC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322189EB1FE9A737002218CC /* HomeTableViewController.swift */; };
+		3242DB601FE910D3001D936B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242DB5F1FE910D3001D936B /* Singleton.swift */; };
+		3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3242DB661FE919E3001D936B /* ProfileSeller.storyboard */; };
+		3242DB6A1FE91CDE001D936B /* ProfileSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */; };
+		324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C51FDEA1B8004FF991 /* RequestsViewController.swift */; };
+		324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C71FDEA1C7004FF991 /* TasksViewController.swift */; };
+		324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C91FDEA1D9004FF991 /* ProfileViewController.swift */; };
+		32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */; };
+		32B2BEB21FEA852200D7D8CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32B2BEB11FEA852200D7D8CC /* GoogleService-Info.plist */; };
+		32B2BEB41FEAB29800D7D8CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEB31FEAB29800D7D8CC /* User.swift */; };
+		32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */; };
+		32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3C1FDE943F0006EF76 /* ViewController.swift */; };
+		32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C3E1FDE943F0006EF76 /* Main.storyboard */; };
+		32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C411FDE943F0006EF76 /* Assets.xcassets */; };
+		32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */; };
+		32E80C501FDE943F0006EF76 /* Inaldo_TonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */; };
+		32E80C5B1FDE943F0006EF76 /* Inaldo_TonyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */; };
+		CE6F58F5BA82160FD678F239 /* Pods_Inaldo_Tony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32E80C4C1FDE943F0006EF76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32E80C2F1FDE943F0006EF76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32E80C361FDE943F0006EF76;
+			remoteInfo = "Inaldo&Tony";
+		};
+		32E80C571FDE943F0006EF76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32E80C2F1FDE943F0006EF76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32E80C361FDE943F0006EF76;
+			remoteInfo = "Inaldo&Tony";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0057E3F31FDEA03A005F68D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/Home.storyboard"; sourceTree = "<group>"; };
+		0057E3F51FDEA07B005F68D7 /* Requests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
+		0057E3F81FDEA0A2005F68D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/Tasks.storyboard"; sourceTree = "<group>"; };
+		0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonFilled.swift; sourceTree = "<group>"; };
+		0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeRoundedUITextField.swift; sourceTree = "<group>"; };
+		0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextField.swift; sourceTree = "<group>"; };
+		0ABAE99D1FE186770022E7F5 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		0ACC02A41FE122C0003774B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0ACC02A61FE1235F003774B1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		0ACC02AA1FE14279003774B1 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		322189EB1FE9A737002218CC /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		3242DB5F1FE910D3001D936B /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		3242DB671FE919E3001D936B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/ProfileSeller.storyboard"; sourceTree = "<group>"; };
+		3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSellerViewController.swift; sourceTree = "<group>"; };
+		324910C51FDEA1B8004FF991 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		324910C71FDEA1C7004FF991 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		324910C91FDEA1D9004FF991 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		32B2BEB11FEA852200D7D8CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		32B2BEB31FEAB29800D7D8CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inaldo&Tony.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		32E80C3C1FDE943F0006EF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		32E80C3F1FDE943F0006EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		32E80C411FDE943F0006EF76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32E80C441FDE943F0006EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32E80C461FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E80C4B1FDE943F0006EF76 /* Inaldo&TonyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inaldo&TonyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyTests.swift; sourceTree = "<group>"; };
+		32E80C511FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E80C561FDE943F0006EF76 /* Inaldo&TonyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inaldo&TonyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyUITests.swift; sourceTree = "<group>"; };
+		32E80C5C1FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inaldo_Tony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.debug.xcconfig"; sourceTree = "<group>"; };
+		B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32E80C341FDE943F0006EF76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6F58F5BA82160FD678F239 /* Pods_Inaldo_Tony.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E80C481FDE943F0006EF76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E80C531FDE943F0006EF76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32E80C2E1FDE943F0006EF76 = {
+			isa = PBXGroup;
+			children = (
+				3242DB5F1FE910D3001D936B /* Singleton.swift */,
+				32B2BEB31FEAB29800D7D8CC /* User.swift */,
+				3242DB661FE919E3001D936B /* ProfileSeller.storyboard */,
+				3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */,
+				0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */,
+				324910C91FDEA1D9004FF991 /* ProfileViewController.swift */,
+				0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */,
+				324910C71FDEA1C7004FF991 /* TasksViewController.swift */,
+				0057E3F51FDEA07B005F68D7 /* Requests.storyboard */,
+				324910C51FDEA1B8004FF991 /* RequestsViewController.swift */,
+				0057E3F21FDEA03A005F68D7 /* Home.storyboard */,
+				322189EB1FE9A737002218CC /* HomeTableViewController.swift */,
+				0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */,
+				0ACC02AA1FE14279003774B1 /* RoundImageView.swift */,
+				0ABAE99D1FE186770022E7F5 /* RoundButton.swift */,
+				0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */,
+				0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */,
+				0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */,
+				32E80C391FDE943F0006EF76 /* Inaldo&Tony */,
+				32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */,
+				32E80C591FDE943F0006EF76 /* Inaldo&TonyUITests */,
+				32E80C381FDE943F0006EF76 /* Products */,
+				8F3C296A9B899E0255AFECA4 /* Pods */,
+				8661779AE53F60A95F7C241D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		32E80C381FDE943F0006EF76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */,
+				32E80C4B1FDE943F0006EF76 /* Inaldo&TonyTests.xctest */,
+				32E80C561FDE943F0006EF76 /* Inaldo&TonyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32E80C391FDE943F0006EF76 /* Inaldo&Tony */ = {
+			isa = PBXGroup;
+			children = (
+				32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */,
+				32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */,
+				32E80C3C1FDE943F0006EF76 /* ViewController.swift */,
+				32E80C3E1FDE943F0006EF76 /* Main.storyboard */,
+				0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */,
+				0ACC02A61FE1235F003774B1 /* SignupViewController.swift */,
+				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
+				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
+				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
+				32B2BEB11FEA852200D7D8CC /* GoogleService-Info.plist */,
+				32E80C461FDE943F0006EF76 /* Info.plist */,
+			);
+			path = "Inaldo&Tony";
+			sourceTree = "<group>";
+		};
+		32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */ = {
+			isa = PBXGroup;
+			children = (
+				32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */,
+				32E80C511FDE943F0006EF76 /* Info.plist */,
+			);
+			path = "Inaldo&TonyTests";
+			sourceTree = "<group>";
+		};
+		32E80C591FDE943F0006EF76 /* Inaldo&TonyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */,
+				32E80C5C1FDE943F0006EF76 /* Info.plist */,
+			);
+			path = "Inaldo&TonyUITests";
+			sourceTree = "<group>";
+		};
+		8661779AE53F60A95F7C241D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F3C296A9B899E0255AFECA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */,
+				B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32E80C361FDE943F0006EF76 /* Inaldo&Tony */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32E80C5F1FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&Tony" */;
+			buildPhases = (
+				1E101EA052EF542EC21B2EE6 /* [CP] Check Pods Manifest.lock */,
+				32E80C331FDE943F0006EF76 /* Sources */,
+				32E80C341FDE943F0006EF76 /* Frameworks */,
+				32E80C351FDE943F0006EF76 /* Resources */,
+				D331A2DA172281B8C63676AF /* [CP] Embed Pods Frameworks */,
+				A8BD0D64D89A72121A3BDE8E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Inaldo&Tony";
+			productName = "Inaldo&Tony";
+			productReference = 32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */;
+			productType = "com.apple.product-type.application";
+		};
+		32E80C4A1FDE943F0006EF76 /* Inaldo&TonyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32E80C621FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyTests" */;
+			buildPhases = (
+				32E80C471FDE943F0006EF76 /* Sources */,
+				32E80C481FDE943F0006EF76 /* Frameworks */,
+				32E80C491FDE943F0006EF76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32E80C4D1FDE943F0006EF76 /* PBXTargetDependency */,
+			);
+			name = "Inaldo&TonyTests";
+			productName = "Inaldo&TonyTests";
+			productReference = 32E80C4B1FDE943F0006EF76 /* Inaldo&TonyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		32E80C551FDE943F0006EF76 /* Inaldo&TonyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32E80C651FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyUITests" */;
+			buildPhases = (
+				32E80C521FDE943F0006EF76 /* Sources */,
+				32E80C531FDE943F0006EF76 /* Frameworks */,
+				32E80C541FDE943F0006EF76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32E80C581FDE943F0006EF76 /* PBXTargetDependency */,
+			);
+			name = "Inaldo&TonyUITests";
+			productName = "Inaldo&TonyUITests";
+			productReference = 32E80C561FDE943F0006EF76 /* Inaldo&TonyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32E80C2F1FDE943F0006EF76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Antonio Sirica";
+				TargetAttributes = {
+					32E80C361FDE943F0006EF76 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					32E80C4A1FDE943F0006EF76 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 32E80C361FDE943F0006EF76;
+					};
+					32E80C551FDE943F0006EF76 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 32E80C361FDE943F0006EF76;
+					};
+				};
+			};
+			buildConfigurationList = 32E80C321FDE943F0006EF76 /* Build configuration list for PBXProject "Inaldo&Tony" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32E80C2E1FDE943F0006EF76;
+			productRefGroup = 32E80C381FDE943F0006EF76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32E80C361FDE943F0006EF76 /* Inaldo&Tony */,
+				32E80C4A1FDE943F0006EF76 /* Inaldo&TonyTests */,
+				32E80C551FDE943F0006EF76 /* Inaldo&TonyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32E80C351FDE943F0006EF76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */,
+				32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */,
+				32B2BEB21FEA852200D7D8CC /* GoogleService-Info.plist in Resources */,
+				32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */,
+				0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */,
+				0057E3F61FDEA07B005F68D7 /* Requests.storyboard in Resources */,
+				0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */,
+				0057E3F41FDEA03A005F68D7 /* Home.storyboard in Resources */,
+				3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E80C491FDE943F0006EF76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E80C541FDE943F0006EF76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E101EA052EF542EC21B2EE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Inaldo&Tony-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8BD0D64D89A72121A3BDE8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D331A2DA172281B8C63676AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32E80C331FDE943F0006EF76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */,
+				324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */,
+				0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */,
+				0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */,
+				3242DB601FE910D3001D936B /* Singleton.swift in Sources */,
+				32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */,
+				0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */,
+				32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */,
+				0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */,
+				3242DB6A1FE91CDE001D936B /* ProfileSellerViewController.swift in Sources */,
+				32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */,
+				324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */,
+				0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */,
+				322189EC1FE9A737002218CC /* HomeTableViewController.swift in Sources */,
+				324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */,
+				0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */,
+				0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */,
+				0A0167731FE29FBA00E4A57B /* RoundButtonFilled.swift in Sources */,
+				32B2BEB41FEAB29800D7D8CC /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E80C471FDE943F0006EF76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E80C501FDE943F0006EF76 /* Inaldo_TonyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E80C521FDE943F0006EF76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E80C5B1FDE943F0006EF76 /* Inaldo_TonyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32E80C4D1FDE943F0006EF76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32E80C361FDE943F0006EF76 /* Inaldo&Tony */;
+			targetProxy = 32E80C4C1FDE943F0006EF76 /* PBXContainerItemProxy */;
+		};
+		32E80C581FDE943F0006EF76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32E80C361FDE943F0006EF76 /* Inaldo&Tony */;
+			targetProxy = 32E80C571FDE943F0006EF76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0057E3F21FDEA03A005F68D7 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0057E3F31FDEA03A005F68D7 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0057E3F81FDEA0A2005F68D7 /* Base */,
+			);
+			name = Tasks.storyboard;
+			sourceTree = "<group>";
+		};
+		3242DB661FE919E3001D936B /* ProfileSeller.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3242DB671FE919E3001D936B /* Base */,
+			);
+			name = ProfileSeller.storyboard;
+			sourceTree = "<group>";
+		};
+		32E80C3E1FDE943F0006EF76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32E80C3F1FDE943F0006EF76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32E80C441FDE943F0006EF76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		32E80C5D1FDE943F0006EF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32E80C5E1FDE943F0006EF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32E80C601FDE943F0006EF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54MA3YJVS2;
+				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prova;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32E80C611FDE943F0006EF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54MA3YJVS2;
+				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prova;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		32E80C631FDE943F0006EF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Inaldo&TonyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.Inaldo-TonyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inaldo&Tony.app/Inaldo&Tony";
+			};
+			name = Debug;
+		};
+		32E80C641FDE943F0006EF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Inaldo&TonyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.Inaldo-TonyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inaldo&Tony.app/Inaldo&Tony";
+			};
+			name = Release;
+		};
+		32E80C661FDE943F0006EF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Inaldo&TonyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.Inaldo-TonyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Inaldo&Tony";
+			};
+			name = Debug;
+		};
+		32E80C671FDE943F0006EF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Inaldo&TonyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.Inaldo-TonyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Inaldo&Tony";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32E80C321FDE943F0006EF76 /* Build configuration list for PBXProject "Inaldo&Tony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E80C5D1FDE943F0006EF76 /* Debug */,
+				32E80C5E1FDE943F0006EF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32E80C5F1FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&Tony" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E80C601FDE943F0006EF76 /* Debug */,
+				32E80C611FDE943F0006EF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32E80C621FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E80C631FDE943F0006EF76 /* Debug */,
+				32E80C641FDE943F0006EF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32E80C651FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E80C661FDE943F0006EF76 /* Debug */,
+				32E80C671FDE943F0006EF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32E80C2F1FDE943F0006EF76 /* Project object */;
+}

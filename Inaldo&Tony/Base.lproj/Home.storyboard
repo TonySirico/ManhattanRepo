@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tle-9f-hMS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="ugq-pH-WOU">
+            <objects>
+                <viewController title="Home" id="tle-9f-hMS" customClass="HomeViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kez-qp-7nR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="tableView" alwaysBounceVertical="YES" delaysContentTouches="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="6" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XP-Xy-QKh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" id="IZq-kv-1jJ" customClass="HomeCell" customModule="Inaldo_Tony" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZq-kv-1jJ" id="Jbf-vq-MhO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spD-FJ-3CE">
+                                                    <rect key="frame" x="35" y="24" width="305" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="nameOutlet" destination="spD-FJ-3CE" id="s98-E4-M31"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tle-9f-hMS" id="Z7H-G3-3sK"/>
+                                    <outlet property="delegate" destination="tle-9f-hMS" id="jQx-yE-ies"/>
+                                    <outletCollection property="gestureRecognizers" destination="fzI-ji-5Wp" appends="YES" id="j4P-Dw-aIA"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLk-XA-oud">
+                                <rect key="frame" x="24" y="93" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Coding"/>
+                                <connections>
+                                    <action selector="firstButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xhp-fz-vHD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Med-UF-qtJ">
+                                <rect key="frame" x="201" y="93" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Design"/>
+                                <connections>
+                                    <action selector="secondButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xxE-wv-Ddu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf3-rp-MXZ">
+                                <rect key="frame" x="24" y="268" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Language"/>
+                                <connections>
+                                    <action selector="thirdButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="cGh-mj-GRw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbJ-cD-15f">
+                                <rect key="frame" x="201" y="268" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Business"/>
+                                <connections>
+                                    <action selector="fourthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="LRt-8S-HCY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-Dr-0vv">
+                                <rect key="frame" x="24" y="443" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Music"/>
+                                <connections>
+                                    <action selector="fifthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="ZzY-AZ-68o"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="center" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" placeholder="&quot;Name&quot; or &quot;#skill&quot;" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-aY-M8H">
+                                <rect key="frame" x="0.0" y="26" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tle-9f-hMS" id="ffI-4U-H8p"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-nk-AkJ">
+                                <rect key="frame" x="0.0" y="26" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="searchButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xxF-jN-yKo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqW-0t-wAg">
+                                <rect key="frame" x="91" y="44" width="193" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ei-DP-VCQ">
+                                <rect key="frame" x="20" y="44" width="85" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="TEP-Za-OvH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBR-ft-tiS">
+                                <rect key="frame" x="201" y="443" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Others"/>
+                                <connections>
+                                    <action selector="sixthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="b0e-33-yjU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="uMT-WK-5UB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" landscapeImage="Home" largeContentSizeImage="Home" selectedImage="HomeHighlighted" id="jMA-4q-bH1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButtonOutlet" destination="4Ei-DP-VCQ" id="JNP-xv-fZY"/>
+                        <outlet property="categoryLabelOutlet" destination="TqW-0t-wAg" id="2Ri-6D-5Up"/>
+                        <outlet property="fifthButtonOutlet" destination="fcN-Dr-0vv" id="3lC-E4-sFj"/>
+                        <outlet property="firstButtonOutlet" destination="wLk-XA-oud" id="N1m-W7-4Bp"/>
+                        <outlet property="fourthButtonOutlet" destination="pbJ-cD-15f" id="fai-6b-uUB"/>
+                        <outlet property="searchBarOutlet" destination="ceq-aY-M8H" id="1TK-yq-JZd"/>
+                        <outlet property="searchButtonOutlet" destination="jMH-nk-AkJ" id="6Ec-gA-pfz"/>
+                        <outlet property="secondButtonOutlet" destination="Med-UF-qtJ" id="hGZ-lq-aa6"/>
+                        <outlet property="sixthButtonOutlet" destination="EBR-ft-tiS" id="gDH-D8-B1Z"/>
+                        <outlet property="tableViewOutlet" destination="2XP-Xy-QKh" id="xyX-fl-ppf"/>
+                        <outlet property="thirdButtonOutlet" destination="xf3-rp-MXZ" id="TW3-hz-VfK"/>
+                        <segue destination="E0F-bo-UBr" kind="presentation" identifier="segueToProfile" id="0qJ-Km-V0a"/>
+                        <segue destination="Xxu-x5-EG9" kind="presentation" identifier="searchSegue" modalTransitionStyle="crossDissolve" id="sro-jB-KoL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3e1-a9-fqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer delaysTouchesBegan="YES" direction="right" id="fzI-ji-5Wp">
+                    <connections>
+                        <action selector="swipeAction:" destination="tle-9f-hMS" id="0mi-fE-MSM"/>
+                        <outlet property="delegate" destination="2XP-Xy-QKh" id="vSR-zd-2Uc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-727" y="822"/>
+        </scene>
+        <!--Home Table View Controller-->
+        <scene sceneID="nzH-z6-wD0">
+            <objects>
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="Xxu-x5-EG9" customClass="HomeTableViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wCq-AY-ObO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="5vn-OC-gcW" customClass="HomeCell" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5vn-OC-gcW" id="IFS-PE-tYf" customClass="HomeCell" customModule="Inaldo_Tony" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Xxu-x5-EG9" id="RiM-nC-NWQ"/>
+                            <outlet property="delegate" destination="Xxu-x5-EG9" id="q0Y-CJ-Eo4"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="31T-dm-c47" kind="unwind" identifier="unwindSegueToHome" unwindAction="unwindToHomeWithSegue:" id="A0r-zo-Icz"/>
+                        <segue destination="E0F-bo-UBr" kind="show" identifier="segueToUserProfile" id="OSC-SX-80B"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qc5-v9-PvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="31T-dm-c47" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="182" y="303"/>
+        </scene>
+        <!--ProfileSeller-->
+        <scene sceneID="YxC-en-Oie">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileSeller" id="E0F-bo-UBr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xP-rI-cte" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="822"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Back" width="55" height="22"/>
+        <image name="Business" width="150" height="150"/>
+        <image name="Coding" width="150" height="150"/>
+        <image name="Design" width="150" height="150"/>
+        <image name="Home" width="25" height="25"/>
+        <image name="HomeHighlighted" width="25" height="25"/>
+        <image name="Language" width="150" height="150"/>
+        <image name="Music" width="150" height="150"/>
+        <image name="Others" width="150" height="150"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="OSC-SX-80B"/>
+    </inferredMetricsTieBreakers>
+</document>
