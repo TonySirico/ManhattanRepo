@@ -69,6 +69,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
                 let uidRef = Database.database().reference().child("users").child(self.uid!)
                 FriendSystem.system.sendRequestToUser(self.userID, timeRequests, "\(date)", descriptionRequests)
                 uidRef.child("timeCoins").setValue(timeCoins-timeRequests)
+                self.performSegue(withIdentifier: "unwindToHome", sender: self)
             } else {
                 AlertController.showAlert(inViewController: self, title: "Missing Coins", message: "You don't have enought time")
             }

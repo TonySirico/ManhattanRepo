@@ -100,7 +100,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:MM:SS +0000"
                 let dayOfRequest = formatter.date(from: stringDate!)
-                let deadline = Date(timeInterval: 259200, since: dayOfRequest!)
+                let deadline = Date(timeInterval: 262800, since: dayOfRequest!)
                 
                 let totalTime = Int(CFDateGetTimeIntervalSinceDate(deadline as CFDate, Date() as CFDate))
                 
