@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,17 +25,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddS-5F-qm8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-ze-cGb" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="111" y="69" width="150" height="150"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-ze-cGb" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="113" y="69" width="150" height="150"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="Zcr-6x-N5s"/>
-                                                    <constraint firstAttribute="height" constant="150" id="pF1-gP-TSV"/>
+                                                    <constraint firstAttribute="width" constant="150" id="M1o-VT-j0E"/>
+                                                    <constraint firstAttribute="height" constant="150" id="j1v-bC-RrT"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxF-z4-CEZ" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="149" y="417" width="75" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxF-z4-CEZ" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="391" width="75" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="Dfs-GC-4yR"/>
+                                                    <constraint firstAttribute="width" constant="75" id="7Mo-0Y-CkO"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Coding"/>
@@ -42,119 +43,150 @@
                                                     <action selector="codingAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="DiC-oW-UKl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-qi-5ft" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="149" y="417" width="75" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="2NO-s1-ND3"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="Others"/>
-                                                <connections>
-                                                    <action selector="otherAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="9Ac-OE-34W"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-tn-0Bo" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="149" y="417" width="75" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="RvC-0h-dlB"/>
-                                                </constraints>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-tn-0Bo" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="444" width="75" height="30"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Language"/>
                                                 <connections>
                                                     <action selector="languageAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="lu8-tA-xga"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFI-RC-HV9" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="149" y="417" width="75" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="geX-h4-9yx"/>
-                                                </constraints>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFI-RC-HV9" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="150" y="391" width="75" height="30"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Design"/>
                                                 <connections>
                                                     <action selector="designAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="hUE-Yv-kmb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KH-BN-ChD" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="149" y="417" width="75" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="FC2-tD-Gvt"/>
-                                                </constraints>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KH-BN-ChD" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="150" y="444" width="75" height="30"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Science"/>
                                                 <connections>
                                                     <action selector="scienceAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="IqX-eC-CBd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exf-1k-AXn" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="149" y="417" width="75" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="IrD-GU-cFK"/>
-                                                </constraints>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exf-1k-AXn" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="270" y="394" width="75" height="30"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Business"/>
                                                 <connections>
                                                     <action selector="businessAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="2qu-TK-cxK"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-6g-lmV" userLabel="nameSurname">
-                                                <rect key="frame" x="102" y="241" width="171" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-6g-lmV" userLabel="nameSurname">
+                                                <rect key="frame" x="102" y="231" width="171" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Badge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-cH-ds9" userLabel="Email">
-                                                <rect key="frame" x="162" y="308" width="50" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-cH-ds9" userLabel="Email">
+                                                <rect key="frame" x="162" y="298" width="50" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9y-OS-D2K">
-                                                <rect key="frame" x="155" y="279" width="65" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9y-OS-D2K">
+                                                <rect key="frame" x="155" y="269" width="65" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-gf-6YI">
-                                                <rect key="frame" x="112" y="337" width="151.5" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-gf-6YI">
+                                                <rect key="frame" x="112" y="327" width="152" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                 <color key="textColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Select a main skill below and tap enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lO-9K-kIe" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="455" width="359" height="60"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Select a main skill below and tap enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lO-9K-kIe" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="490" width="359" height="60"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="c1u-bI-ZBE"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="h6k-tX-WoL"/>
-                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6V-X3-bN7" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="163" y="594" width="160" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6V-X3-bN7" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="107" y="658" width="160" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="MP9-6e-5hN"/>
+                                                    <constraint firstAttribute="width" constant="160" id="t6e-xj-rYQ"/>
+                                                </constraints>
                                                 <state key="normal" title="Send Request"/>
                                                 <connections>
                                                     <action selector="requestAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="Y9f-kz-O7T"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to select time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2S-Dg-X7f" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="537" width="312" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to select time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2S-Dg-X7f" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="572" width="312" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="PLj-eM-bdq"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to write a task description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zIJ-cO-wfi" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="610" width="312" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="0pr-17-ovc"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-qi-5ft" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="270" y="444" width="75" height="30"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Others"/>
+                                                <connections>
+                                                    <action selector="otherAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="9Ac-OE-34W"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="f5U-6g-lmV" firstAttribute="top" secondItem="OfX-ze-cGb" secondAttribute="bottom" constant="12" id="0UI-HM-EUp"/>
+                                            <constraint firstItem="BsL-qi-5ft" firstAttribute="top" secondItem="exf-1k-AXn" secondAttribute="bottom" constant="20" id="1cE-Gq-h0Q"/>
+                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="top" secondItem="f5U-6g-lmV" secondAttribute="bottom" constant="8" symbolic="YES" id="1hE-db-UDJ"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="top" secondItem="8lO-9K-kIe" secondAttribute="bottom" constant="22" id="34K-wd-UFl"/>
+                                            <constraint firstItem="9sO-gf-6YI" firstAttribute="top" secondItem="8Iw-cH-ds9" secondAttribute="bottom" constant="8" symbolic="YES" id="4Ke-Uc-Snr"/>
+                                            <constraint firstItem="9sO-gf-6YI" firstAttribute="centerX" secondItem="BFI-RC-HV9" secondAttribute="centerX" id="5od-bU-Jc9"/>
+                                            <constraint firstAttribute="trailing" secondItem="exf-1k-AXn" secondAttribute="trailing" constant="30" id="8uw-YA-8Si"/>
+                                            <constraint firstAttribute="trailing" secondItem="O2S-Dg-X7f" secondAttribute="trailing" constant="35" id="9pe-da-eaG"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="centerX" secondItem="a6V-X3-bN7" secondAttribute="centerX" id="AVc-tP-qWo"/>
+                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="leading" secondItem="FIf-tn-0Bo" secondAttribute="leading" id="Bp0-sk-o1Q"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="28" id="Bu4-td-ozz"/>
+                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="baseline" secondItem="BsL-qi-5ft" secondAttribute="baseline" id="D2X-VR-rUL"/>
+                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="leading" secondItem="ZxF-z4-CEZ" secondAttribute="trailing" constant="45" id="Ffm-hg-kcd"/>
+                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="leading" secondItem="4KH-BN-ChD" secondAttribute="leading" id="GDD-NN-oNA"/>
+                                            <constraint firstItem="a6V-X3-bN7" firstAttribute="top" secondItem="zIJ-cO-wfi" secondAttribute="bottom" constant="8" symbolic="YES" id="Gcl-v4-MNL"/>
+                                            <constraint firstItem="8Iw-cH-ds9" firstAttribute="top" secondItem="U9y-OS-D2K" secondAttribute="bottom" constant="8" symbolic="YES" id="Kcr-3t-MDM"/>
+                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="ZxF-z4-CEZ" secondAttribute="bottom" constant="23" id="LBK-1R-d5t"/>
                                             <constraint firstAttribute="height" constant="800" id="Ljm-85-gOn"/>
+                                            <constraint firstItem="zIJ-cO-wfi" firstAttribute="top" secondItem="O2S-Dg-X7f" secondAttribute="bottom" constant="8" symbolic="YES" id="RWJ-I3-0eD"/>
+                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="top" secondItem="9sO-gf-6YI" secondAttribute="bottom" constant="28" id="ReV-ej-jNd"/>
+                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="4KH-BN-ChD" secondAttribute="top" id="UDE-dn-iKQ"/>
+                                            <constraint firstItem="OfX-ze-cGb" firstAttribute="top" secondItem="ddS-5F-qm8" secondAttribute="top" constant="69" id="USW-YK-PmE"/>
+                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="baseline" secondItem="4KH-BN-ChD" secondAttribute="baseline" id="XQP-gV-qHw"/>
+                                            <constraint firstItem="OfX-ze-cGb" firstAttribute="centerX" secondItem="f5U-6g-lmV" secondAttribute="centerX" id="Zz2-J8-Nfg"/>
+                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="centerX" secondItem="8lO-9K-kIe" secondAttribute="centerX" id="bp3-qG-DNT"/>
+                                            <constraint firstAttribute="bottom" secondItem="a6V-X3-bN7" secondAttribute="bottom" constant="92" id="cvb-Bs-X7a"/>
+                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="centerX" secondItem="8Iw-cH-ds9" secondAttribute="centerX" id="e04-nl-2L8"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leadingMargin" id="gF3-Rx-R0f"/>
+                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="trailing" secondItem="4KH-BN-ChD" secondAttribute="trailing" id="gha-1O-Pla"/>
+                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="baseline" secondItem="BFI-RC-HV9" secondAttribute="baseline" id="hBl-Ka-aqf"/>
+                                            <constraint firstItem="exf-1k-AXn" firstAttribute="trailing" secondItem="BsL-qi-5ft" secondAttribute="trailing" id="hMw-QO-8FN"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="trailing" secondItem="ddS-5F-qm8" secondAttribute="trailingMargin" id="hl4-Lb-ljS"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="trailing" secondItem="zIJ-cO-wfi" secondAttribute="trailing" id="nPD-Cx-dNr"/>
+                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="trailing" secondItem="FIf-tn-0Bo" secondAttribute="trailing" id="nxY-7J-1RC"/>
+                                            <constraint firstItem="exf-1k-AXn" firstAttribute="leading" secondItem="BsL-qi-5ft" secondAttribute="leading" id="qEd-6d-oUc"/>
+                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="centerX" secondItem="9sO-gf-6YI" secondAttribute="centerX" id="qFz-8y-bjP"/>
+                                            <constraint firstItem="exf-1k-AXn" firstAttribute="leading" secondItem="BFI-RC-HV9" secondAttribute="trailing" constant="45" id="tcU-VT-6Qv"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="leading" secondItem="zIJ-cO-wfi" secondAttribute="leading" id="uxf-9Z-ZTa"/>
+                                            <constraint firstItem="f5U-6g-lmV" firstAttribute="centerX" secondItem="U9y-OS-D2K" secondAttribute="centerX" id="vw6-2W-55y"/>
+                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="30" id="wVb-dV-K9H"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="top" secondItem="FIf-tn-0Bo" secondAttribute="bottom" constant="16" id="zig-88-lfW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -165,13 +197,12 @@
                                     <constraint firstAttribute="bottom" secondItem="ddS-5F-qm8" secondAttribute="bottom" id="o6V-Js-Orl"/>
                                 </constraints>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="cu8-VD-U32">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu8-VD-U32">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="EaT-Vf-K0s">
+                                    <navigationItem id="EaT-Vf-K0s">
                                         <barButtonItem key="leftBarButtonItem" image="Back" id="tho-aT-9Pu">
                                             <connections>
                                                 <action selector="goBackToOneButtonTapped:" destination="xJE-RJ-PWq" id="GW3-b0-4hA"/>
@@ -214,7 +245,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bih-GM-LIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Thy-JW-R4l" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1673" y="-1458"/>
+            <point key="canvasLocation" x="-1674.4000000000001" y="-1458.1709145427287"/>
         </scene>
     </scenes>
     <resources>
