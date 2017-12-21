@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 
 class OnGoingTaskCell: UITableViewCell {
@@ -33,6 +35,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
    
     @IBOutlet weak var taskTableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    let uid = Auth.auth().currentUser!.uid
+    let ref = Database.database().reference()
     
     // TIMER CODE
     
@@ -42,21 +46,19 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //TIMER CODE END
     
-    
-    var namesA = ["Cecilia", "Pasquale", "Astrogildo", "Natalia", "Lis", "Perna"]
-    var surnamesA = ["Silva Ribeiro", "Antonio Ramos Ribeiro", "Toschi Magalhes", "Salti", "Pereira Rios", "Oliveira da Silva Sauro"]
-    var skillsA = ["Coding", "Desing", "Business", "Languages", "Other", "Other"]
-    var timeRequestedA = ["50", "90", "130", "100", "11", "30"]
-    var timeLeftA = ["12", "7", "100", "800", "47", "99"]
-    
-    var namesB = ["Lucia Vania", "Isabel Pereira", "Sol", "Danilo", "Kameni", "Taita"]
-    var surnamesB = ["Silvao", "Perkiasi Silva Saurao", "Lete de Vinci", "Robatini Perske", "Olsen", "Ramos"]
-    var skillsB = ["Coding", "Coding", "Design", "Other", "Other", "Other"]
-    var timeRequestedB = ["20", "90", "90", "30", "30", "10"]
-    var timeLeftB = ["288", "500", "100", "39", "0", "10"]
-    
     let tableSections = ["Tasks in progress", "Ended Tasks" ]
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        FriendSystem.system.showUserOnGoing {
+            print(FriendSystem.system.onGoingList)
+            self.taskTableView.reloadData()
+        }
+        FriendSystem.system.showUserCompleted{
+            print(FriendSystem.system.completedList)
+            self.taskTableView.reloadData()
+        }
+    }
 
     override func viewDidLoad()
     {
@@ -109,11 +111,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         switch(segmentedControl.selectedSegmentIndex)
         {
         case 0:
-           return namesA.count
-           
-        case 1:
-            return namesB.count
-            
+            switch(section) {
+            case 0:
+                return FriendSystem.system.onGoingList.count
+            default:
+                return FriendSystem.system.completedList.count
+            }
         default:
             return 1
         }
@@ -129,9 +132,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             switch (indexPath.section) {  //SWITCH SECTION
             case 0: //ON GOING
                 let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
-                cell.nameSurnameLabel?.text = namesA[indexPath.row] + " " + surnamesA[indexPath.row]
-                cell.skillRequestedLabel?.text = skillsA[indexPath.row]
-                cell.timeRequestedLabel?.text = "(" + timeRequestedA[indexPath.row] + " TimeCoins)"
+                cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
+                cell.skillRequestedLabel?.text = FriendSystem.system.onGoingList[indexPath.row].requestDescription
+//                cell.timeRequestedLabel?.text = "(" + timeRequestedA[indexPath.row] + " TimeCoins)"
                //TIMER
                 cell.timeLeftLabel?.text = "\(timeFormatted(Int(totalTime)))"
                 cell.accessoryType = UITableViewCellAccessoryType.none
@@ -144,66 +147,65 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
               
                cell.progressViewOutlet.progress = Float((totalTime/259200))
                 
-                
                 return cell
                 
             case 1: //OLD
                 let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell") as! oldTaskCell
-                cell.nameSurnameLabel?.text = namesB[indexPath.row] + " " + surnamesB[indexPath.row]
-                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
-                cell.timeRequestedLabel?.text = timeRequestedB[indexPath.row]
-                
+                cell.nameSurnameLabel?.text = FriendSystem.system.completedList[indexPath.row].name + " " + FriendSystem.system.completedList[indexPath.row].surname
+//                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
+//                cell.timeRequestedLabel?.text = timeRequestedB[indexPath.row]
+
                 cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
                 cell.skillRequestedLabel.sizeToFit()
                 cell.timeRequestedLabel.sizeToFit()
-                
-                
+
+
                 return cell
                 
             default:
                 break
             }
             
-        case 1:
-            switch (indexPath.section) {  //SWITCH SECTION
-            case 0: //ON GOING
-                let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
-                cell.nameSurnameLabel?.text = namesB[indexPath.row] + " " + surnamesB[indexPath.row]
-                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
-                cell.timeRequestedLabel?.text = "(" + timeRequestedB[indexPath.row] + " TimeCoins)"
-              //TIMER
-                cell.timeLeftLabel?.text = "\(timeFormatted(Int(totalTime)))"
-                cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-                
-                //cell.nameSurnameLabel?.sizeToFit()
-                cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
-                cell.skillRequestedLabel?.sizeToFit()
-                cell.timeRequestedLabel?.sizeToFit()
-                cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
-                
-               cell.progressViewOutlet.progress = Float(totalTime/259200)
-         
-
-                
-                return cell
-                
-            case 1: //OLD
-                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell") as! oldTaskCell
-                cell.nameSurnameLabel?.text = namesA[indexPath.row] + " " + surnamesB[indexPath.row]
-                cell.skillRequestedLabel?.text = skillsA[indexPath.row]
-                cell.timeRequestedLabel?.text = timeRequestedA[indexPath.row]
-                
-                cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
-                cell.skillRequestedLabel.sizeToFit()
-                cell.timeRequestedLabel.sizeToFit()
-                
-                
-                return cell
-                
-            default:
-                break
-                
-            }
+//        case 1:
+//            switch (indexPath.section) {  //SWITCH SECTION
+//            case 0: //ON GOING
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
+//                cell.nameSurnameLabel?.text = namesB[indexPath.row] + " " + surnamesB[indexPath.row]
+//                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
+//                cell.timeRequestedLabel?.text = "(" + timeRequestedB[indexPath.row] + " TimeCoins)"
+//              //TIMER
+//                cell.timeLeftLabel?.text = "\(timeFormatted(Int(totalTime)))"
+//                cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+//
+//                //cell.nameSurnameLabel?.sizeToFit()
+//                cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
+//                cell.skillRequestedLabel?.sizeToFit()
+//                cell.timeRequestedLabel?.sizeToFit()
+//                cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
+//
+//               cell.progressViewOutlet.progress = Float(totalTime/259200)
+//
+//
+//
+//                return cell
+//
+//            case 1: //OLD
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell") as! oldTaskCell
+//                cell.nameSurnameLabel?.text = namesA[indexPath.row] + " " + surnamesB[indexPath.row]
+//                cell.skillRequestedLabel?.text = skillsA[indexPath.row]
+//                cell.timeRequestedLabel?.text = timeRequestedA[indexPath.row]
+//
+//                cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
+//                cell.skillRequestedLabel.sizeToFit()
+//                cell.timeRequestedLabel.sizeToFit()
+//
+//
+//                return cell
+//
+//            default:
+//                break
+//
+//            }
             
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell")
@@ -224,13 +226,29 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //tablerow actions on swipe
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        if indexPath.section == 0 && segmentedControl.selectedSegmentIndex == 1 {
+        if indexPath.section == 0 && segmentedControl.selectedSegmentIndex == 0 {
             
             
             
             
             let endTaskAction = UIContextualAction(style: .normal, title:  "End Task", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                //
+                var time = 0
+                var description = ""
+                var date = ""
+                
+                let currentUserRef = self.ref.child("users").child(self.uid)
+                let id = FriendSystem.system.onGoingList[indexPath.row].id
+                
+                currentUserRef.child("requests").child("onGoingRequests").child(id!).observeSingleEvent(of: .value, with: { (DataSnapshot) in
+                    if let dictionary = DataSnapshot.value as? [String: AnyObject] {
+                        time = dictionary["time"] as! Int
+                        description = dictionary["description"] as! String
+                        date = dictionary["date"] as! String
+                        currentUserRef.child("requests").child("completedRequests").child(id!).setValue(["time": time, "bool": true, "description": description, "date": date])
+                    }
+                }, withCancel: nil)
+                
+                currentUserRef.child("requests").child("onGoingRequests").child(id!).removeValue()
                 success(true)
             })
            

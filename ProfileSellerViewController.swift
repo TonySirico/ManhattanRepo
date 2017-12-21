@@ -38,6 +38,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timeCoinsLabel: UILabel!
     @IBOutlet weak var timeTextField: RoundedUITextField!
     
+    let ref = Database.database().reference()
     var userID = ""
     var interval = NSDate().timeIntervalSince1970
     let uid = Auth.auth().currentUser?.uid

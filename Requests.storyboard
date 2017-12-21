@@ -38,7 +38,7 @@
                                 <color key="tintColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="requestCell" id="DPk-q2-PHg" customClass="requestCell" customModule="Inaldo_Tony" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="requestCell" id="DPk-q2-PHg" customClass="RequestCell" customModule="Inaldo_Tony" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DPk-q2-PHg" id="nn0-Wr-l9W">
@@ -83,9 +83,9 @@
                                         <color key="tintColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outlet property="nameSurname" destination="gIb-3t-FNC" id="N9A-eO-5VD"/>
-                                            <outlet property="skillRequested" destination="0gT-MW-6x3" id="oga-gg-NZI"/>
-                                            <outlet property="timeRequested" destination="XXc-Bl-QfV" id="quH-87-LSq"/>
+                                            <outlet property="nameSurname" destination="gIb-3t-FNC" id="rOG-ww-3so"/>
+                                            <outlet property="skillRequested" destination="0gT-MW-6x3" id="A4u-fF-giO"/>
+                                            <outlet property="timeRequested" destination="XXc-Bl-QfV" id="MY5-3z-kMf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

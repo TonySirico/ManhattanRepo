@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 
-class requestCell: UITableViewCell {
+class RequestCell: UITableViewCell {
     
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var skillRequested: UILabel!
@@ -20,25 +22,28 @@ class requestCell: UITableViewCell {
 
 
 class RequestsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let ref = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid
   
     @IBOutlet weak var requestTableView: UITableView!
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return FriendSystem.system.requestList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell") as! requestCell
-        cell.nameSurname?.text = "Name Surname"
-        cell.skillRequested?.text = "Coding"
-        cell.timeRequested?.text = "45"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell" , for: indexPath) as? RequestCell
         
-        cell.nameSurname?.adjustsFontSizeToFitWidth = true
+        cell!.nameSurname.text = FriendSystem.system.requestList[indexPath.row].name + " " + FriendSystem.system.requestList[indexPath.row].surname
+        cell!.timeRequested.text = String(FriendSystem.system.requestList[indexPath.row].requestTime)
+//        cell!.dateLabel.text = FriendSystem.system.requestList[indexPath.row].requestDate
+        cell!.skillRequested.text = FriendSystem.system.requestList[indexPath.row].requestDescription
+
         
-        
-        return cell
+        return cell!
     }
     
 
@@ -49,6 +54,12 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
         requestTableView.delegate = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        FriendSystem.system.showRequests {
+            self.requestTableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,14 +72,26 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let refuseAction = UIContextualAction(style: .normal, title:  "Refuse", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            
+            let id = FriendSystem.system.requestList[indexPath.row].id
+            let timeRequests = FriendSystem.system.requestList[indexPath.row].requestTime
+            FriendSystem.system.declineFriendRequest(id!)
+            FriendSystem.system.getTimeCoinsCurrentUser(id!, { (timeCoins) in
+                let idRef = Database.database().reference().child("users").child(id!)
+                idRef.child("timeCoins").setValue(timeCoins+timeRequests!)
+            })
             success(true)
         })
         refuseAction.backgroundColor = UIColor(red:1.00, green:0.36, blue:0.32, alpha:1.0)
         
         
         let acceptAction = UIContextualAction(style: .normal, title:  "Accept", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            //
+            let id = FriendSystem.system.requestList[indexPath.row].id
+            let timeRequests = FriendSystem.system.requestList[indexPath.row].requestTime
+            FriendSystem.system.acceptFriendRequest(id!)
+            FriendSystem.system.getTimeCoinsCurrentUser(self.uid!, { (timeCoins) in
+                let uidRef = Database.database().reference().child("users").child(self.uid!)
+                uidRef.child("timeCoins").setValue(timeCoins+timeRequests!)
+            })
             success(true)
         })
       acceptAction.backgroundColor = UIColor(red:0.31, green:0.82, blue:0.30, alpha:1.0)
