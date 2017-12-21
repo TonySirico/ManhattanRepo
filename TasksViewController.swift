@@ -34,17 +34,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
    
     @IBOutlet weak var taskTableView: UITableView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     let uid = Auth.auth().currentUser!.uid
     let ref = Database.database().reference()
-    
-    // TIMER CODE
-    
-    var countdownTimer: Timer!
-    var refreshTimer: Timer!
-    var totalTime: Double = 0
-    
-    //TIMER CODE END
     
     let tableSections = ["Tasks in progress", "Ended Tasks" ]
     
@@ -64,31 +55,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         super.viewDidLoad()
         
+        _ = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { (Timer) in
+            self.taskTableView.reloadData()
+        })
+        
         taskTableView.dataSource = self
         taskTableView.delegate = self
         
         taskTableView.sectionIndexColor = UIColor.white
-        
-        // TIMER CODE
-        
-        startTimer()
-        
-        //deadilne
-        var dateComponents = DateComponents()
-        dateComponents.year = 2017
-        dateComponents.month = 12
-        dateComponents.day = 21
-        dateComponents.timeZone = TimeZone(abbreviation: "UTC+1")
-        dateComponents.hour = 8
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        
-        let userCalendar = Calendar.current // user calendar
-        let deadline = userCalendar.date(from: dateComponents)
-        
-        let todayDate = Date()
-        
-        totalTime = Double(CFDateGetTimeIntervalSinceDate(deadline! as CFDate, todayDate as CFDate))
         
     }
     
@@ -107,18 +81,11 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //return the rows number
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        switch(segmentedControl.selectedSegmentIndex)
-        {
+        switch(section) {
         case 0:
-            switch(section) {
-            case 0:
-                return FriendSystem.system.onGoingList.count
-            default:
-                return FriendSystem.system.completedList.count
-            }
+            return FriendSystem.system.onGoingList.count
         default:
-            return 1
+            return FriendSystem.system.completedList.count
         }
         
     }
@@ -126,12 +93,20 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //return the cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        switch(segmentedControl.selectedSegmentIndex) //SWITCH SEGMENTED
-        {
-        case 0:
             switch (indexPath.section) {  //SWITCH SECTION
             case 0: //ON GOING
+                
+                let stringDate = FriendSystem.system.onGoingList[indexPath.row].requestDate
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:MM:SS +0000"
+                let dayOfRequest = formatter.date(from: stringDate!)
+                let deadline = Date(timeInterval: 259200, since: dayOfRequest!)
+                
+                let totalTime = Int(CFDateGetTimeIntervalSinceDate(deadline as CFDate, Date() as CFDate))
+                
                 let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
+                
+                cell.progressViewOutlet.progress = Float((259200 - totalTime)/259200)
                 cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
                 cell.skillRequestedLabel?.text = FriendSystem.system.onGoingList[indexPath.row].requestDescription
 //                cell.timeRequestedLabel?.text = "(" + timeRequestedA[indexPath.row] + " TimeCoins)"
@@ -143,9 +118,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.skillRequestedLabel?.sizeToFit()
                 cell.timeRequestedLabel?.sizeToFit()
                 cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
-               
-              
-               cell.progressViewOutlet.progress = Float((totalTime/259200))
                 
                 return cell
                 
@@ -159,58 +131,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.skillRequestedLabel.sizeToFit()
                 cell.timeRequestedLabel.sizeToFit()
 
-
                 return cell
                 
             default:
                 break
-            }
-            
-//        case 1:
-//            switch (indexPath.section) {  //SWITCH SECTION
-//            case 0: //ON GOING
-//                let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
-//                cell.nameSurnameLabel?.text = namesB[indexPath.row] + " " + surnamesB[indexPath.row]
-//                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
-//                cell.timeRequestedLabel?.text = "(" + timeRequestedB[indexPath.row] + " TimeCoins)"
-//              //TIMER
-//                cell.timeLeftLabel?.text = "\(timeFormatted(Int(totalTime)))"
-//                cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-//
-//                //cell.nameSurnameLabel?.sizeToFit()
-//                cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
-//                cell.skillRequestedLabel?.sizeToFit()
-//                cell.timeRequestedLabel?.sizeToFit()
-//                cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
-//
-//               cell.progressViewOutlet.progress = Float(totalTime/259200)
-//
-//
-//
-//                return cell
-//
-//            case 1: //OLD
-//                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell") as! oldTaskCell
-//                cell.nameSurnameLabel?.text = namesA[indexPath.row] + " " + surnamesB[indexPath.row]
-//                cell.skillRequestedLabel?.text = skillsA[indexPath.row]
-//                cell.timeRequestedLabel?.text = timeRequestedA[indexPath.row]
-//
-//                cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
-//                cell.skillRequestedLabel.sizeToFit()
-//                cell.timeRequestedLabel.sizeToFit()
-//
-//
-//                return cell
-//
-//            default:
-//                break
-//
-//            }
-            
-            default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell")
-                return cell!
-              
             }
         let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell")
         return cell!
@@ -226,10 +150,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //tablerow actions on swipe
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        if indexPath.section == 0 && segmentedControl.selectedSegmentIndex == 0 {
-            
-            
-            
+        if indexPath.section == 0 {
             
             let endTaskAction = UIContextualAction(style: .normal, title:  "End Task", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
                 var time = 0
@@ -285,29 +206,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
     }
-    
-    // TIMER CODE
-    
-    func startTimer() {
-        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-        refreshTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateTime() {
-        if totalTime != 0 {
-            totalTime -= 1
-        } else {
-            endTimer()
-        }
-    }
-    
-    @objc func updateLabel() {
-        taskTableView.reloadData()
-    }
-    
-    func endTimer() {
-        countdownTimer.invalidate()
-    }
+
     
     func timeFormatted(_ totalSeconds: Int) -> String {
         let hours: Int = (totalSeconds / 3600)
@@ -315,5 +214,4 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //     let hours: Int = totalSeconds / 3600
         return String(format: "\(hours)h \(minutes)\'")
     }
-
 }
