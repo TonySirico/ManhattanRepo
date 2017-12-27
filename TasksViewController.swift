@@ -96,10 +96,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             switch (indexPath.section) {  //SWITCH SECTION
             case 0: //ON GOING
                 
-                let stringDate = FriendSystem.system.onGoingList[indexPath.row].requestDate
+                let stringDate: String = FriendSystem.system.onGoingList[indexPath.row].requestDate
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd HH:MM:SS +0000"
-                let dayOfRequest = formatter.date(from: stringDate!)
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss +0000"
+                let dayOfRequest = formatter.date(from: stringDate)
                 let deadline = Date(timeInterval: 262800, since: dayOfRequest!)
                 
                 let totalTime = Int(CFDateGetTimeIntervalSinceDate(deadline as CFDate, Date() as CFDate))
