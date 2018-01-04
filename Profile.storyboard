@@ -25,14 +25,6 @@
                                     <constraint firstAttribute="height" constant="150" id="pF1-gP-TSV"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xq-Ad-3oK" userLabel="ChangeImage Button">
-                                <rect key="frame" x="238" y="177" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="Rfu-FT-pC7"/>
-                                    <constraint firstAttribute="width" constant="24" id="Vrb-ci-zeO"/>
-                                </constraints>
-                                <state key="normal" image="plusIcon"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxF-z4-CEZ" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
                                 <rect key="frame" x="30" y="410" width="75" height="30"/>
                                 <constraints>
@@ -117,7 +109,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Select a main skill below and tap enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lO-9K-kIe" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tap a main skill above and type a #description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lO-9K-kIe" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                 <rect key="frame" x="8" y="528" width="359" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
@@ -148,7 +140,6 @@
                             <constraint firstItem="U9y-OS-D2K" firstAttribute="top" secondItem="f5U-6g-lmV" secondAttribute="bottom" constant="8" id="13y-uQ-r23"/>
                             <constraint firstItem="kIW-Fp-Jgz" firstAttribute="trailing" secondItem="8lO-9K-kIe" secondAttribute="trailing" constant="8" id="19h-6X-Gi9"/>
                             <constraint firstItem="kIW-Fp-Jgz" firstAttribute="bottom" secondItem="8lO-9K-kIe" secondAttribute="bottom" constant="30" id="36A-vF-BAc"/>
-                            <constraint firstItem="4xq-Ad-3oK" firstAttribute="top" secondItem="kIW-Fp-Jgz" secondAttribute="top" constant="157" id="7xp-i7-n7X"/>
                             <constraint firstItem="u7w-ez-G8c" firstAttribute="top" secondItem="kIW-Fp-Jgz" secondAttribute="top" constant="30" id="8if-Of-Py0"/>
                             <constraint firstItem="BsL-qi-5ft" firstAttribute="top" secondItem="exf-1k-AXn" secondAttribute="bottom" constant="22" id="C4O-31-MwP"/>
                             <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="ZxF-z4-CEZ" secondAttribute="bottom" constant="22" id="CXG-Wd-V7n"/>
@@ -160,7 +151,6 @@
                             <constraint firstItem="8lO-9K-kIe" firstAttribute="leading" secondItem="kIW-Fp-Jgz" secondAttribute="leading" constant="8" id="HTE-hY-LZF"/>
                             <constraint firstItem="f5U-6g-lmV" firstAttribute="top" secondItem="OfX-ze-cGb" secondAttribute="bottom" constant="20" id="Hot-DS-cbT"/>
                             <constraint firstItem="8lO-9K-kIe" firstAttribute="top" secondItem="BsL-qi-5ft" secondAttribute="bottom" constant="36" id="ITB-Ey-mo9"/>
-                            <constraint firstItem="kIW-Fp-Jgz" firstAttribute="trailing" secondItem="4xq-Ad-3oK" secondAttribute="trailing" constant="113" id="Ica-CX-hBV"/>
                             <constraint firstItem="8Iw-cH-ds9" firstAttribute="centerX" secondItem="dOS-6Y-tx1" secondAttribute="centerX" id="Lii-MP-Wy3"/>
                             <constraint firstItem="U9y-OS-D2K" firstAttribute="top" secondItem="f5U-6g-lmV" secondAttribute="bottom" constant="8" id="Ody-Wn-AYw"/>
                             <constraint firstItem="U9y-OS-D2K" firstAttribute="centerX" secondItem="dOS-6Y-tx1" secondAttribute="centerX" id="P5s-ed-85r"/>
@@ -175,8 +165,6 @@
                             <constraint firstItem="4KH-BN-ChD" firstAttribute="top" secondItem="BFI-RC-HV9" secondAttribute="bottom" constant="22" id="Wgo-Si-y0c"/>
                             <constraint firstItem="9sO-gf-6YI" firstAttribute="top" secondItem="8Iw-cH-ds9" secondAttribute="bottom" constant="26" id="Wok-f8-hcI"/>
                             <constraint firstItem="8Iw-cH-ds9" firstAttribute="top" secondItem="U9y-OS-D2K" secondAttribute="bottom" constant="8" id="YZ3-sa-uxK"/>
-                            <constraint firstItem="4xq-Ad-3oK" firstAttribute="leading" secondItem="kIW-Fp-Jgz" secondAttribute="leading" constant="238" id="ZVF-pn-aA1"/>
-                            <constraint firstItem="f5U-6g-lmV" firstAttribute="top" secondItem="4xq-Ad-3oK" secondAttribute="bottom" constant="19" id="aQv-f9-4rZ"/>
                             <constraint firstItem="ZxF-z4-CEZ" firstAttribute="leading" secondItem="kIW-Fp-Jgz" secondAttribute="leading" constant="30" id="bh3-51-ow5"/>
                             <constraint firstItem="9sO-gf-6YI" firstAttribute="centerX" secondItem="dOS-6Y-tx1" secondAttribute="centerX" id="eEp-TZ-hKz"/>
                             <constraint firstItem="exf-1k-AXn" firstAttribute="top" secondItem="u7w-ez-G8c" secondAttribute="bottom" constant="334" id="gPA-1l-Jqe"/>
@@ -225,6 +213,5 @@
         <image name="Profile" width="19" height="25"/>
         <image name="ProfileHighlighted" width="19" height="25"/>
         <image name="dummyProfilePic" width="140" height="140"/>
-        <image name="plusIcon" width="24" height="24"/>
     </resources>
 </document>

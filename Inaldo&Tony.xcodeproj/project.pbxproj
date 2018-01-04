@@ -14,6 +14,10 @@
 		0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */; };
 		0A0167731FE29FBA00E4A57B /* RoundButtonFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */; };
 		0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */; };
+		0A1EF7C31FF93FB4007881B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A1EF7C21FF93FB4007881B6 /* GoogleService-Info.plist */; };
+		0A75D5551FFE3EA5001939EF /* RoundedUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */; };
+		0A75D5591FFE46DA001939EF /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D5581FFE46DA001939EF /* PopUpViewController.swift */; };
+		0A75D55B1FFE4F32001939EF /* requestDescriptionSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */; };
 		0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */; };
 		0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAE99D1FE186770022E7F5 /* RoundButton.swift */; };
 		0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A41FE122C0003774B1 /* LoginViewController.swift */; };
@@ -26,7 +30,6 @@
 		324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C51FDEA1B8004FF991 /* RequestsViewController.swift */; };
 		324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C71FDEA1C7004FF991 /* TasksViewController.swift */; };
 		324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C91FDEA1D9004FF991 /* ProfileViewController.swift */; };
-		328DEA8A1FEAF8320019C17A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 328DEA891FEAF8310019C17A /* GoogleService-Info.plist */; };
 		32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */; };
 		32B2BEB41FEAB29800D7D8CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEB31FEAB29800D7D8CC /* User.swift */; };
 		32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */; };
@@ -64,6 +67,10 @@
 		0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonFilled.swift; sourceTree = "<group>"; };
 		0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeRoundedUITextField.swift; sourceTree = "<group>"; };
+		0A1EF7C21FF93FB4007881B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextView.swift; sourceTree = "<group>"; };
+		0A75D5581FFE46DA001939EF /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDescriptionSingleton.swift; sourceTree = "<group>"; };
 		0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextField.swift; sourceTree = "<group>"; };
 		0ABAE99D1FE186770022E7F5 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		0ACC02A41FE122C0003774B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +83,6 @@
 		324910C51FDEA1B8004FF991 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		324910C71FDEA1C7004FF991 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		324910C91FDEA1D9004FF991 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		328DEA891FEAF8310019C17A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		32B2BEB31FEAB29800D7D8CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inaldo&Tony.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,10 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				3242DB5F1FE910D3001D936B /* Singleton.swift */,
+				0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */,
 				32B2BEB31FEAB29800D7D8CC /* User.swift */,
 				3242DB661FE919E3001D936B /* ProfileSeller.storyboard */,
 				3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */,
 				0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */,
+				0A75D5581FFE46DA001939EF /* PopUpViewController.swift */,
 				324910C91FDEA1D9004FF991 /* ProfileViewController.swift */,
 				0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */,
 				324910C71FDEA1C7004FF991 /* TasksViewController.swift */,
@@ -142,6 +150,7 @@
 				0ABAE99D1FE186770022E7F5 /* RoundButton.swift */,
 				0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */,
 				0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */,
+				0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */,
 				0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */,
 				32E80C391FDE943F0006EF76 /* Inaldo&Tony */,
 				32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */,
@@ -173,8 +182,8 @@
 				0ACC02A61FE1235F003774B1 /* SignupViewController.swift */,
 				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
 				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
+				0A1EF7C21FF93FB4007881B6 /* GoogleService-Info.plist */,
 				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
-				328DEA891FEAF8310019C17A /* GoogleService-Info.plist */,
 				32E80C461FDE943F0006EF76 /* Info.plist */,
 			);
 			path = "Inaldo&Tony";
@@ -327,11 +336,11 @@
 			files = (
 				32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */,
 				32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */,
+				0A1EF7C31FF93FB4007881B6 /* GoogleService-Info.plist in Resources */,
 				32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */,
 				0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */,
 				0057E3F61FDEA07B005F68D7 /* Requests.storyboard in Resources */,
 				0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */,
-				328DEA8A1FEAF8320019C17A /* GoogleService-Info.plist in Resources */,
 				0057E3F41FDEA03A005F68D7 /* Home.storyboard in Resources */,
 				3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */,
 			);
@@ -422,6 +431,7 @@
 				324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */,
 				0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */,
 				0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */,
+				0A75D5551FFE3EA5001939EF /* RoundedUITextView.swift in Sources */,
 				3242DB601FE910D3001D936B /* Singleton.swift in Sources */,
 				32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */,
 				0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */,
@@ -430,8 +440,10 @@
 				3242DB6A1FE91CDE001D936B /* ProfileSellerViewController.swift in Sources */,
 				32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */,
 				324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */,
+				0A75D55B1FFE4F32001939EF /* requestDescriptionSingleton.swift in Sources */,
 				0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */,
 				324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */,
+				0A75D5591FFE46DA001939EF /* PopUpViewController.swift in Sources */,
 				0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */,
 				0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */,
 				0A0167731FE29FBA00E4A57B /* RoundButtonFilled.swift in Sources */,

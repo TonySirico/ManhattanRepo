@@ -33,6 +33,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     //Hide keyboard when user taps anywhere
     @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        print("Tap!")
         self.view.endEditing(true)
         
     }
@@ -149,7 +150,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         myDatePicker.datePickerMode = UIDatePickerMode.date
         myDatePicker.addTarget(self, action: #selector(SignupViewController.datePickeralueChanged(sender:)), for: UIControlEvents.valueChanged)
         birthdayTextField.inputView = myDatePicker
-        myDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        myDatePicker.setValue(mainColor, forKeyPath: "textColor")
         myDatePicker.setValue(UIColor.black, forKey: "backgroundColor")
         
         let tapGesture = UITapGestureRecognizer(target: self, action:
@@ -248,7 +249,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 codingButton.backgroundColor = mainColor
                 codingButton.titleLabel?.textColor = UIColor.black
             } else {
-                codingButton.backgroundColor = UIColor.black
+                if !codingButton.isSelected {codingButton.backgroundColor = UIColor.black}
             }
             
         case "design":
@@ -257,7 +258,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 designButton.backgroundColor = mainColor
                 designButton.titleLabel?.textColor = UIColor.black
             } else {
-                designButton.backgroundColor = UIColor.black
+                if !designButton.isSelected  {designButton.backgroundColor = UIColor.black}
             }
         
         case "business":
@@ -266,7 +267,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 businessButton.backgroundColor = mainColor
                 businessButton.titleLabel?.textColor = UIColor.black
             } else {
-                businessButton.backgroundColor = UIColor.black
+                if !businessButton.isSelected {businessButton.backgroundColor = UIColor.black}
             }
         case "language":
             language = descriptionTextField.text!
@@ -274,7 +275,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 languageButton.backgroundColor = mainColor
                 languageButton.titleLabel?.textColor = UIColor.black
             } else {
-                languageButton.backgroundColor = UIColor.black
+                if !languageButton.isSelected {languageButton.backgroundColor = UIColor.black}
             }
             
         case "science":
@@ -283,7 +284,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 scienceButton.backgroundColor = mainColor
                 scienceButton.titleLabel?.textColor = UIColor.black
             } else {
-                scienceButton.backgroundColor = UIColor.black
+                if !scienceButton.isSelected {scienceButton.backgroundColor = UIColor.black}
             }
         
         case "other":
@@ -292,7 +293,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 otherButton.backgroundColor = mainColor
                 otherButton.titleLabel?.textColor = UIColor.black
             } else {
-                otherButton.backgroundColor = UIColor.black
+                if !otherButton.isSelected {otherButton.backgroundColor = UIColor.black}
             }
             
             

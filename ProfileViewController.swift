@@ -39,6 +39,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
    
     @IBOutlet weak var descriptionTextField: AlternativeRoundedUITextField!
     
+    @IBOutlet weak var requestDescriptionTextField: AlternativeRoundedUITextField!
+    
+    
     //Buttons
     
     @IBOutlet weak var codingButton: RoundedButton!
@@ -139,6 +142,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         userRef.child("skill").updateChildValues(["language": language])
         userRef.child("skill").updateChildValues(["science": science])
         userRef.child("skill").updateChildValues(["other": other])
+        
+       
     }
     
     override func viewDidLoad() {
@@ -177,6 +182,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 self.science = (dictionary["science"] as? String)!
                 self.business = (dictionary["business"] as? String)!
                 
+                
+                self.fillButtons()
             }
         }, withCancel: nil)
         
@@ -190,6 +197,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         })
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -235,7 +246,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 codingButton.backgroundColor = mainColor
                 codingButton.titleLabel?.textColor = UIColor.black
             } else {
-                codingButton.backgroundColor = UIColor.black
+                if !codingButton.isSelected {codingButton.backgroundColor = UIColor.black}
             }
             
         case "design":
@@ -244,7 +255,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 designButton.backgroundColor = mainColor
                 designButton.titleLabel?.textColor = UIColor.black
             } else {
-                designButton.backgroundColor = UIColor.black
+                if !designButton.isSelected  {designButton.backgroundColor = UIColor.black}
             }
             
         case "business":
@@ -253,7 +264,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 businessButton.backgroundColor = mainColor
                 businessButton.titleLabel?.textColor = UIColor.black
             } else {
-                businessButton.backgroundColor = UIColor.black
+                if !businessButton.isSelected {businessButton.backgroundColor = UIColor.black}
             }
         case "language":
             language = descriptionTextField.text!
@@ -261,7 +272,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 languageButton.backgroundColor = mainColor
                 languageButton.titleLabel?.textColor = UIColor.black
             } else {
-                languageButton.backgroundColor = UIColor.black
+                if !languageButton.isSelected {languageButton.backgroundColor = UIColor.black}
             }
             
         case "science":
@@ -270,7 +281,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 scienceButton.backgroundColor = mainColor
                 scienceButton.titleLabel?.textColor = UIColor.black
             } else {
-                scienceButton.backgroundColor = UIColor.black
+                if !scienceButton.isSelected {scienceButton.backgroundColor = UIColor.black}
             }
             
         case "other":
@@ -279,7 +290,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 otherButton.backgroundColor = mainColor
                 otherButton.titleLabel?.textColor = UIColor.black
             } else {
-                otherButton.backgroundColor = UIColor.black
+                if !otherButton.isSelected {otherButton.backgroundColor = UIColor.black}
             }
             
             
@@ -293,6 +304,47 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    
+    func fillButtons() {
+        
+        //Funzione che colora i pulsanti con le skill
+        
+        if coding != "" {
+            codingButton.backgroundColor = mainColor
+            codingButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if design != "" {
+            designButton.backgroundColor = mainColor
+            designButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if business != "" {
+            businessButton.backgroundColor = mainColor
+            businessButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if language != "" {
+            languageButton.backgroundColor = mainColor
+            languageButton.titleLabel?.textColor = UIColor.black}
+        
+        if science != "" {
+            scienceButton.backgroundColor = mainColor
+            scienceButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if other != "" {
+            otherButton.backgroundColor = mainColor
+            otherButton.titleLabel?.textColor = UIColor.black
+        }
+        
+    }
+    
+    
+    
+    
+    
     
     //Move view according to keyboard height
     @objc func keyboardWillShow(notification: Notification) {
@@ -321,6 +373,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     //Hide keyboard when user taps anywhere
     @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        print("TAP!")
         self.view.endEditing(true)
         
     }

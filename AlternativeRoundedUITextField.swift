@@ -10,6 +10,8 @@ import UIKit
 
 class AlternativeRoundedUITextField: UITextField {
     
+    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0);
+    
     
     
     override init(frame: CGRect) {
@@ -39,8 +41,14 @@ class AlternativeRoundedUITextField: UITextField {
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor(red:0.56, green:0.56, blue:0.58, alpha:1.0)])
         
         
-        
-        
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
     }
     
 }

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,26 +15,27 @@
             <objects>
                 <viewController title="Profile" id="xJE-RJ-PWq" customClass="ProfileSellerViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dOS-6Y-tx1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziA-uf-Fg0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="780"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="880"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddS-5F-qm8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-ze-cGb" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="113" y="69" width="150" height="150"/>
+                                                <rect key="frame" x="113" y="55" width="150" height="150"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="M1o-VT-j0E"/>
-                                                    <constraint firstAttribute="height" constant="150" id="j1v-bC-RrT"/>
+                                                    <constraint firstAttribute="height" constant="150" id="QJr-eq-nvv"/>
+                                                    <constraint firstAttribute="width" constant="150" id="qiM-C8-9sx"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxF-z4-CEZ" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="391" width="75" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxF-z4-CEZ" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="380" width="75" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="7Mo-0Y-CkO"/>
+                                                    <constraint firstAttribute="height" constant="30" id="ElL-Qd-u0Z"/>
+                                                    <constraint firstAttribute="width" constant="75" id="zgo-IE-mIb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Coding"/>
@@ -43,158 +43,215 @@
                                                     <action selector="codingAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="DiC-oW-UKl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-tn-0Bo" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="444" width="75" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-tn-0Bo" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="433" width="75" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75" id="kPp-gE-FTU"/>
+                                                    <constraint firstAttribute="height" constant="30" id="pgE-GH-jDL"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Language"/>
                                                 <connections>
                                                     <action selector="languageAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="lu8-tA-xga"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFI-RC-HV9" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="150" y="391" width="75" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFI-RC-HV9" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="150" y="380" width="75" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75" id="LGO-ar-bsN"/>
+                                                    <constraint firstAttribute="height" constant="30" id="uwf-pt-yRk"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Design"/>
                                                 <connections>
                                                     <action selector="designAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="hUE-Yv-kmb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KH-BN-ChD" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="150" y="444" width="75" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KH-BN-ChD" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="150" y="433" width="75" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="8Ri-Cr-k8n"/>
+                                                    <constraint firstAttribute="width" constant="75" id="ic9-bJ-9hg"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Science"/>
                                                 <connections>
                                                     <action selector="scienceAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="IqX-eC-CBd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exf-1k-AXn" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="270" y="394" width="75" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exf-1k-AXn" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="270" y="380" width="75" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="XGT-xG-ADL"/>
+                                                    <constraint firstAttribute="width" constant="75" id="aXG-wY-U5s"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Business"/>
                                                 <connections>
                                                     <action selector="businessAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="2qu-TK-cxK"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-6g-lmV" userLabel="nameSurname">
-                                                <rect key="frame" x="102" y="231" width="171" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-cH-ds9" userLabel="Email">
-                                                <rect key="frame" x="162" y="298" width="50" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9y-OS-D2K">
-                                                <rect key="frame" x="155" y="269" width="65" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-gf-6YI">
-                                                <rect key="frame" x="112" y="327" width="152" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                                <color key="textColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Select a main skill below and tap enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lO-9K-kIe" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="490" width="359" height="60"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6V-X3-bN7" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="107" y="658" width="160" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="75" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-qi-5ft" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="270" y="433" width="75" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="MP9-6e-5hN"/>
-                                                    <constraint firstAttribute="width" constant="160" id="t6e-xj-rYQ"/>
+                                                    <constraint firstAttribute="width" constant="75" id="KJi-LN-VuP"/>
+                                                    <constraint firstAttribute="height" constant="30" id="OdF-yI-7NI"/>
                                                 </constraints>
-                                                <state key="normal" title="Send Request"/>
-                                                <connections>
-                                                    <action selector="requestAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="Y9f-kz-O7T"/>
-                                                </connections>
-                                            </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to select time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2S-Dg-X7f" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="572" width="312" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="PLj-eM-bdq"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to write a task description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zIJ-cO-wfi" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="610" width="312" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="0pr-17-ovc"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-qi-5ft" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="270" y="444" width="75" height="30"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Others"/>
                                                 <connections>
                                                     <action selector="otherAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="9Ac-OE-34W"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-6g-lmV" userLabel="nameSurname">
+                                                <rect key="frame" x="102" y="226" width="171" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-cH-ds9" userLabel="Email">
+                                                <rect key="frame" x="162" y="292" width="50" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9y-OS-D2K">
+                                                <rect key="frame" x="155" y="263" width="65" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-gf-6YI">
+                                                <rect key="frame" x="112" y="321" width="152" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <color key="textColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Select a main skill above to view the description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lO-9K-kIe" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="496" width="359" height="80"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="359" id="TaQ-Og-caz"/>
+                                                    <constraint firstAttribute="height" constant="80" id="XVc-5c-qlS"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="120" textAlignment="natural" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="O2S-Dg-X7f" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="315" y="635" width="47" height="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="L61-Yz-a6A">
+                                                <rect key="frame" x="10" y="635" width="291" height="31"/>
+                                                <color key="tintColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Bl3-98-RRX"/>
+                                                    <constraint firstAttribute="width" constant="287" id="uW5-uu-2E6"/>
+                                                </constraints>
+                                                <color key="minimumTrackTintColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="maximumTrackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="thumbTintColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="timeSliderValueChanged:" destination="xJE-RJ-PWq" eventType="valueChanged" id="d3x-X9-cgO"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requested TimeCoins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kML-Lh-hdn">
+                                                <rect key="frame" x="12" y="609" width="172" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="172" id="U6Q-PT-Htx"/>
+                                                    <constraint firstAttribute="height" constant="18" id="eEi-KW-bsg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to write a description for the request" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cH9-5c-IgJ" userLabel="RequestDescription TextView" customClass="RoundedUITextView" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="12" y="673" width="350" height="47"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6V-X3-bN7" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="123" y="738" width="128" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="N9i-tU-rCQ"/>
+                                                    <constraint firstAttribute="width" constant="128" id="uWb-vE-KFf"/>
+                                                </constraints>
+                                                <state key="normal" title="Send Request"/>
+                                                <connections>
+                                                    <action selector="requestAction:" destination="xJE-RJ-PWq" eventType="touchUpInside" id="Y9f-kz-O7T"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="f5U-6g-lmV" firstAttribute="top" secondItem="OfX-ze-cGb" secondAttribute="bottom" constant="12" id="0UI-HM-EUp"/>
-                                            <constraint firstItem="BsL-qi-5ft" firstAttribute="top" secondItem="exf-1k-AXn" secondAttribute="bottom" constant="20" id="1cE-Gq-h0Q"/>
-                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="top" secondItem="f5U-6g-lmV" secondAttribute="bottom" constant="8" symbolic="YES" id="1hE-db-UDJ"/>
-                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="top" secondItem="8lO-9K-kIe" secondAttribute="bottom" constant="22" id="34K-wd-UFl"/>
-                                            <constraint firstItem="9sO-gf-6YI" firstAttribute="top" secondItem="8Iw-cH-ds9" secondAttribute="bottom" constant="8" symbolic="YES" id="4Ke-Uc-Snr"/>
-                                            <constraint firstItem="9sO-gf-6YI" firstAttribute="centerX" secondItem="BFI-RC-HV9" secondAttribute="centerX" id="5od-bU-Jc9"/>
-                                            <constraint firstAttribute="trailing" secondItem="exf-1k-AXn" secondAttribute="trailing" constant="30" id="8uw-YA-8Si"/>
-                                            <constraint firstAttribute="trailing" secondItem="O2S-Dg-X7f" secondAttribute="trailing" constant="35" id="9pe-da-eaG"/>
-                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="centerX" secondItem="a6V-X3-bN7" secondAttribute="centerX" id="AVc-tP-qWo"/>
-                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="leading" secondItem="FIf-tn-0Bo" secondAttribute="leading" id="Bp0-sk-o1Q"/>
-                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="28" id="Bu4-td-ozz"/>
-                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="baseline" secondItem="BsL-qi-5ft" secondAttribute="baseline" id="D2X-VR-rUL"/>
-                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="leading" secondItem="ZxF-z4-CEZ" secondAttribute="trailing" constant="45" id="Ffm-hg-kcd"/>
-                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="leading" secondItem="4KH-BN-ChD" secondAttribute="leading" id="GDD-NN-oNA"/>
-                                            <constraint firstItem="a6V-X3-bN7" firstAttribute="top" secondItem="zIJ-cO-wfi" secondAttribute="bottom" constant="8" symbolic="YES" id="Gcl-v4-MNL"/>
-                                            <constraint firstItem="8Iw-cH-ds9" firstAttribute="top" secondItem="U9y-OS-D2K" secondAttribute="bottom" constant="8" symbolic="YES" id="Kcr-3t-MDM"/>
-                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="ZxF-z4-CEZ" secondAttribute="bottom" constant="23" id="LBK-1R-d5t"/>
-                                            <constraint firstAttribute="height" constant="800" id="Ljm-85-gOn"/>
-                                            <constraint firstItem="zIJ-cO-wfi" firstAttribute="top" secondItem="O2S-Dg-X7f" secondAttribute="bottom" constant="8" symbolic="YES" id="RWJ-I3-0eD"/>
-                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="top" secondItem="9sO-gf-6YI" secondAttribute="bottom" constant="28" id="ReV-ej-jNd"/>
-                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="4KH-BN-ChD" secondAttribute="top" id="UDE-dn-iKQ"/>
-                                            <constraint firstItem="OfX-ze-cGb" firstAttribute="top" secondItem="ddS-5F-qm8" secondAttribute="top" constant="69" id="USW-YK-PmE"/>
-                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="baseline" secondItem="4KH-BN-ChD" secondAttribute="baseline" id="XQP-gV-qHw"/>
-                                            <constraint firstItem="OfX-ze-cGb" firstAttribute="centerX" secondItem="f5U-6g-lmV" secondAttribute="centerX" id="Zz2-J8-Nfg"/>
-                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="centerX" secondItem="8lO-9K-kIe" secondAttribute="centerX" id="bp3-qG-DNT"/>
-                                            <constraint firstAttribute="bottom" secondItem="a6V-X3-bN7" secondAttribute="bottom" constant="92" id="cvb-Bs-X7a"/>
-                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="centerX" secondItem="8Iw-cH-ds9" secondAttribute="centerX" id="e04-nl-2L8"/>
-                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leadingMargin" id="gF3-Rx-R0f"/>
-                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="trailing" secondItem="4KH-BN-ChD" secondAttribute="trailing" id="gha-1O-Pla"/>
-                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="baseline" secondItem="BFI-RC-HV9" secondAttribute="baseline" id="hBl-Ka-aqf"/>
-                                            <constraint firstItem="exf-1k-AXn" firstAttribute="trailing" secondItem="BsL-qi-5ft" secondAttribute="trailing" id="hMw-QO-8FN"/>
-                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="trailing" secondItem="ddS-5F-qm8" secondAttribute="trailingMargin" id="hl4-Lb-ljS"/>
-                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="trailing" secondItem="zIJ-cO-wfi" secondAttribute="trailing" id="nPD-Cx-dNr"/>
-                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="trailing" secondItem="FIf-tn-0Bo" secondAttribute="trailing" id="nxY-7J-1RC"/>
-                                            <constraint firstItem="exf-1k-AXn" firstAttribute="leading" secondItem="BsL-qi-5ft" secondAttribute="leading" id="qEd-6d-oUc"/>
-                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="centerX" secondItem="9sO-gf-6YI" secondAttribute="centerX" id="qFz-8y-bjP"/>
-                                            <constraint firstItem="exf-1k-AXn" firstAttribute="leading" secondItem="BFI-RC-HV9" secondAttribute="trailing" constant="45" id="tcU-VT-6Qv"/>
-                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="leading" secondItem="zIJ-cO-wfi" secondAttribute="leading" id="uxf-9Z-ZTa"/>
-                                            <constraint firstItem="f5U-6g-lmV" firstAttribute="centerX" secondItem="U9y-OS-D2K" secondAttribute="centerX" id="vw6-2W-55y"/>
-                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="30" id="wVb-dV-K9H"/>
-                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="top" secondItem="FIf-tn-0Bo" secondAttribute="bottom" constant="16" id="zig-88-lfW"/>
+                                            <constraint firstItem="OfX-ze-cGb" firstAttribute="top" secondItem="ddS-5F-qm8" secondAttribute="top" constant="55" id="1iw-BD-whf"/>
+                                            <constraint firstItem="BsL-qi-5ft" firstAttribute="leading" secondItem="4KH-BN-ChD" secondAttribute="trailing" constant="45" id="2cG-Sj-uCh"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="8" id="5T3-JV-WX3"/>
+                                            <constraint firstAttribute="height" constant="800" id="6xB-bk-2FA"/>
+                                            <constraint firstAttribute="trailing" secondItem="a6V-X3-bN7" secondAttribute="trailing" constant="124" id="72P-i2-Let"/>
+                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="leading" secondItem="FIf-tn-0Bo" secondAttribute="trailing" constant="45" id="7mo-eT-v5M"/>
+                                            <constraint firstItem="cH9-5c-IgJ" firstAttribute="top" secondItem="L61-Yz-a6A" secondAttribute="bottom" constant="8" id="7y4-gb-MXH"/>
+                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="30" id="8hz-LM-6dt"/>
+                                            <constraint firstItem="BsL-qi-5ft" firstAttribute="top" secondItem="exf-1k-AXn" secondAttribute="bottom" constant="23" id="9Tv-Lb-do1"/>
+                                            <constraint firstItem="kML-Lh-hdn" firstAttribute="top" secondItem="8lO-9K-kIe" secondAttribute="bottom" constant="33" id="9jr-Tj-qml"/>
+                                            <constraint firstItem="9sO-gf-6YI" firstAttribute="top" secondItem="8Iw-cH-ds9" secondAttribute="bottom" constant="8" symbolic="YES" id="9wO-Ey-M7f"/>
+                                            <constraint firstAttribute="trailing" secondItem="exf-1k-AXn" secondAttribute="trailing" constant="30" id="CCW-e1-N6Z"/>
+                                            <constraint firstItem="cH9-5c-IgJ" firstAttribute="top" secondItem="O2S-Dg-X7f" secondAttribute="bottom" constant="8" id="Cg9-2b-G3a"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="top" secondItem="BsL-qi-5ft" secondAttribute="bottom" constant="33" id="Dx8-pA-aOZ"/>
+                                            <constraint firstItem="a6V-X3-bN7" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="123" id="KxZ-Fn-fgW"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="leading" secondItem="L61-Yz-a6A" secondAttribute="trailing" constant="16" id="L0j-n9-q5Z"/>
+                                            <constraint firstItem="f5U-6g-lmV" firstAttribute="top" secondItem="OfX-ze-cGb" secondAttribute="bottom" constant="21" id="MRE-im-m1d"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="top" secondItem="FIf-tn-0Bo" secondAttribute="bottom" constant="33" id="Nf8-kU-XVX"/>
+                                            <constraint firstItem="exf-1k-AXn" firstAttribute="leading" secondItem="BFI-RC-HV9" secondAttribute="trailing" constant="45" id="PNu-Ou-3Q3"/>
+                                            <constraint firstItem="L61-Yz-a6A" firstAttribute="top" secondItem="kML-Lh-hdn" secondAttribute="bottom" constant="8" id="PTa-Qu-xTK"/>
+                                            <constraint firstItem="OfX-ze-cGb" firstAttribute="centerX" secondItem="f5U-6g-lmV" secondAttribute="centerX" id="RDu-jl-WO0"/>
+                                            <constraint firstItem="9sO-gf-6YI" firstAttribute="centerX" secondItem="BFI-RC-HV9" secondAttribute="centerX" id="U7w-n0-5kp"/>
+                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="ZxF-z4-CEZ" secondAttribute="bottom" constant="23" id="Wes-pG-CPR"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="leading" secondItem="L61-Yz-a6A" secondAttribute="trailing" constant="16" id="Whi-kU-xB5"/>
+                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="centerX" secondItem="8Iw-cH-ds9" secondAttribute="centerX" id="XNZ-yE-awa"/>
+                                            <constraint firstItem="f5U-6g-lmV" firstAttribute="centerX" secondItem="U9y-OS-D2K" secondAttribute="centerX" id="XTO-OM-YhY"/>
+                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="top" secondItem="9sO-gf-6YI" secondAttribute="bottom" constant="23" id="YW0-kp-4sU"/>
+                                            <constraint firstItem="kML-Lh-hdn" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="12" id="Ynk-2G-2ex"/>
+                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="leading" secondItem="FIf-tn-0Bo" secondAttribute="trailing" constant="45" id="Zrl-NW-Q7U"/>
+                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="centerX" secondItem="9sO-gf-6YI" secondAttribute="centerX" id="a0V-a7-UbK"/>
+                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="leading" secondItem="ZxF-z4-CEZ" secondAttribute="trailing" constant="45" id="a2U-iU-Sy6"/>
+                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="top" secondItem="BFI-RC-HV9" secondAttribute="bottom" constant="23" id="b8J-no-Z1O"/>
+                                            <constraint firstAttribute="trailing" secondItem="O2S-Dg-X7f" secondAttribute="trailing" constant="13" id="bF1-wO-U1A"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="top" secondItem="FIf-tn-0Bo" secondAttribute="bottom" constant="33" id="ceR-c6-zmp"/>
+                                            <constraint firstItem="exf-1k-AXn" firstAttribute="leading" secondItem="BFI-RC-HV9" secondAttribute="trailing" constant="45" id="d67-C1-Tzd"/>
+                                            <constraint firstItem="L61-Yz-a6A" firstAttribute="top" secondItem="kML-Lh-hdn" secondAttribute="bottom" constant="8" id="dyA-Ap-csG"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="trailing" secondItem="cH9-5c-IgJ" secondAttribute="trailing" id="gNY-Ym-cE8"/>
+                                            <constraint firstItem="BFI-RC-HV9" firstAttribute="leading" secondItem="ZxF-z4-CEZ" secondAttribute="trailing" constant="45" id="hrX-Nr-AbQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="kML-Lh-hdn" secondAttribute="trailing" constant="191" id="iVf-Mv-aeL"/>
+                                            <constraint firstItem="8lO-9K-kIe" firstAttribute="top" secondItem="4KH-BN-ChD" secondAttribute="bottom" constant="33" id="iyA-uD-hNB"/>
+                                            <constraint firstItem="BsL-qi-5ft" firstAttribute="top" secondItem="exf-1k-AXn" secondAttribute="bottom" constant="23" id="kJ6-1c-BFM"/>
+                                            <constraint firstItem="L61-Yz-a6A" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="12" id="koh-CN-8Uj"/>
+                                            <constraint firstAttribute="trailing" secondItem="BsL-qi-5ft" secondAttribute="trailing" constant="30" id="lw8-Us-dPA"/>
+                                            <constraint firstItem="O2S-Dg-X7f" firstAttribute="top" secondItem="8lO-9K-kIe" secondAttribute="bottom" constant="59" id="np9-6J-eQK"/>
+                                            <constraint firstAttribute="trailing" secondItem="8lO-9K-kIe" secondAttribute="trailing" constant="8" id="nvc-83-Wdd"/>
+                                            <constraint firstItem="a6V-X3-bN7" firstAttribute="top" secondItem="cH9-5c-IgJ" secondAttribute="bottom" constant="18" id="tZ8-YG-SqS"/>
+                                            <constraint firstItem="4KH-BN-ChD" firstAttribute="top" secondItem="BFI-RC-HV9" secondAttribute="bottom" constant="23" id="tuM-CD-fEb"/>
+                                            <constraint firstItem="U9y-OS-D2K" firstAttribute="top" secondItem="f5U-6g-lmV" secondAttribute="bottom" constant="7" id="uQK-1d-fwB"/>
+                                            <constraint firstItem="ZxF-z4-CEZ" firstAttribute="leading" secondItem="ddS-5F-qm8" secondAttribute="leading" constant="30" id="v3S-mu-nsG"/>
+                                            <constraint firstItem="8Iw-cH-ds9" firstAttribute="top" secondItem="U9y-OS-D2K" secondAttribute="bottom" constant="8" symbolic="YES" id="wqy-RE-JWr"/>
+                                            <constraint firstItem="L61-Yz-a6A" firstAttribute="leading" secondItem="cH9-5c-IgJ" secondAttribute="leading" id="x8O-Wq-Q8T"/>
+                                            <constraint firstItem="BsL-qi-5ft" firstAttribute="leading" secondItem="4KH-BN-ChD" secondAttribute="trailing" constant="45" id="xHL-Rd-CrE"/>
+                                            <constraint firstItem="kML-Lh-hdn" firstAttribute="top" secondItem="8lO-9K-kIe" secondAttribute="bottom" constant="33" id="yLs-ea-FL3"/>
+                                            <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="ZxF-z4-CEZ" secondAttribute="bottom" constant="23" id="yiS-L1-sco"/>
+                                            <constraint firstAttribute="bottom" secondItem="a6V-X3-bN7" secondAttribute="bottom" constant="22" id="yw3-Cn-Ib3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ddS-5F-qm8" secondAttribute="trailing" id="386-Es-8sP"/>
-                                    <constraint firstItem="ddS-5F-qm8" firstAttribute="top" secondItem="ziA-uf-Fg0" secondAttribute="top" id="8f2-6W-jAu"/>
-                                    <constraint firstItem="ddS-5F-qm8" firstAttribute="leading" secondItem="ziA-uf-Fg0" secondAttribute="leading" id="Sdn-rn-cVq"/>
-                                    <constraint firstAttribute="bottom" secondItem="ddS-5F-qm8" secondAttribute="bottom" id="o6V-Js-Orl"/>
+                                    <constraint firstItem="ddS-5F-qm8" firstAttribute="leading" secondItem="ziA-uf-Fg0" secondAttribute="leading" id="8kY-hy-GJV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ddS-5F-qm8" secondAttribute="trailing" id="F3l-vN-WC7"/>
+                                    <constraint firstAttribute="bottom" secondItem="ddS-5F-qm8" secondAttribute="bottom" constant="-20" id="I76-fZ-Gve"/>
+                                    <constraint firstItem="ddS-5F-qm8" firstAttribute="top" secondItem="ziA-uf-Fg0" secondAttribute="top" id="L1k-nI-5Zs"/>
+                                    <constraint firstItem="ddS-5F-qm8" firstAttribute="centerX" secondItem="ziA-uf-Fg0" secondAttribute="centerX" id="qrO-vu-zj7"/>
                                 </constraints>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu8-VD-U32">
@@ -218,14 +275,13 @@
                             <constraint firstItem="ziA-uf-Fg0" firstAttribute="leading" secondItem="kIW-Fp-Jgz" secondAttribute="leading" id="IxR-Hv-v4m"/>
                             <constraint firstItem="ziA-uf-Fg0" firstAttribute="trailing" secondItem="kIW-Fp-Jgz" secondAttribute="trailing" id="n3C-BE-Z8B"/>
                             <constraint firstItem="ziA-uf-Fg0" firstAttribute="top" secondItem="kIW-Fp-Jgz" secondAttribute="top" id="rVT-Tp-Nj1"/>
-                            <constraint firstItem="ddS-5F-qm8" firstAttribute="width" secondItem="dOS-6Y-tx1" secondAttribute="width" id="vWK-Tm-zUA"/>
                             <constraint firstAttribute="bottom" secondItem="ziA-uf-Fg0" secondAttribute="bottom" id="yfP-Ve-BqP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kIW-Fp-Jgz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" landscapeImage="Profile" largeContentSizeImage="Profile" selectedImage="ProfileHighlighted" id="rZk-Yw-HlY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="ProfilePic" destination="OfX-ze-cGb" id="CXA-D6-Pm2"/>
                         <outlet property="badgeLabel" destination="8Iw-cH-ds9" id="YzB-hf-a3T"/>
@@ -237,8 +293,10 @@
                         <outlet property="languageButton" destination="FIf-tn-0Bo" id="4Xq-3s-FBT"/>
                         <outlet property="nameSurname" destination="f5U-6g-lmV" id="hDL-6C-Toz"/>
                         <outlet property="otherButton" destination="BsL-qi-5ft" id="vFV-Gn-OS5"/>
+                        <outlet property="requestDescriptionTextField" destination="cH9-5c-IgJ" id="VtV-mj-gbm"/>
                         <outlet property="scienceButton" destination="4KH-BN-ChD" id="3M3-mo-4VG"/>
                         <outlet property="timeCoinsLabel" destination="9sO-gf-6YI" id="suk-r8-LeE"/>
+                        <outlet property="timeSlider" destination="L61-Yz-a6A" id="F4P-f3-WJV"/>
                         <outlet property="timeTextField" destination="O2S-Dg-X7f" id="djO-Zc-2h2"/>
                     </connections>
                 </viewController>

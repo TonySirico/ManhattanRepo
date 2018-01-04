@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" id="IZq-kv-1jJ" customClass="HomeCell" customModule="Inaldo_Tony" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" id="IZq-kv-1jJ" customClass="HomeCell" customModule="Inaldo_Tony" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZq-kv-1jJ" id="Jbf-vq-MhO">
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="24" y="443" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="Music"/>
+                                <state key="normal" image="science"/>
                                 <connections>
                                     <action selector="fifthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="ZzY-AZ-68o"/>
                                 </connections>
@@ -169,7 +169,7 @@
         <image name="Home" width="25" height="25"/>
         <image name="HomeHighlighted" width="25" height="25"/>
         <image name="Language" width="150" height="150"/>
-        <image name="Music" width="150" height="150"/>
         <image name="Others" width="150" height="150"/>
+        <image name="science" width="450" height="450"/>
     </resources>
 </document>

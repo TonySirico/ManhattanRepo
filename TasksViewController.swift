@@ -109,7 +109,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.progressViewOutlet.progress = Float((259200 - totalTime)/259200)
                 cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
                 cell.skillRequestedLabel?.text = FriendSystem.system.onGoingList[indexPath.row].requestDescription
-//                cell.timeRequestedLabel?.text = "(" + timeRequestedA[indexPath.row] + " TimeCoins)"
+                
                //TIMER
                 cell.timeLeftLabel?.text = "\(timeFormatted(Int(totalTime)))"
                 cell.accessoryType = UITableViewCellAccessoryType.none
@@ -119,6 +119,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.timeRequestedLabel?.sizeToFit()
                 cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
                 
+                //NOT USED
+                cell.timeRequestedLabel?.text = ""
+                
                 return cell
                 
             case 1: //OLD
@@ -126,6 +129,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.nameSurnameLabel?.text = FriendSystem.system.completedList[indexPath.row].name + " " + FriendSystem.system.completedList[indexPath.row].surname
 //                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
 //                cell.timeRequestedLabel?.text = timeRequestedB[indexPath.row]
+                
+                //NOT USED:
+                cell.skillRequestedLabel.text = ""
+                cell.timeRequestedLabel.text = ""
 
                 cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
                 cell.skillRequestedLabel.sizeToFit()
@@ -184,7 +191,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             chatAction.backgroundColor = UIColor(red:0.75, green:0.75, blue:0.75, alpha:1.0)
             
             
-            return UISwipeActionsConfiguration(actions: [endTaskAction, chatAction])
+            return UISwipeActionsConfiguration(actions: [endTaskAction])
             
         }
         

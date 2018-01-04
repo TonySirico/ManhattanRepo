@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
+class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     //Back segue function
     @IBAction func goBackToOneButtonTapped(_ sender: Any) {
@@ -38,6 +38,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timeCoinsLabel: UILabel!
     @IBOutlet weak var timeTextField: RoundedUITextField!
     
+    @IBOutlet weak var timeSlider: UISlider!
     let ref = Database.database().reference()
     var userID = ""
     var interval = NSDate().timeIntervalSince1970
@@ -46,6 +47,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     //TextFields
     
     @IBOutlet weak var descriptionTextField: AlternativeRoundedUITextField!
+    @IBOutlet weak var requestDescriptionTextField: RoundedUITextView!
     
     //Buttons
     
@@ -56,20 +58,38 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scienceButton: RoundedButton!
     @IBOutlet weak var otherButton: RoundedButton!
     
-    //BUTTONS ACTIONS
     
+  
+    @IBAction func timeSliderValueChanged(_ sender: UISlider) {
+        
+        let value = Int(sender.value)
+        timeTextField.text = "\(value)"
+    }
+    
+    
+    
+    //BUTTONS ACTIONS
     @IBAction func requestAction(_ sender: Any) {
         let date = NSDate(timeIntervalSince1970: self.interval)
         
+        let requestAlert = UIAlertController(title: "Request Sent!", message: "Request sent successfully to \(self.nameSurname.text!).", preferredStyle: .alert)
+        requestAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            self.performSegue(withIdentifier: "unwindToHome", sender: self)
+        }))
+        
+        
+        
         guard let timeRequests = Int(self.timeTextField.text!) else {return}
-        guard let descriptionRequests = descriptionTextField.text else {return}
+        guard let descriptionRequests = requestDescriptionTextField.text else {return}
         FriendSystem.system.getTimeCoinsCurrentUser(uid!, { (timeCoins) in
             
             if timeCoins >= timeRequests {
                 let uidRef = Database.database().reference().child("users").child(self.uid!)
                 FriendSystem.system.sendRequestToUser(self.userID, timeRequests, "\(date)", descriptionRequests)
                 uidRef.child("timeCoins").setValue(timeCoins-timeRequests)
-                self.performSegue(withIdentifier: "unwindToHome", sender: self)
+                self.present(requestAlert, animated: true)
+                
+                //self.performSegue(withIdentifier: "unwindToHome", sender: self)
             } else {
                 AlertController.showAlert(inViewController: self, title: "Missing Coins", message: "You don't have enought time")
             }
@@ -78,6 +98,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func codingAction(_ sender: Any) {
         if !codingButton.isSelected {
+            fillButtons()
             deselectAllButtons()
             codingButton.isSelected = true
             descriptionTextField.text! = coding
@@ -88,6 +109,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func designAction(_ sender: Any) {
         if !designButton.isSelected {
+            fillButtons()
             deselectAllButtons()
             designButton.isSelected = true
             descriptionTextField.text! = design
@@ -98,6 +120,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func businessAction(_ sender: Any) {
         if !businessButton.isSelected {
+            fillButtons()
             deselectAllButtons()
             businessButton.isSelected = true
             descriptionTextField.text! = business
@@ -108,6 +131,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func languageAction(_ sender: Any) {
         if !languageButton.isSelected {
+            fillButtons()
             deselectAllButtons()
             languageButton.isSelected = true
             descriptionTextField.text! = language
@@ -118,6 +142,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func scienceAction(_ sender: Any) {
         if !scienceButton.isSelected {
+            fillButtons()
             deselectAllButtons()
             scienceButton.isSelected = true
             descriptionTextField.text! = science
@@ -127,6 +152,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func otherAction(_ sender: Any) {
         if !otherButton.isSelected {
+            fillButtons()
             deselectAllButtons()
             otherButton.isSelected = true
             descriptionTextField.text! = other
@@ -151,10 +177,8 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Labels
         nameSurname.adjustsFontSizeToFitWidth = true
-        
-        self.descriptionTextField.delegate = self
-        
         nameSurname.text = ProfileSeller.shared.name + " " + ProfileSeller.shared.surname
         
         let userRef = Database.database().reference().child("users").child(userID)
@@ -171,7 +195,46 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
                 self.timeCoinsLabel.text = String(format: "%02d:%02d", hoursCoins, minutesCoins)
             }
         }, withCancel: nil)
-        // Do any additional setup after loading the view.
+        
+        
+        
+        //skills
+        userRef.child("skill").observe(.value, with: { (DataSnapshot) in //questo observe è in real time
+            if let dictionary = DataSnapshot.value as? [String: AnyObject] {
+                self.coding = (dictionary["coding"] as? String)!
+                self.design = (dictionary["design"] as? String)!
+                self.language = (dictionary["language"] as? String)!
+                self.other = (dictionary["other"] as? String)!
+                self.science = (dictionary["science"] as? String)!
+                self.business = (dictionary["business"] as? String)!
+                
+                
+                self.fillButtons()
+            }
+        }, withCancel: nil)
+        
+        
+        //profilePic
+        let userPhotoRef = Storage.storage().reference().child("profile Image").child(uid!)
+        userPhotoRef.getData(maxSize: 1 * 1024 * 1024, completion: { (photoData, error) in
+            if error != nil {
+                return
+            } else {
+                if let data = photoData {
+                    self.ProfilePic.image = UIImage(data: data)
+                }
+            }
+        })
+        
+        
+        //delegate
+        requestDescriptionTextField.delegate = self
+        
+        
+        //Slider
+        timeTextField.text = "30"
+        timeSlider.value = 30
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -195,9 +258,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+    
     
     //Move view according to keyboard height
     @objc func keyboardWillShow(notification: Notification) {
@@ -219,10 +280,10 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //Hide keyboard when user taps anywhere
-    @IBAction func tapToDismissKeyboard(_ sender: Any) {
-        self.view.endEditing(true)
-        
+    //hide keyboard when user taps anywhere
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
     }
     
     //Hide Keyboard when user press return key
@@ -231,6 +292,54 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate {
         return (true)
     }
     
+    
+    func fillButtons() {
+        
+        //Funzione che colora i pulsanti con le skill
+        
+        if coding != "" {
+            codingButton.backgroundColor = mainColor
+            codingButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if design != "" {
+            designButton.backgroundColor = mainColor
+            designButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if business != "" {
+            businessButton.backgroundColor = mainColor
+            businessButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if language != "" {
+            languageButton.backgroundColor = mainColor
+            languageButton.titleLabel?.textColor = UIColor.black}
+        
+        if science != "" {
+            scienceButton.backgroundColor = mainColor
+            scienceButton.titleLabel?.textColor = UIColor.black
+        }
+        
+        if other != "" {
+            otherButton.backgroundColor = mainColor
+            otherButton.titleLabel?.textColor = UIColor.black
+        }
+        
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+    }
+   
+    //Toglie tastiera textview quando si preme invio
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
     
     /*
      // MARK: - Navigation

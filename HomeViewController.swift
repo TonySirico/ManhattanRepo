@@ -29,6 +29,8 @@ class HomeCell: UITableViewCell {
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
     
+    let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+    
     var filteredPeople = [User]()
     var searchController = UISearchController(searchResultsController: nil)
     var user = [User]()
@@ -116,6 +118,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController.searchBar.tintColor = mainColor
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -164,6 +167,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         backButtonOutlet.setImage(#imageLiteral(resourceName: "Back"), for: .normal)
         
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -322,6 +326,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
+    
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        if let tabItems = self.tabBarController?.tabBar.items as NSArray!
+//        {
+//            // Si deve modificare il secondo elemento
+//            let tabItem = tabItems[1] as! UITabBarItem
+//
+//            if FriendSystem.system.requestList.count != 0 {
+//
+//                tabItem.badgeValue = "\(FriendSystem.system.requestList.count)"
+//            }
+//        }
+//
+//    }
     
     /*
      // MARK: - Navigation

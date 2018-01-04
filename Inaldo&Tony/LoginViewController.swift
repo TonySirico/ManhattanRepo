@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextFieldOutlet: RoundedUITextField!
     @IBOutlet weak var passwordTextFieldOutlet: RoundedUITextField!
@@ -35,6 +35,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextFieldOutlet.delegate = self
+        passwordTextFieldOutlet.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -51,8 +54,53 @@ class LoginViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             self.performSegue(withIdentifier: "segueLoggedIn", sender: self)
         }
+        
+        
+        
+        //KeyboardNotificationTrigger
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    //dismiss keyboard when user taps return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        
+        //Move view according to keyboard height
+        super.view.frame.origin = CGPoint(x: 0.0, y: -(keyboardHeight - 50.0))
+        
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        //Move view into original position
+        super.view.frame.origin = CGPoint(x: 0.0, y: 0.0)
+        
+    }
+    
+    
+    //keyboard notification
+    override open func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        NotificationCenter.default.removeObserver(self)
+       
+        
+    }
+    
+
+    //hide keyboard when user taps anywhere
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
     
 
     /*
