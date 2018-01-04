@@ -63,8 +63,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchController.searchBar.resignFirstResponder()
-        searchController.searchBar.endEditing(true)
             performSegue(withIdentifier: "segueToProfile", sender: self)
     }
     
@@ -143,11 +141,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.addSubview(self.searchController.searchBar)
         self.searchController.searchBar.frame = CGRect(x: 0, y: 40, width: super.view.frame.width, height: 56)
         self.searchController.searchBar.center = CGPoint(x: super.view.frame.width/2, y:54.5)
+        //------- SEARCH BAR CONTRAINTS
         
-        let margins = view.layoutMarginsGuide
-        
-        searchController.searchBar.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-        searchController.searchBar.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         
         
         //-----------------------------
@@ -319,10 +314,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         prepareBackButtonForCategories()
         categoryLabelOutlet.text = "Others"
         moveLabelIn()
-    }
-    
-    @IBAction func searchButtonAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "searchSegue", sender: self)
     }
     
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
