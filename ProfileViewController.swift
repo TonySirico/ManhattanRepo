@@ -72,6 +72,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             descriptionTextField.text! = coding
             flag = "coding"
         }
+        fillButtons()
         
     }
     
@@ -82,6 +83,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             descriptionTextField.text! = design
             flag = "design"
         }
+        fillButtons()
     }
     
     
@@ -92,6 +94,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             descriptionTextField.text! = business
             flag = "business"
         }
+        fillButtons()
     }
     
     
@@ -102,6 +105,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             descriptionTextField.text! = language
             flag = "language"
         }
+        fillButtons()
     }
     
     
@@ -112,6 +116,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             descriptionTextField.text! = science
             flag = "science"
         }
+        fillButtons()
     }
     
     @IBAction func otherAction(_ sender: Any) {
@@ -121,6 +126,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             descriptionTextField.text! = other
             flag = "other"
         }
+        fillButtons()
     }
     
     func deselectAllButtons() {

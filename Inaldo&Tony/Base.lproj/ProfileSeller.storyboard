@@ -187,6 +187,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="OfX-ze-cGb" firstAttribute="top" secondItem="ddS-5F-qm8" secondAttribute="top" constant="55" id="1iw-BD-whf"/>
                                             <constraint firstItem="BsL-qi-5ft" firstAttribute="leading" secondItem="4KH-BN-ChD" secondAttribute="trailing" constant="45" id="2cG-Sj-uCh"/>
@@ -244,6 +245,9 @@
                                             <constraint firstItem="FIf-tn-0Bo" firstAttribute="top" secondItem="ZxF-z4-CEZ" secondAttribute="bottom" constant="23" id="yiS-L1-sco"/>
                                             <constraint firstAttribute="bottom" secondItem="a6V-X3-bN7" secondAttribute="bottom" constant="22" id="yw3-Cn-Ib3"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Dy5-H2-IJt" appends="YES" id="05F-eW-miR"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -302,6 +306,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bih-GM-LIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Thy-JW-R4l" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Dy5-H2-IJt">
+                    <connections>
+                        <action selector="tapToDismissKeyboard:" destination="xJE-RJ-PWq" id="QxQ-Ch-bCd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1674.4000000000001" y="-1458.1709145427287"/>
         </scene>
