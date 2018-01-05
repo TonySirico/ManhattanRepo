@@ -109,6 +109,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 cell.progressViewOutlet.progress = progress
                 
+                if progress < 0.2 && progress > 0 {
+                    cell.progressViewOutlet.progressTintColor = UIColor(red:1.00, green: 0.36, blue: 0.32, alpha: 1.0)
+                } else if progress <= 0 {
+                    //COSA FARE QUANDO SCADE IL TEMPO
+                }
+                
                 cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
                 cell.skillRequestedLabel?.text = FriendSystem.system.onGoingList[indexPath.row].requestDescription
                 
