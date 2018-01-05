@@ -14,7 +14,6 @@
 		0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */; };
 		0A0167731FE29FBA00E4A57B /* RoundButtonFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */; };
 		0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */; };
-		0A1EF7C31FF93FB4007881B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A1EF7C21FF93FB4007881B6 /* GoogleService-Info.plist */; };
 		0A75D5551FFE3EA5001939EF /* RoundedUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */; };
 		0A75D5591FFE46DA001939EF /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D5581FFE46DA001939EF /* PopUpViewController.swift */; };
 		0A75D55B1FFE4F32001939EF /* requestDescriptionSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */; };
@@ -39,6 +38,7 @@
 		32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */; };
 		32E80C501FDE943F0006EF76 /* Inaldo_TonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */; };
 		32E80C5B1FDE943F0006EF76 /* Inaldo_TonyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */; };
+		65ABBFAA1FFE8D65000F3DDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65ABBFA91FFE8D65000F3DDD /* GoogleService-Info.plist */; };
 		CE6F58F5BA82160FD678F239 /* Pods_Inaldo_Tony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +67,6 @@
 		0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonFilled.swift; sourceTree = "<group>"; };
 		0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeRoundedUITextField.swift; sourceTree = "<group>"; };
-		0A1EF7C21FF93FB4007881B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextView.swift; sourceTree = "<group>"; };
 		0A75D5581FFE46DA001939EF /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDescriptionSingleton.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyUITests.swift; sourceTree = "<group>"; };
 		32E80C5C1FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inaldo_Tony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65ABBFA91FFE8D65000F3DDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.debug.xcconfig"; sourceTree = "<group>"; };
 		B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,7 +182,7 @@
 				0ACC02A61FE1235F003774B1 /* SignupViewController.swift */,
 				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
 				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
-				0A1EF7C21FF93FB4007881B6 /* GoogleService-Info.plist */,
+				65ABBFA91FFE8D65000F3DDD /* GoogleService-Info.plist */,
 				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
 				32E80C461FDE943F0006EF76 /* Info.plist */,
 			);
@@ -336,11 +336,11 @@
 			files = (
 				32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */,
 				32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */,
-				0A1EF7C31FF93FB4007881B6 /* GoogleService-Info.plist in Resources */,
 				32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */,
 				0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */,
 				0057E3F61FDEA07B005F68D7 /* Requests.storyboard in Resources */,
 				0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */,
+				65ABBFAA1FFE8D65000F3DDD /* GoogleService-Info.plist in Resources */,
 				0057E3F41FDEA03A005F68D7 /* Home.storyboard in Resources */,
 				3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */,
 			);
@@ -639,10 +639,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54MA3YJVS2;
+				DEVELOPMENT_TEAM = Q2U9U5N4EH;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prova;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,10 +655,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54MA3YJVS2;
+				DEVELOPMENT_TEAM = Q2U9U5N4EH;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prova;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
