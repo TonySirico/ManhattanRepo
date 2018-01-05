@@ -20,6 +20,11 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
     let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
     
     
+    @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    
     var coding = ProfileSeller.shared.codingDescription
     var design = ProfileSeller.shared.designDescription
     var business = ProfileSeller.shared.businessDescription
@@ -282,8 +287,9 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
     
     //hide keyboard when user taps anywhere
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+        print("TOUCH!")
         super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     //Hide Keyboard when user press return key
