@@ -101,12 +101,14 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss +0000"
                 let dayOfRequest = formatter.date(from: stringDate)
                 let deadline = Date(timeInterval: 262800, since: dayOfRequest!)
-                
                 let totalTime = Int(CFDateGetTimeIntervalSinceDate(deadline as CFDate, Date() as CFDate))
+                let progressIndex: Float = Float(259200 - (259200 - totalTime))
+                let progress: Float = progressIndex/259200
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
                 
-                cell.progressViewOutlet.progress = Float((259200 - totalTime)/259200)
+                cell.progressViewOutlet.progress = Float(progress)
+                
                 cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
                 cell.skillRequestedLabel?.text = FriendSystem.system.onGoingList[indexPath.row].requestDescription
                 
