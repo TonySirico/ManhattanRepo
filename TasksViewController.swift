@@ -107,7 +107,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
                 
-                cell.progressViewOutlet.progress = Float(progress)
+                cell.progressViewOutlet.progress = progress
                 
                 cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
                 cell.skillRequestedLabel?.text = FriendSystem.system.onGoingList[indexPath.row].requestDescription
