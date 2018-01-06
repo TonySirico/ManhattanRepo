@@ -112,7 +112,22 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if progress <= 0.2 && progress > 0 {
                     cell.progressViewOutlet.progressTintColor = UIColor(red:1.00, green: 0.36, blue: 0.32, alpha: 1.0)
                 } else if progress <= 0 {
-                    //COSA FARE QUANDO SCADE IL TEMPO
+                    var time = 0
+                    var description = ""
+                    var date = ""
+                    
+                    let currentUserRef = self.ref.child("users").child(self.uid)
+                    let id = FriendSystem.system.onGoingList[indexPath.row].id
+                    
+                    currentUserRef.child("requests").child("onGoingRequests").child(id!).observeSingleEvent(of: .value, with: { (DataSnapshot) in
+                        if let dictionary = DataSnapshot.value as? [String: AnyObject] {
+                            time = dictionary["time"] as! Int
+                            description = dictionary["description"] as! String
+                            date = dictionary["date"] as! String
+                            currentUserRef.child("requests").child("completedRequests").child(id!).setValue(["time": time, "bool": false, "description": description, "date": date])
+                        }
+                    }, withCancel: nil)
+                    currentUserRef.child("requests").child("onGoingRequests").child(id!).removeValue()
                 }
                 
                 cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
@@ -137,6 +152,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.nameSurnameLabel?.text = FriendSystem.system.completedList[indexPath.row].name + " " + FriendSystem.system.completedList[indexPath.row].surname
 //                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
 //                cell.timeRequestedLabel?.text = timeRequestedB[indexPath.row]
+                let boolean = FriendSystem.system.completedList[indexPath.row].bool
+                
+                if boolean == false {
+                    cell.nameSurnameLabel.textColor = .red
+                } else {
+                    cell.nameSurnameLabel.textColor = .white
+                }
                 
                 //NOT USED:
                 cell.skillRequestedLabel.text = ""
@@ -145,6 +167,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
                 cell.skillRequestedLabel.sizeToFit()
                 cell.timeRequestedLabel.sizeToFit()
+                
+                
 
                 return cell
                 

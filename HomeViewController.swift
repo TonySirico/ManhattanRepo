@@ -139,7 +139,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //settingUpSearchBar
         self.view.addSubview(self.searchController.searchBar)
-        self.searchController.searchBar.frame = CGRect(x: 0, y: 40, width: super.view.frame.width, height: 56)
         self.searchController.searchBar.center = CGPoint(x: super.view.frame.width/2, y:54.5)
         //------- SEARCH BAR CONTRAINTS
         

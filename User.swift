@@ -9,6 +9,7 @@ class User {
     var requestTime: Int!
     var requestDescription: String!
     var requestDate: String!
+    var bool: Bool?
     
     init(userEmail: String, userID: String) {
         self.email = userEmail

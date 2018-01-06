@@ -47,9 +47,11 @@ class FriendSystem {
                     let requestTime = snapshot.childSnapshot(forPath: "\(id)/time").value as! Int
                     let requestDate = snapshot.childSnapshot(forPath: "\(id)/date").value as! String
                     let requestDescription = snapshot.childSnapshot(forPath: "\(id)/description").value as! String
+                    let bool = snapshot.childSnapshot(forPath: "\(id)/bool").value as! Bool
                     user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
                     user.requestDate = requestDate
                     user.requestDescription = requestDescription
+                    user.bool = bool
                     self.completedList.append(user)
                     update()
                 })
