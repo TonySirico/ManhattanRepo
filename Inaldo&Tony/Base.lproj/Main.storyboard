@@ -19,11 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-v7-B1F" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
-                                <rect key="frame" x="127.5" y="491" width="120" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="JGS-PW-CgI"/>
-                                    <constraint firstAttribute="height" constant="40" id="XPZ-ri-CaO"/>
-                                </constraints>
+                                <rect key="frame" x="128" y="498" width="120" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -31,57 +27,67 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EQ-9Z-NW9">
-                                <rect key="frame" x="111.5" y="571" width="152" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="EAV-Yt-vCu"/>
-                                </constraints>
+                                <rect key="frame" x="112" y="571" width="152" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.59215686274509804" green="0.76862745098039209" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <segue destination="Dwx-Pk-NBg" kind="show" id="APZ-zf-gq1"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-ZF-5on" userLabel="appLogo" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="103" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="renTimeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-ZF-5on" userLabel="appLogo" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="88" y="110" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Y0y-Rl-tod"/>
-                                    <constraint firstAttribute="width" constant="200" id="tyC-yG-lVv"/>
+                                    <constraint firstAttribute="width" constant="200" id="RS0-f1-cEb"/>
+                                    <constraint firstAttribute="height" constant="200" id="kkA-Sl-31o"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-mt-WkX" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                <rect key="frame" x="62" y="370" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="3dT-hd-7ur"/>
-                                </constraints>
+                                <rect key="frame" x="62" y="377" width="250" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-g5-GrC" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                <rect key="frame" x="62" y="408" width="250" height="30"/>
+                                <rect key="frame" x="62" y="415" width="250" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScrittaRenTime" translatesAutoresizingMaskIntoConstraints="NO" id="FWR-iN-VPf">
+                                <rect key="frame" x="103" y="327" width="170" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Vad-ey-ku7"/>
+                                    <constraint firstAttribute="height" constant="26" id="cTr-Vc-cC7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BKk-v7-B1F" firstAttribute="top" secondItem="1mP-g5-GrC" secondAttribute="bottom" constant="53" id="9OQ-TN-9g8"/>
-                            <constraint firstItem="LDE-J0-tRY" firstAttribute="bottom" secondItem="7EQ-9Z-NW9" secondAttribute="bottom" constant="66" id="Faj-LK-1dS"/>
-                            <constraint firstItem="1mP-g5-GrC" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="62" id="KLu-St-8io"/>
-                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="1mP-g5-GrC" secondAttribute="trailing" constant="63" id="MBh-Ur-Aa3"/>
-                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="M1P-mt-WkX" secondAttribute="trailing" constant="63" id="OMR-YI-6Fq"/>
-                            <constraint firstItem="7EQ-9Z-NW9" firstAttribute="top" secondItem="BKk-v7-B1F" secondAttribute="bottom" constant="40" id="ObD-PY-yRt"/>
-                            <constraint firstItem="7EQ-9Z-NW9" firstAttribute="centerX" secondItem="WGw-k4-xbh" secondAttribute="centerX" id="TqV-r5-Cjy"/>
-                            <constraint firstItem="M1P-mt-WkX" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="62" id="TwF-nG-lv7"/>
-                            <constraint firstItem="9lV-ZF-5on" firstAttribute="centerX" secondItem="WGw-k4-xbh" secondAttribute="centerX" id="Uae-2q-WVW"/>
-                            <constraint firstItem="9lV-ZF-5on" firstAttribute="top" secondItem="LDE-J0-tRY" secondAttribute="top" constant="39" id="a9H-fS-Dc5"/>
-                            <constraint firstItem="M1P-mt-WkX" firstAttribute="top" secondItem="9lV-ZF-5on" secondAttribute="bottom" constant="67" id="c5C-xL-SWO"/>
-                            <constraint firstItem="1mP-g5-GrC" firstAttribute="top" secondItem="M1P-mt-WkX" secondAttribute="bottom" constant="8" id="ht0-SB-ymm"/>
-                            <constraint firstItem="1mP-g5-GrC" firstAttribute="top" secondItem="M1P-mt-WkX" secondAttribute="bottom" constant="8" id="n8k-Ys-gpe"/>
-                            <constraint firstItem="BKk-v7-B1F" firstAttribute="centerX" secondItem="WGw-k4-xbh" secondAttribute="centerX" id="rL5-lv-Abt"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="FWR-iN-VPf" secondAttribute="trailing" constant="102" id="5dH-cm-ye6"/>
+                            <constraint firstItem="M1P-mt-WkX" firstAttribute="top" secondItem="FWR-iN-VPf" secondAttribute="bottom" constant="24" id="6Zl-ma-XQc"/>
+                            <constraint firstItem="M1P-mt-WkX" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="62" id="7K5-Op-um6"/>
+                            <constraint firstItem="1mP-g5-GrC" firstAttribute="top" secondItem="M1P-mt-WkX" secondAttribute="bottom" constant="8" id="BJr-g2-azw"/>
+                            <constraint firstItem="BKk-v7-B1F" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="128" id="IR9-ft-fUh"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="bottom" secondItem="7EQ-9Z-NW9" secondAttribute="bottom" constant="66" id="Mfp-71-Mzl"/>
+                            <constraint firstItem="9lV-ZF-5on" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="88" id="MpJ-UK-5fk"/>
+                            <constraint firstItem="FWR-iN-VPf" firstAttribute="top" secondItem="9lV-ZF-5on" secondAttribute="bottom" constant="17" id="RML-0S-NWK"/>
+                            <constraint firstItem="FWR-iN-VPf" firstAttribute="top" secondItem="9lV-ZF-5on" secondAttribute="bottom" constant="17" id="Tvi-zA-crr"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="7EQ-9Z-NW9" secondAttribute="trailing" constant="111" id="UmS-Oe-bik"/>
+                            <constraint firstItem="M1P-mt-WkX" firstAttribute="top" secondItem="FWR-iN-VPf" secondAttribute="bottom" constant="24" id="X5m-xI-NCR"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="9lV-ZF-5on" secondAttribute="trailing" constant="87" id="bGH-Dd-Em1"/>
+                            <constraint firstItem="9lV-ZF-5on" firstAttribute="top" secondItem="LDE-J0-tRY" secondAttribute="top" constant="46" id="dGv-GJ-LBN"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="M1P-mt-WkX" secondAttribute="trailing" constant="63" id="fFT-05-7qa"/>
+                            <constraint firstItem="BKk-v7-B1F" firstAttribute="top" secondItem="1mP-g5-GrC" secondAttribute="bottom" constant="53" id="gy2-wq-9RG"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="1mP-g5-GrC" secondAttribute="trailing" constant="63" id="jUo-oJ-8aR"/>
+                            <constraint firstItem="7EQ-9Z-NW9" firstAttribute="top" secondItem="BKk-v7-B1F" secondAttribute="bottom" constant="40" id="nAM-u0-eFA"/>
+                            <constraint firstItem="7EQ-9Z-NW9" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="112" id="pyx-be-Kqb"/>
+                            <constraint firstItem="1mP-g5-GrC" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="62" id="sIz-SH-c6n"/>
+                            <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="BKk-v7-B1F" secondAttribute="trailing" constant="127" id="tO3-7Y-2F4"/>
+                            <constraint firstItem="1mP-g5-GrC" firstAttribute="top" secondItem="M1P-mt-WkX" secondAttribute="bottom" constant="8" id="xGq-Lu-ob5"/>
+                            <constraint firstItem="BKk-v7-B1F" firstAttribute="top" secondItem="1mP-g5-GrC" secondAttribute="bottom" constant="53" id="xMH-O7-r1k"/>
+                            <constraint firstItem="FWR-iN-VPf" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="103" id="xkT-sj-Q23"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LDE-J0-tRY"/>
                     </view>
@@ -95,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I7-ME-zMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3154" y="72"/>
+            <point key="canvasLocation" x="-3154.4000000000001" y="71.514242878560722"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="KLM-SU-pCT">
@@ -124,7 +130,7 @@
                                                 <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PPp-cK-waO" userLabel="Surname" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="231" width="359" height="30"/>
@@ -132,7 +138,7 @@
                                                 <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="family-name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-lw-daE" userLabel="Email" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="307" width="359" height="30"/>
@@ -140,7 +146,7 @@
                                                 <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Badge Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Zcz-pd-o4B" userLabel="Badge" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="385" width="359" height="30"/>
@@ -387,8 +393,10 @@
         <image name="Home" width="25" height="25"/>
         <image name="Profile" width="19" height="25"/>
         <image name="Requests" width="19" height="25"/>
+        <image name="ScrittaRenTime" width="344" height="57"/>
         <image name="Tasks" width="20" height="25"/>
         <image name="dummyProfilePic" width="140" height="140"/>
+        <image name="renTimeLogo" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JAH-un-G18"/>
