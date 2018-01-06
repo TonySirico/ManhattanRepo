@@ -106,11 +106,16 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="X" translatesAutoresizingMaskIntoConstraints="NO" id="UD0-W6-Xko">
+                                                    <rect key="frame" x="346" y="28" width="13" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.094117647060000004" green="0.098039215690000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="nameSurnameLabel" destination="FpB-Mz-hxy" id="MZf-7g-Wgg"/>
+                                            <outlet property="redXOutlet" destination="UD0-W6-Xko" id="dUf-Ab-tOm"/>
                                             <outlet property="skillRequestedLabel" destination="Rv0-fF-L6O" id="hTn-nG-gdr"/>
                                             <outlet property="timeRequestedLabel" destination="KiC-NK-d8s" id="qpx-DA-N7R"/>
                                         </connections>
@@ -136,5 +141,6 @@
     <resources>
         <image name="Tasks" width="20" height="25"/>
         <image name="TasksHighlighted" width="25" height="25"/>
+        <image name="X" width="15" height="15"/>
     </resources>
 </document>
