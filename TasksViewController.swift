@@ -26,6 +26,7 @@ class oldTaskCell: UITableViewCell {
     @IBOutlet weak var nameSurnameLabel: UILabel!
     @IBOutlet weak var timeRequestedLabel: UILabel!
     @IBOutlet weak var skillRequestedLabel: UILabel!
+    @IBOutlet weak var redXOutlet: UIImageView!
     
 }
 
@@ -155,9 +156,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let boolean = FriendSystem.system.completedList[indexPath.row].bool
                 
                 if boolean == false {
-                    cell.nameSurnameLabel.textColor = .red
+                    cell.accessoryType = .none
                 } else {
-                    cell.nameSurnameLabel.textColor = .white
+                    cell.accessoryType = .checkmark
+                    cell.redXOutlet.isHidden = true
                 }
                 
                 //NOT USED:
