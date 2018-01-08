@@ -171,8 +171,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 let minutesCoins = credits % 60
                 
                 self.nameSurnameLabel.text = (dictionary["name"] as? String)! + " " + (dictionary["surname"] as? String)!
-                self.badgeNumberLabel.text = dictionary["badge"] as? String
-                self.dateOfBirthLabel.text = dictionary["date of birth"] as? String
+              //  self.badgeNumberLabel.text = dictionary["badge"] as? String
+              //  self.dateOfBirthLabel.text = dictionary["date of birth"] as? String
                 self.timeCoinsLabel.text = String(format: "%02d:%02d", hoursCoins, minutesCoins)
             }
         })
@@ -389,6 +389,19 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return (true)
     }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == " " {
+            textField.text?.append("    ")
+            textField.text?.removeLast()
+        }
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text?.append("#")
+    }
+    
     
     
     /*

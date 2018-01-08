@@ -28,6 +28,7 @@ import UIKit
         self.layer.masksToBounds = false
         self.layer.cornerRadius = self.frame.size.height/2
         self.clipsToBounds = true
+        self.contentMode = .scaleAspectFill
     }
     
 }
