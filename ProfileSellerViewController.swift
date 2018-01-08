@@ -220,7 +220,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
         
         
         //profilePic
-        let userPhotoRef = Storage.storage().reference().child("profile Image").child(uid!)
+        let userPhotoRef = Storage.storage().reference().child("profile Image").child(userID)
         userPhotoRef.getData(maxSize: 1 * 1024 * 1024, completion: { (photoData, error) in
             if error != nil {
                 return
@@ -338,6 +338,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
         textView.text = ""
     }
    
+    
     //Toglie tastiera textview quando si preme invio
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
