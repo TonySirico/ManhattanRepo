@@ -106,7 +106,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func filterContent(searchText:String) {
         self.filteredPeople = FriendSystem.system.userList.filter { user in
-            let username = user.name + " " + user.surname
+            let username = user.name + " " + user.surname + " " + user.descriptions
+
             return(username.contains(searchText))
             
         }

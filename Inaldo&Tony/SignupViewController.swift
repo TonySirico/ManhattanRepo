@@ -349,6 +349,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 let userReference = Database.database().reference().child("users").child(uid!)
                 userReference.setValue(["email": email, "name": name, "surname": surname, "badge": badge, "date of birth": self.birthdayTextField.text!, "timeCoins": 120])
                 userReference.child("skill").setValue(["coding": self.coding, "design": self.design, "language": self.language, "business": self.business, "science": self.science, "other": self.other])
+                userReference.child("requests").child("newRequests").setValue(["requestsCounter": 0])
                 self.showLoggedInView()
             })
         }

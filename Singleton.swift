@@ -83,7 +83,16 @@ class FriendSystem {
     
     //manda una richiesta ad un utente aggiungendo a tale utente un figlio nella sezione request
     func sendRequestToUser(_ userID: String, _ time: Int, _ date: String, _ description: String) {
-        userRef.child(userID).child("requests").child("newRequests").child(uid).setValue(["time": time, "bool": true, "date": date, "description": description])
+        
+        var counter = 0
+        userRef.child(userID).child("requests").child("newRequests").observeSingleEvent(of: .value, with: { (DataSnapshot) in
+            if let dictionary = DataSnapshot.value as? [String: AnyObject] {
+                counter = dictionary["requestsCounter"] as! Int
+                self.userRef.child(userID).child("requests").child("newRequests").updateChildValues(["requestsCounter": counter + 1])
+                 self.userRef.child(userID).child("requests").child("newRequests").child("request\(counter + 1)").child(self.uid).setValue(["time": time, "bool": true, "date": date, "description": description])
+            }
+           
+        })
     }
     
     /** Accepts a friend request from the user with the specified id */
@@ -105,6 +114,7 @@ class FriendSystem {
     }
     
     func declineFriendRequest(_ userID: String) {
+        
         currentUserRef.child("requests").child("newRequests").child(userID).removeValue()
     }
     
@@ -118,26 +128,55 @@ class FriendSystem {
     var requestList = [User]()
     
     func showRequests(_ update: @escaping () -> Void) {
-        currentUserRequestRef.child("newRequests").observe(DataEventType.value, with: { (snapshot) in
+        var counter = 0
+        currentUserRequestRef.child("newRequests").observeSingleEvent(of: .value, with: { (snapshot) in
             self.requestList.removeAll()
-            for child in snapshot.children.allObjects as! [DataSnapshot] {
-                let id = child.key
-                let requestTime = snapshot.childSnapshot(forPath: "\(id)/time").value as! Int
-                let requestDate = snapshot.childSnapshot(forPath: "\(id)/date").value as! String
-                let requestDescription = snapshot.childSnapshot(forPath: "\(id)/description").value as! String
-                self.getUser(id, { (user) in
-                    user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
-                    user.requestDate = requestDate
-                    user.requestDescription = requestDescription
-                    self.requestList.append(user)
-                    update()
-                })
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                counter = dictionary["requestsCounter"] as! Int
             }
-            // If there are no children, run completion here instead
+            
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                while counter > 0 {
+                    for idChild in child.children.allObjects as! [DataSnapshot] {
+                        let id = idChild.key
+                        let requestTime = snapshot.childSnapshot(forPath: "request\(counter)/\(id)/time").value as! Int
+                        let requestDate = snapshot.childSnapshot(forPath: "request\(counter)/\(id)/date").value as! String
+                        let requestDescription = snapshot.childSnapshot(forPath: "request\(counter)/\(id)/description").value as! String
+                        self.getUser(id, { (user) in
+                            user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
+                            user.requestDate = requestDate
+                            user.requestDescription = requestDescription
+                            self.requestList.append(user)
+                            update()
+                        })
+                    }
+                    counter -= 1
+                }
+            }
             if snapshot.childrenCount == 0 {
                 update()
             }
         })
+//        currentUserRequestRef.child("newRequests").observe(DataEventType.value, with: { (snapshot) in
+//            self.requestList.removeAll()
+//            for child in snapshot.children.allObjects as! [DataSnapshot] {
+//                let id = child.key
+//                let requestTime = snapshot.childSnapshot(forPath: "request\(id)/time").value as! Int
+//                let requestDate = snapshot.childSnapshot(forPath: "\(id)/date").value as! String
+//                let requestDescription = snapshot.childSnapshot(forPath: "\(id)/description").value as! String
+//                self.getUser(id, { (user) in
+//                    user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
+//                    user.requestDate = requestDate
+//                    user.requestDescription = requestDescription
+//                    self.requestList.append(user)
+//                    update()
+//                })
+//            }
+//            // If there are no children, run completion here instead
+//            if snapshot.childrenCount == 0 {
+//                update()
+//            }
+//        })
     }
     
     var userList = [User]()
@@ -149,8 +188,16 @@ class FriendSystem {
                 let email = child.childSnapshot(forPath: "email").value as! String
                 let name = child.childSnapshot(forPath: "name").value as! String
                 let surname = child.childSnapshot(forPath: "surname").value as! String
+                let codingDescription = child.childSnapshot(forPath: "skill/coding").value as! String
+                let designDescription = child.childSnapshot(forPath: "skill/design").value as! String
+                let businessDescription = child.childSnapshot(forPath: "skill/business").value as! String
+                let languageDescription = child.childSnapshot(forPath: "skill/language").value as! String
+                let otherDescription = child.childSnapshot(forPath: "skill/other").value as! String
+                let scienceDescription = child.childSnapshot(forPath: "skill/science").value as! String
+                let descriptions = codingDescription + " " + designDescription + " " + businessDescription + " " + languageDescription + " " + otherDescription + " " + scienceDescription
+                
                 if email != Auth.auth().currentUser?.email! {
-                    self.userList.append(User(userEmail: email, userName: name, userSurname: surname, userID: child.key))
+                    self.userList.append(User(userEmail: email, userName: name, userSurname: surname, userID: child.key, descriptions: descriptions))
                 }
             }
             update()
