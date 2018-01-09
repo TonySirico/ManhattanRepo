@@ -35,9 +35,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     //Hide keyboard when user taps anywhere
     @IBAction func tapToDismissKeyboard(_ sender: Any) {
-        print("Tap!")
         self.view.endEditing(true)
-        
     }
     
     
@@ -219,7 +217,23 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    var secondLastTextCount = 0
+    var lastTextCount = 0
+    
     @IBAction func descriptionTextFieldEditingChanged(_ sender: Any) {
+        if descriptionTextField.text?.count == 1 && descriptionTextField.text != "#" {
+            var string = "#"
+            string.append(descriptionTextField.text!)
+            descriptionTextField.text = string
+        }
+        secondLastTextCount = lastTextCount
+        lastTextCount = (descriptionTextField.text?.count)!
+        if secondLastTextCount < lastTextCount {
+            if descriptionTextField.text?.last == " " {
+                descriptionTextField.text?.append("   #")
+                lastTextCount = (descriptionTextField.text?.count)!
+            }
+        }
         descriptionFill()
         rightColourForButtons()
     }
@@ -246,18 +260,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return (true)
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        
-        if textField == descriptionTextField {
-            if string.contains(" ") {
-                textField.text?.append("   ")
-                
-            }
-        }
-        return true
     }
     
     @objc func keyboardWillShow(notification: Notification) {
