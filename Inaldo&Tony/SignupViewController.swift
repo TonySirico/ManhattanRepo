@@ -17,6 +17,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
     
+    let darkMainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:0.6)
+    
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
@@ -29,7 +31,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     var science = ""
     var other = ""
     var flag: String = ""
-
+    
     
     //Hide keyboard when user taps anywhere
     @IBAction func tapToDismissKeyboard(_ sender: Any) {
@@ -39,7 +41,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-/*-----------OUTLETS-----------*/
+    /*-----------OUTLETS-----------*/
     
     //TextFields
     @IBOutlet weak var nameTextField: RoundedUITextField!
@@ -72,59 +74,88 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func codingAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
         if !codingButton.isSelected {
             deselectAllButtons()
             codingButton.isSelected = true
-            descriptionTextField.text! = coding
+            if coding != "" {
+                descriptionTextField.text! = coding
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "coding"
         }
-        
     }
     
     @IBAction func designAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
         if !designButton.isSelected {
             deselectAllButtons()
             designButton.isSelected = true
-            descriptionTextField.text! = design
+            if design != "" {
+                descriptionTextField.text! = design
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "design"
         }
     }
     
     
     @IBAction func businessAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
         if !businessButton.isSelected {
             deselectAllButtons()
             businessButton.isSelected = true
-            descriptionTextField.text! = business
+            if business != "" {
+                descriptionTextField.text! = business
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "business"
         }
     }
     
     
     @IBAction func languageAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
         if !languageButton.isSelected {
             deselectAllButtons()
             languageButton.isSelected = true
-            descriptionTextField.text! = language
+            if language != "" {
+                descriptionTextField.text! = language
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "language"
         }
     }
     
     
     @IBAction func scienceAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
         if !scienceButton.isSelected {
             deselectAllButtons()
             scienceButton.isSelected = true
-            descriptionTextField.text! = science
+            if science != "" {
+                descriptionTextField.text! = science
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "science"
         }
     }
     
     @IBAction func otherAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
         if !otherButton.isSelected {
             deselectAllButtons()
             otherButton.isSelected = true
-            descriptionTextField.text! = other
+            if other != "" {
+                descriptionTextField.text! = other
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "other"
         }
     }
@@ -132,8 +163,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
         
         //TextField delegate
         self.nameTextField.delegate = self
@@ -159,7 +188,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         profilePhotoIV.isUserInteractionEnabled = true
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -174,7 +203,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         //KeyboardNotificationTrigger
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+        
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
@@ -184,13 +213,23 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func descriptionTextFieldEditingChanged(_ sender: Any) {
+        descriptionFill()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        descriptionFill()
+        descriptionTextField.text = ""
+        deselectAllButtons()
+    }
+    
     @objc func handleProfileImageView() {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self // self ora è il delegato dell'image picker che usiamo
         // in questo modo è in grado di implementare i delegate di UIImagePickerControllerDelegate, UINavigationControllerDelegate che abbiamo utilizzato nella funziona a fine pagina
         present(pickerController, animated: true, completion: nil)
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -199,13 +238,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return (true)
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if textField == descriptionTextField {
-            textField.text?.append("#")
-        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -219,12 +251,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        descriptionFill()
-    }
-    
-
     
     @objc func keyboardWillShow(notification: Notification) {
         
@@ -244,7 +270,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillHide(notification: Notification) {
         //Move view into original position
-       super.view.frame.origin = CGPoint(x: 0.0, y: 0.0)
+        super.view.frame.origin = CGPoint(x: 0.0, y: 0.0)
         
     }
     
@@ -263,56 +289,81 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         switch flag {
             
         case "coding":
-            coding = descriptionTextField.text!
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                coding = descriptionTextField.text!
+            } else {
+                coding = ""
+            }
             if coding != "" {
                 codingButton.backgroundColor = mainColor
                 codingButton.titleLabel?.textColor = UIColor.black
             } else {
-                if !codingButton.isSelected {codingButton.backgroundColor = UIColor.black}
+                codingButton.backgroundColor = darkMainColor
             }
             
         case "design":
-            design = descriptionTextField.text!
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                design = descriptionTextField.text!
+            } else {
+                design = ""
+            }
             if design != "" {
                 designButton.backgroundColor = mainColor
                 designButton.titleLabel?.textColor = UIColor.black
             } else {
-                if !designButton.isSelected  {designButton.backgroundColor = UIColor.black}
+                designButton.backgroundColor = darkMainColor
             }
-        
+            
         case "business":
-            business = descriptionTextField.text!
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                business = descriptionTextField.text!
+            } else {
+                business = ""
+            }
             if business != "" {
                 businessButton.backgroundColor = mainColor
                 businessButton.titleLabel?.textColor = UIColor.black
             } else {
-                if !businessButton.isSelected {businessButton.backgroundColor = UIColor.black}
+                businessButton.backgroundColor = darkMainColor
             }
+            
         case "language":
-            language = descriptionTextField.text!
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                language = descriptionTextField.text!
+            } else {
+                language = ""
+            }
             if language != "" {
                 languageButton.backgroundColor = mainColor
                 languageButton.titleLabel?.textColor = UIColor.black
             } else {
-                if !languageButton.isSelected {languageButton.backgroundColor = UIColor.black}
+                languageButton.backgroundColor = darkMainColor
             }
             
         case "science":
-            science = descriptionTextField.text!
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                science = descriptionTextField.text!
+            } else {
+                science = ""
+            }
             if science != "" {
                 scienceButton.backgroundColor = mainColor
                 scienceButton.titleLabel?.textColor = UIColor.black
             } else {
-                if !scienceButton.isSelected {scienceButton.backgroundColor = UIColor.black}
+                scienceButton.backgroundColor = darkMainColor
             }
-        
+            
         case "other":
-            other = descriptionTextField.text!
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                other = descriptionTextField.text!
+            } else {
+                other = ""
+            }
             if other != "" {
                 otherButton.backgroundColor = mainColor
                 otherButton.titleLabel?.textColor = UIColor.black
             } else {
-                if !otherButton.isSelected {otherButton.backgroundColor = UIColor.black}
+                otherButton.backgroundColor = darkMainColor
             }
             
             
@@ -326,7 +377,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-
+    
     @objc func datePickeralueChanged(sender: UIDatePicker) {
         
         let formatter = DateFormatter()
@@ -385,7 +436,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "segueToHome", sender: self)
     }
     
-
+    
 }
 
 

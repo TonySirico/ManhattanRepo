@@ -213,6 +213,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="twitter"/>
+                                                <connections>
+                                                    <action selector="descriptionTextFieldEditingChanged:" destination="Dwx-Pk-NBg" eventType="editingChanged" id="6IH-pT-w0Y"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="21I-Lc-20C" userLabel="Birthday" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="269" width="359" height="30"/>
