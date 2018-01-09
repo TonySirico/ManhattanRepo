@@ -95,8 +95,9 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let refuseAction = UIContextualAction(style: .normal, title:  "Refuse", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             let id = FriendSystem.system.requestList[indexPath.row].id
+            let date = FriendSystem.system.requestDates[indexPath.row]
             let timeRequests = FriendSystem.system.requestList[indexPath.row].requestTime
-            FriendSystem.system.declineFriendRequest(id!)
+            FriendSystem.system.declineFriendRequest(date, id!)
             FriendSystem.system.getTimeCoinsCurrentUser(id!, { (timeCoins) in
                 let idRef = Database.database().reference().child("users").child(id!)
                 idRef.child("timeCoins").setValue(timeCoins+timeRequests!)
@@ -110,8 +111,9 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let acceptAction = UIContextualAction(style: .normal, title:  "Accept", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             let id = FriendSystem.system.requestList[indexPath.row].id
+            let date = FriendSystem.system.requestDates[indexPath.row]
             let timeRequests = FriendSystem.system.requestList[indexPath.row].requestTime
-            FriendSystem.system.acceptFriendRequest(id!)
+            FriendSystem.system.acceptFriendRequest(date, id!)
             FriendSystem.system.getTimeCoinsCurrentUser(self.uid!, { (timeCoins) in
                 let uidRef = Database.database().reference().child("users").child(self.uid!)
                 uidRef.child("timeCoins").setValue(timeCoins+timeRequests!)

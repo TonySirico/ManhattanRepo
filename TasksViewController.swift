@@ -196,21 +196,20 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let endTaskAction = UIContextualAction(style: .normal, title:  "End Task", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
                 var time = 0
                 var description = ""
-                var date = ""
                 
                 let currentUserRef = self.ref.child("users").child(self.uid)
                 let id = FriendSystem.system.onGoingList[indexPath.row].id
+                let date = FriendSystem.system.onGoingDates[indexPath.row]
                 
-                currentUserRef.child("requests").child("onGoingRequests").child(id!).observeSingleEvent(of: .value, with: { (DataSnapshot) in
+                currentUserRef.child("requests").child("onGoingRequests").child(date + "," + id!).observeSingleEvent(of: .value, with: { (DataSnapshot) in
                     if let dictionary = DataSnapshot.value as? [String: AnyObject] {
                         time = dictionary["time"] as! Int
                         description = dictionary["description"] as! String
-                        date = dictionary["date"] as! String
-                        currentUserRef.child("requests").child("completedRequests").child(id!).setValue(["time": time, "bool": true, "description": description, "date": date])
+                        currentUserRef.child("requests").child("completedRequests").child(date + "," + id!).setValue(["time": time, "bool": true, "description": description, "date": date])
                     }
                 }, withCancel: nil)
                 
-                currentUserRef.child("requests").child("onGoingRequests").child(id!).removeValue()
+                currentUserRef.child("requests").child("onGoingRequests").child(date + "," + id!).removeValue()
                 success(true)
             })
            

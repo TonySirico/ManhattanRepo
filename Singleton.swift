@@ -42,14 +42,16 @@ class FriendSystem {
         currentUserRef.child("requests").child("completedRequests").observe(DataEventType.value, with: { (snapshot) in
             self.completedList.removeAll()
             for child in snapshot.children.allObjects as! [DataSnapshot] {
-                let id = child.key
+                let fullKey = child.key
+                let components = fullKey.components(separatedBy: ",")
+                let date = components[0]
+                let id = components[1]
                 self.getUser(id, { (user) in
-                    let requestTime = snapshot.childSnapshot(forPath: "\(id)/time").value as! Int
-                    let requestDate = snapshot.childSnapshot(forPath: "\(id)/date").value as! String
-                    let requestDescription = snapshot.childSnapshot(forPath: "\(id)/description").value as! String
-                    let bool = snapshot.childSnapshot(forPath: "\(id)/bool").value as! Bool
+                    let requestTime = snapshot.childSnapshot(forPath: "\(fullKey)/time").value as! Int
+                    let requestDescription = snapshot.childSnapshot(forPath: "\(fullKey)/description").value as! String
+                    let bool = snapshot.childSnapshot(forPath: "\(fullKey)/bool").value as! Bool
                     user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
-                    user.requestDate = requestDate
+                    user.requestDate = date
                     user.requestDescription = requestDescription
                     user.bool = bool
                     self.completedList.append(user)
@@ -83,39 +85,28 @@ class FriendSystem {
     
     //manda una richiesta ad un utente aggiungendo a tale utente un figlio nella sezione request
     func sendRequestToUser(_ userID: String, _ time: Int, _ date: String, _ description: String) {
-        
-        var counter = 0
-        userRef.child(userID).child("requests").child("newRequests").observeSingleEvent(of: .value, with: { (DataSnapshot) in
-            if let dictionary = DataSnapshot.value as? [String: AnyObject] {
-                counter = dictionary["requestsCounter"] as! Int
-                self.userRef.child(userID).child("requests").child("newRequests").updateChildValues(["requestsCounter": counter + 1])
-                 self.userRef.child(userID).child("requests").child("newRequests").child("request\(counter + 1)").child(self.uid).setValue(["time": time, "bool": true, "date": date, "description": description])
-            }
-           
-        })
+        self.userRef.child(userID).child("requests").child("newRequests").child(date + "," + self.uid).setValue(["time": time, "bool": true, "date": date, "description": description])
     }
     
     /** Accepts a friend request from the user with the specified id */
-    func acceptFriendRequest(_ userID: String) {
+    func acceptFriendRequest(_ date: String, _ id: String) {
         
         var time = 0
         var description = ""
-        var date = ""
         // utilizziamo questo observe per spostare il tempo e la richiesta da newRequests a onGoingRequests
-        currentUserRef.child("requests").child("newRequests").child(userID).observeSingleEvent(of: .value, with: { (DataSnapshot) in
+        currentUserRef.child("requests").child("newRequests").child(date + "," + id).observeSingleEvent(of: .value, with: { (DataSnapshot) in
             if let dictionary = DataSnapshot.value as? [String: AnyObject] {
                 time = dictionary["time"] as! Int
                 description = dictionary["description"] as! String
-                date = dictionary["date"] as! String
-                self.currentUserRef.child("requests").child("onGoingRequests").child(userID).setValue(["time": time, "bool": true, "description": description, "date": date])
+                self.currentUserRef.child("requests").child("onGoingRequests").child(date + "," + id).setValue(["time": time, "bool": true, "description": description, "date": date])
             }
         }, withCancel: nil)
-        currentUserRef.child("requests").child("newRequests").child(userID).removeValue()
+        currentUserRef.child("requests").child("newRequests").child(date + "," + id).removeValue()
     }
     
-    func declineFriendRequest(_ userID: String) {
+    func declineFriendRequest(_ date: String, _ userID: String) {
         
-        currentUserRef.child("requests").child("newRequests").child(userID).removeValue()
+        currentUserRef.child("requests").child("newRequests").child(date + "," + userID).removeValue()
     }
     
     func showTimeRequest() {
@@ -125,33 +116,28 @@ class FriendSystem {
         
     }
     
+    var requestDates: [String] = []
     var requestList = [User]()
     
     func showRequests(_ update: @escaping () -> Void) {
-        var counter = 0
         currentUserRequestRef.child("newRequests").observeSingleEvent(of: .value, with: { (snapshot) in
             self.requestList.removeAll()
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                counter = dictionary["requestsCounter"] as! Int
-            }
-            
+            self.requestDates.removeAll()
             for child in snapshot.children.allObjects as! [DataSnapshot] {
-                while counter > 0 {
-                    for idChild in child.children.allObjects as! [DataSnapshot] {
-                        let id = idChild.key
-                        let requestTime = snapshot.childSnapshot(forPath: "request\(counter)/\(id)/time").value as! Int
-                        let requestDate = snapshot.childSnapshot(forPath: "request\(counter)/\(id)/date").value as! String
-                        let requestDescription = snapshot.childSnapshot(forPath: "request\(counter)/\(id)/description").value as! String
-                        self.getUser(id, { (user) in
-                            user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
-                            user.requestDate = requestDate
-                            user.requestDescription = requestDescription
-                            self.requestList.append(user)
-                            update()
-                        })
-                    }
-                    counter -= 1
-                }
+                let fullKey = child.key
+                let components = fullKey.components(separatedBy: ",")
+                let date = components[0]
+                let id = components[1]
+                let requestTime = snapshot.childSnapshot(forPath: "\(fullKey)/time").value as! Int
+                let requestDescription = snapshot.childSnapshot(forPath: "\(fullKey)/description").value as! String
+                self.getUser(id, { (user) in
+                    user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
+                    user.requestDate = date
+                    user.requestDescription = requestDescription
+                    self.requestList.append(user)
+                    self.requestDates.append(date)
+                    update()
+                })
             }
             if snapshot.childrenCount == 0 {
                 update()
@@ -302,20 +288,25 @@ class FriendSystem {
     }
     
     var onGoingList = [User]()
+    var onGoingDates: [String] = []
     
     func showUserOnGoing(_ update: @escaping () -> Void) {
         currentUserRef.child("requests").child("onGoingRequests").observe(DataEventType.value, with: { (snapshot) in
             self.onGoingList.removeAll()
+            self.onGoingDates.removeAll()
             for child in snapshot.children.allObjects as! [DataSnapshot] {
-                let id = child.key
+                let fullKey = child.key
+                let components = fullKey.components(separatedBy: ",")
+                let date = components[0]
+                let id = components[1]
                 self.getUser(id, { (user) in
-                    let requestTime = snapshot.childSnapshot(forPath: "\(id)/time").value as! Int
-                    let requestDate = snapshot.childSnapshot(forPath: "\(id)/date").value as! String
-                    let requestDescription = snapshot.childSnapshot(forPath: "\(id)/description").value as! String
+                    let requestTime = snapshot.childSnapshot(forPath: "\(fullKey)/time").value as! Int
+                    let requestDescription = snapshot.childSnapshot(forPath: "\(fullKey)/description").value as! String
                     user.requestTime = requestTime //aggiunge all'utente creato in requestList anche quanto tempo ha chiesto
-                    user.requestDate = requestDate
+                    user.requestDate = date
                     user.requestDescription = requestDescription
                     self.onGoingList.append(user)
+                    self.onGoingDates.append(date)
                     update()
                 })
             }
