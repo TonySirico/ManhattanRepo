@@ -90,10 +90,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         moveButtonsOut()
+        searchBar.frame.origin = CGPoint(x: 0.0, y: 15.0)
+        print("DID BEGIN: ")
+        print(searchBar.frame.origin)
         FriendSystem.system.showUser { () in
             self.tableViewOutlet.reloadData()
         }
     }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("DID END 1: ")
+        print(searchBar.frame.origin)
+        searchBar.frame.origin = CGPoint(x: 0.0, y: 15.0)
+        print("DID END 2: ")
+        print(searchBar.frame.origin)
+    }
+    
     
     func updateSearchResults(for searchController: UISearchController) {
         filterContent(searchText: self.searchController.searchBar.text!)
@@ -114,8 +126,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableViewOutlet.reloadData()
     }
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = true
         
         searchController.searchBar.tintColor = mainColor
         searchController.searchBar.delegate = self
@@ -140,7 +157,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //settingUpSearchBar
         self.view.addSubview(self.searchController.searchBar)
-        self.searchController.searchBar.center = CGPoint(x: super.view.frame.width/2, y:54.5)
+        //self.searchController.searchBar.frame.origin = CGPoint(x: 0, y: 30)
         //------- SEARCH BAR CONTRAINTS
         
         
@@ -162,6 +179,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         backButtonOutlet.setImage(#imageLiteral(resourceName: "Back"), for: .normal)
         
         // Do any additional setup after loading the view.
+        
+        searchController.searchBar.frame.origin = CGPoint(x: 0.0, y: 15.0)
+       
         
     }
     

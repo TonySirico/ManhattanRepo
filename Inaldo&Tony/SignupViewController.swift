@@ -203,16 +203,20 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        textField.text?.append("#")
-        
+        if textField == descriptionTextField {
+            textField.text?.append("#")
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if string.contains(" ") {
-            textField.text?.append("   ")
-        }
         
+        if textField == descriptionTextField {
+            if string.contains(" ") {
+                textField.text?.append("   ")
+                
+            }
+        }
         return true
     }
     
@@ -229,8 +233,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         
+        
         //Move view according to keyboard height
-        super.view.frame.origin = CGPoint(x: 0.0, y: -(keyboardHeight - 50.0))
+        
+        if nameTextField.isEditing {}
+        else if descriptionTextField.isEditing {super.view.frame.origin = CGPoint(x: 0.0, y: -(keyboardHeight - 5))}
+        else {super.view.frame.origin = CGPoint(x: 0.0, y: -(keyboardHeight - 50.0))}
         
     }
     
