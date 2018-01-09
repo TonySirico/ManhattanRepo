@@ -75,6 +75,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func codingAction(_ sender: Any) {
         descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !codingButton.isSelected {
             deselectAllButtons()
             codingButton.isSelected = true
@@ -89,6 +90,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func designAction(_ sender: Any) {
         descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !designButton.isSelected {
             deselectAllButtons()
             designButton.isSelected = true
@@ -104,6 +106,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func businessAction(_ sender: Any) {
         descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !businessButton.isSelected {
             deselectAllButtons()
             businessButton.isSelected = true
@@ -119,6 +122,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func languageAction(_ sender: Any) {
         descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !languageButton.isSelected {
             deselectAllButtons()
             languageButton.isSelected = true
@@ -134,6 +138,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func scienceAction(_ sender: Any) {
         descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !scienceButton.isSelected {
             deselectAllButtons()
             scienceButton.isSelected = true
@@ -148,6 +153,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func otherAction(_ sender: Any) {
         descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !otherButton.isSelected {
             deselectAllButtons()
             otherButton.isSelected = true
@@ -215,10 +221,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func descriptionTextFieldEditingChanged(_ sender: Any) {
         descriptionFill()
+        rightColourForButtons()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         descriptionFill()
+        rightColourForButtons()
         descriptionTextField.text = ""
         deselectAllButtons()
     }
@@ -294,24 +302,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             } else {
                 coding = ""
             }
-            if coding != "" {
-                codingButton.backgroundColor = mainColor
-                codingButton.titleLabel?.textColor = UIColor.black
-            } else {
-                codingButton.backgroundColor = darkMainColor
-            }
             
         case "design":
             if descriptionTextField.text != "" && descriptionTextField.text != "#" {
                 design = descriptionTextField.text!
             } else {
                 design = ""
-            }
-            if design != "" {
-                designButton.backgroundColor = mainColor
-                designButton.titleLabel?.textColor = UIColor.black
-            } else {
-                designButton.backgroundColor = darkMainColor
             }
             
         case "business":
@@ -320,24 +316,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             } else {
                 business = ""
             }
-            if business != "" {
-                businessButton.backgroundColor = mainColor
-                businessButton.titleLabel?.textColor = UIColor.black
-            } else {
-                businessButton.backgroundColor = darkMainColor
-            }
             
         case "language":
             if descriptionTextField.text != "" && descriptionTextField.text != "#" {
                 language = descriptionTextField.text!
             } else {
                 language = ""
-            }
-            if language != "" {
-                languageButton.backgroundColor = mainColor
-                languageButton.titleLabel?.textColor = UIColor.black
-            } else {
-                languageButton.backgroundColor = darkMainColor
             }
             
         case "science":
@@ -346,12 +330,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             } else {
                 science = ""
             }
-            if science != "" {
-                scienceButton.backgroundColor = mainColor
-                scienceButton.titleLabel?.textColor = UIColor.black
-            } else {
-                scienceButton.backgroundColor = darkMainColor
-            }
             
         case "other":
             if descriptionTextField.text != "" && descriptionTextField.text != "#" {
@@ -359,23 +337,79 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             } else {
                 other = ""
             }
-            if other != "" {
-                otherButton.backgroundColor = mainColor
-                otherButton.titleLabel?.textColor = UIColor.black
-            } else {
-                otherButton.backgroundColor = darkMainColor
-            }
-            
-            
             
         default:
             deselectAllButtons()
             
         }
+    }
+    
+    func rightColourForButtons() {
+        if coding != "" {
+            codingButton.backgroundColor = mainColor
+            codingButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if codingButton.isSelected {
+                codingButton.backgroundColor = darkMainColor
+            } else {
+                codingButton.backgroundColor = .black
+            }
+        }
         
+        if design != "" {
+            designButton.backgroundColor = mainColor
+            designButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if designButton.isSelected {
+                designButton.backgroundColor = darkMainColor
+            } else {
+                designButton.backgroundColor = .black
+            }
+        }
         
+        if business != "" {
+            businessButton.backgroundColor = mainColor
+            businessButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if businessButton.isSelected {
+                businessButton.backgroundColor = darkMainColor
+            } else {
+                businessButton.backgroundColor = .black
+            }
+        }
         
+        if language != "" {
+            languageButton.backgroundColor = mainColor
+            languageButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if languageButton.isSelected {
+                languageButton.backgroundColor = darkMainColor
+            } else {
+                languageButton.backgroundColor = .black
+            }
+        }
         
+        if science != "" {
+            scienceButton.backgroundColor = mainColor
+            scienceButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if scienceButton.isSelected {
+                scienceButton.backgroundColor = darkMainColor
+            } else {
+                scienceButton.backgroundColor = .black
+            }
+        }
+        
+        if other != "" {
+            otherButton.backgroundColor = mainColor
+            otherButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if otherButton.isSelected {
+                otherButton.backgroundColor = darkMainColor
+            } else {
+                otherButton.backgroundColor = .black
+            }
+        }
     }
     
     @objc func datePickeralueChanged(sender: UIDatePicker) {
