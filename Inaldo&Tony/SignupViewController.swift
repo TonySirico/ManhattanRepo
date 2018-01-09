@@ -203,6 +203,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
+        textField.text?.append("#")
+        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if string.contains(" ") {
+            textField.text?.append("   ")
+        }
+        
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -344,6 +355,14 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                             return
                         }
                     })
+                } else {
+                    let photoData = UIImageJPEGRepresentation(#imageLiteral(resourceName: "dummyProfileImage"), 0.1)
+                    userPhotoRef.putData(photoData!, metadata: nil, completion: { (metadata, error) in
+                        if error != nil {
+                            return
+                        }
+                    })
+                    
                 }
                 
                 let userReference = Database.database().reference().child("users").child(uid!)
@@ -362,6 +381,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
 }
 
+
+
+
+
 //extension usata per implementare la scelta dell'immagine profilo dall'utente
 extension SignupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -371,4 +394,7 @@ extension SignupViewController: UIImagePickerControllerDelegate, UINavigationCon
         }
         dismiss(animated: true, completion: nil) //serve a far scomparire la libreria una volta scelta la foto
     }
+    
+    
+    
 }

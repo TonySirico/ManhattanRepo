@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
     
+    
+    
     var coding = ""
     var design = ""
     var business = ""
@@ -50,6 +52,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var languageButton: RoundedButton!
     @IBOutlet weak var scienceButton: RoundedButton!
     @IBOutlet weak var otherButton: RoundedButton!
+    
+    //activityIndicator
+    
+    lazy var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    
     
     //BUTTONS ACTIONS
     
@@ -155,6 +163,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startLoadingIndicator()
         self.descriptionTextField.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action:
@@ -200,6 +209,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             } else {
                 if let data = photoData {
                     self.ProfilePic.image = UIImage(data: data)
+                    self.endLoadingIndicator()
                 }
             }
         })
@@ -392,15 +402,50 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string == " " {
-            textField.text?.append("    ")
-            textField.text?.removeLast()
+         
+        if string.contains(" ") {
+            textField.text?.append("   ")
         }
+        
         return true
     }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text?.append("#")
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+       
+        //Codice
+    
+    }
+    
+    let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
+    
+    func startLoadingIndicator() {
+        
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+     }
+    
+    func endLoadingIndicator(){
+        
+            blurEffectView.removeFromSuperview()
+            activityIndicator.stopAnimating()
+        
+            UIApplication.shared.endIgnoringInteractionEvents()
+    }
+
     
     
     

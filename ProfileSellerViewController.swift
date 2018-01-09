@@ -35,6 +35,10 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
     
     @IBOutlet weak var ProfilePic: RoundImageView!
     
+    
+    //Activity indicator
+    lazy var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    
     //Outlets
     
     @IBOutlet weak var nameSurname: UILabel!
@@ -182,6 +186,8 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startLoadingIndicator()
+        
         //Labels
         nameSurname.adjustsFontSizeToFitWidth = true
         nameSurname.text = ProfileSeller.shared.name + " " + ProfileSeller.shared.surname
@@ -195,8 +201,8 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
                 let minutesCoins = credits % 60
                 
                 self.nameSurname.text = (dictionary["name"] as? String)! + " " + (dictionary["surname"] as? String)!
-                self.badgeLabel.text = dictionary["badge"] as? String
-                self.birthLabel.text = dictionary["date of birth"] as? String
+                //self.badgeLabel.text = dictionary["badge"] as? String
+                //self.birthLabel.text = dictionary["date of birth"] as? String
                 self.timeCoinsLabel.text = String(format: "%02d:%02d", hoursCoins, minutesCoins)
             }
         }, withCancel: nil)
@@ -227,9 +233,11 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
             } else {
                 if let data = photoData {
                     self.ProfilePic.image = UIImage(data: data)
+                    self.endLoadingIndicator()
                 }
             }
         })
+        
         
         
         //delegate
@@ -239,6 +247,8 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
         //Slider
         timeTextField.text = "30"
         timeSlider.value = 30
+        
+
        
     }
     
@@ -346,6 +356,31 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
             return false
         }
         return true
+    }
+    
+    let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
+    
+    func startLoadingIndicator() {
+        
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    func endLoadingIndicator(){
+        
+        blurEffectView.removeFromSuperview()
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     /*
