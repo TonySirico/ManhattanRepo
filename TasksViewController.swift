@@ -115,20 +115,19 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 } else if progress <= 0 {
                     var time = 0
                     var description = ""
-                    var date = ""
                     
                     let currentUserRef = self.ref.child("users").child(self.uid)
                     let id = FriendSystem.system.onGoingList[indexPath.row].id
+                    let date = FriendSystem.system.onGoingDates[indexPath.row]
                     
-                    currentUserRef.child("requests").child("onGoingRequests").child(id!).observeSingleEvent(of: .value, with: { (DataSnapshot) in
+                    currentUserRef.child("requests").child("onGoingRequests").child(date + "," + id!).observeSingleEvent(of: .value, with: { (DataSnapshot) in
                         if let dictionary = DataSnapshot.value as? [String: AnyObject] {
                             time = dictionary["time"] as! Int
                             description = dictionary["description"] as! String
-                            date = dictionary["date"] as! String
-                            currentUserRef.child("requests").child("completedRequests").child(id!).setValue(["time": time, "bool": false, "description": description, "date": date])
+                            currentUserRef.child("requests").child("completedRequests").child(date + "," + id!).setValue(["time": time, "bool": false, "description": description, "date": date])
                         }
                     }, withCancel: nil)
-                    currentUserRef.child("requests").child("onGoingRequests").child(id!).removeValue()
+                    currentUserRef.child("requests").child("onGoingRequests").child(date + "," + id!).removeValue()
                 }
                 
                 cell.nameSurnameLabel?.text = FriendSystem.system.onGoingList[indexPath.row].name + " " + FriendSystem.system.onGoingList[indexPath.row].surname
