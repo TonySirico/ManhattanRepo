@@ -130,6 +130,7 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
             self.addBadgeToRequest()
             
             self.requestTableView.deleteRows(at: [indexPath], with: .fade)
+            
             success(true)
         })
       acceptAction.backgroundColor = UIColor(red:0.31, green:0.82, blue:0.30, alpha:1.0)

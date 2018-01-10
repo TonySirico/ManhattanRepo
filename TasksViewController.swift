@@ -209,6 +209,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }, withCancel: nil)
                 
                 currentUserRef.child("requests").child("onGoingRequests").child(date + "," + id!).removeValue()
+                
+                FriendSystem.system.onGoingList.remove(at: indexPath.row)
+                FriendSystem.system.onGoingDates.remove(at: indexPath.row)
+                
+                self.taskTableView.deleteRows(at: [indexPath], with: .fade)
+                
                 success(true)
             })
            
