@@ -103,7 +103,12 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
                 idRef.child("timeCoins").setValue(timeCoins+timeRequests!)
             })
             
+            FriendSystem.system.requestList.remove(at: indexPath.row)
+            FriendSystem.system.requestDates.remove(at: indexPath.row)
+            
             self.addBadgeToRequest()
+            
+            self.requestTableView.deleteRows(at: [indexPath], with: .fade)
             success(true)
         })
         refuseAction.backgroundColor = UIColor(red:1.00, green:0.36, blue:0.32, alpha:1.0)
@@ -119,7 +124,12 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
                 uidRef.child("timeCoins").setValue(timeCoins+timeRequests!)
             })
             
+            FriendSystem.system.requestList.remove(at: indexPath.row)
+            FriendSystem.system.requestDates.remove(at: indexPath.row)
+            
             self.addBadgeToRequest()
+            
+            self.requestTableView.deleteRows(at: [indexPath], with: .fade)
             success(true)
         })
       acceptAction.backgroundColor = UIColor(red:0.31, green:0.82, blue:0.30, alpha:1.0)

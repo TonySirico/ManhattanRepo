@@ -127,7 +127,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        FriendSystem.system.showRequests {
+            if let tabItems = self.tabBarController?.tabBar.items as NSArray!
+            {
+                let tabItem = tabItems[1] as! UITabBarItem
+                if FriendSystem.system.requestList.count != 0 {
+                    tabItem.badgeValue = "\(FriendSystem.system.requestList.count)"
+                } else {
+                    tabItem.badgeValue = nil
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
