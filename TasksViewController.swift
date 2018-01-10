@@ -138,7 +138,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.accessoryType = UITableViewCellAccessoryType.none
                 //cell.nameSurnameLabel?.sizeToFit()
                 cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
-                cell.skillRequestedLabel?.sizeToFit()
+                
                 cell.timeRequestedLabel?.sizeToFit()
                 cell.timeLeftLabel?.adjustsFontSizeToFitWidth = true
                 

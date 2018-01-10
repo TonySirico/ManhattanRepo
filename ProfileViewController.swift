@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
     
-    
+    let darkMainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:0.6)
     
     var coding = ""
     var design = ""
@@ -74,67 +74,96 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func codingAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !codingButton.isSelected {
             deselectAllButtons()
             codingButton.isSelected = true
-            descriptionTextField.text! = coding
+            if coding != "" {
+                descriptionTextField.text! = coding
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "coding"
         }
-        fillButtons()
-        
     }
     
     @IBAction func designAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !designButton.isSelected {
             deselectAllButtons()
             designButton.isSelected = true
-            descriptionTextField.text! = design
+            if design != "" {
+                descriptionTextField.text! = design
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "design"
         }
-        fillButtons()
     }
     
     
     @IBAction func businessAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !businessButton.isSelected {
             deselectAllButtons()
             businessButton.isSelected = true
-            descriptionTextField.text! = business
+            if business != "" {
+                descriptionTextField.text! = business
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "business"
         }
-        fillButtons()
     }
     
     
     @IBAction func languageAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !languageButton.isSelected {
             deselectAllButtons()
             languageButton.isSelected = true
-            descriptionTextField.text! = language
+            if language != "" {
+                descriptionTextField.text! = language
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "language"
         }
-        fillButtons()
     }
     
     
     @IBAction func scienceAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !scienceButton.isSelected {
             deselectAllButtons()
             scienceButton.isSelected = true
-            descriptionTextField.text! = science
+            if science != "" {
+                descriptionTextField.text! = science
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "science"
         }
-        fillButtons()
     }
     
     @IBAction func otherAction(_ sender: Any) {
+        descriptionTextField.becomeFirstResponder()
+        rightColourForButtons()
         if !otherButton.isSelected {
             deselectAllButtons()
             otherButton.isSelected = true
-            descriptionTextField.text! = other
+            if other != "" {
+                descriptionTextField.text! = other
+            } else {
+                descriptionTextField.text = "#"
+            }
             flag = "other"
         }
-        fillButtons()
     }
     
     func deselectAllButtons() {
@@ -198,7 +227,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                 self.business = (dictionary["business"] as? String)!
                 
                 
-                self.fillButtons()
+                self.rightColourForButtons()
             }
         }, withCancel: nil)
         
@@ -252,115 +281,146 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         present(pickerController, animated: true, completion: nil)
     }
     
-    func descriptionFill() {
-        
-        switch flag {
-            
-        case "coding":
-            coding = descriptionTextField.text!
-            if coding != "" {
-                codingButton.backgroundColor = mainColor
-                codingButton.titleLabel?.textColor = UIColor.black
-            } else {
-                if !codingButton.isSelected {codingButton.backgroundColor = UIColor.black}
-            }
-            
-        case "design":
-            design = descriptionTextField.text!
-            if design != "" {
-                designButton.backgroundColor = mainColor
-                designButton.titleLabel?.textColor = UIColor.black
-            } else {
-                if !designButton.isSelected  {designButton.backgroundColor = UIColor.black}
-            }
-            
-        case "business":
-            business = descriptionTextField.text!
-            if business != "" {
-                businessButton.backgroundColor = mainColor
-                businessButton.titleLabel?.textColor = UIColor.black
-            } else {
-                if !businessButton.isSelected {businessButton.backgroundColor = UIColor.black}
-            }
-        case "language":
-            language = descriptionTextField.text!
-            if language != "" {
-                languageButton.backgroundColor = mainColor
-                languageButton.titleLabel?.textColor = UIColor.black
-            } else {
-                if !languageButton.isSelected {languageButton.backgroundColor = UIColor.black}
-            }
-            
-        case "science":
-            science = descriptionTextField.text!
-            if science != "" {
-                scienceButton.backgroundColor = mainColor
-                scienceButton.titleLabel?.textColor = UIColor.black
-            } else {
-                if !scienceButton.isSelected {scienceButton.backgroundColor = UIColor.black}
-            }
-            
-        case "other":
-            other = descriptionTextField.text!
-            if other != "" {
-                otherButton.backgroundColor = mainColor
-                otherButton.titleLabel?.textColor = UIColor.black
-            } else {
-                if !otherButton.isSelected {otherButton.backgroundColor = UIColor.black}
-            }
-            
-            
-            
-        default:
-            deselectAllButtons()
-            
+    var secondLastTextCount = 0
+    var lastTextCount = 0
+    
+    @IBAction func descriptionTextFieldEditingChanged(_ sender: Any) {
+        if descriptionTextField.text?.count == 1 && descriptionTextField.text != "#" {
+            var string = "#"
+            string.append(descriptionTextField.text!)
+            descriptionTextField.text = string
         }
-        
-        
-        
-        
+        secondLastTextCount = lastTextCount
+        lastTextCount = (descriptionTextField.text?.count)!
+        if secondLastTextCount < lastTextCount {
+            if descriptionTextField.text?.last == " " {
+                descriptionTextField.text?.append("   #")
+                lastTextCount = (descriptionTextField.text?.count)!
+            }
+        }
+        descriptionFill()
+        rightColourForButtons()
     }
     
-    
-    func fillButtons() {
-        
-        //Funzione che colora i pulsanti con le skill
-        
+    func rightColourForButtons() {
         if coding != "" {
             codingButton.backgroundColor = mainColor
             codingButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if codingButton.isSelected {
+                codingButton.backgroundColor = darkMainColor
+            } else {
+                codingButton.backgroundColor = .black
+            }
         }
         
         if design != "" {
             designButton.backgroundColor = mainColor
             designButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if designButton.isSelected {
+                designButton.backgroundColor = darkMainColor
+            } else {
+                designButton.backgroundColor = .black
+            }
         }
         
         if business != "" {
             businessButton.backgroundColor = mainColor
             businessButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if businessButton.isSelected {
+                businessButton.backgroundColor = darkMainColor
+            } else {
+                businessButton.backgroundColor = .black
+            }
         }
         
         if language != "" {
             languageButton.backgroundColor = mainColor
-            languageButton.titleLabel?.textColor = UIColor.black}
+            languageButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if languageButton.isSelected {
+                languageButton.backgroundColor = darkMainColor
+            } else {
+                languageButton.backgroundColor = .black
+            }
+        }
         
         if science != "" {
             scienceButton.backgroundColor = mainColor
             scienceButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if scienceButton.isSelected {
+                scienceButton.backgroundColor = darkMainColor
+            } else {
+                scienceButton.backgroundColor = .black
+            }
         }
         
         if other != "" {
             otherButton.backgroundColor = mainColor
             otherButton.titleLabel?.textColor = UIColor.black
+        } else {
+            if otherButton.isSelected {
+                otherButton.backgroundColor = darkMainColor
+            } else {
+                otherButton.backgroundColor = .black
+            }
         }
-        
     }
     
-    
-    
-    
-    
+    func descriptionFill() {
+        
+        switch flag {
+            
+        case "coding":
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                coding = descriptionTextField.text!
+            } else {
+                coding = ""
+            }
+            
+        case "design":
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                design = descriptionTextField.text!
+            } else {
+                design = ""
+            }
+            
+        case "business":
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                business = descriptionTextField.text!
+            } else {
+                business = ""
+            }
+            
+        case "language":
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                language = descriptionTextField.text!
+            } else {
+                language = ""
+            }
+            
+        case "science":
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                science = descriptionTextField.text!
+            } else {
+                science = ""
+            }
+            
+        case "other":
+            if descriptionTextField.text != "" && descriptionTextField.text != "#" {
+                other = descriptionTextField.text!
+            } else {
+                other = ""
+            }
+            
+        default:
+            deselectAllButtons()
+            
+        }
+    }
     
     //Move view according to keyboard height
     @objc func keyboardWillShow(notification: Notification) {
@@ -384,6 +444,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         descriptionFill()
+        rightColourForButtons()
+        descriptionTextField.text = ""
         deselectAllButtons()
     }
     

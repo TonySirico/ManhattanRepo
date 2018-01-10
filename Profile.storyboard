@@ -128,6 +128,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="twitter"/>
+                                <connections>
+                                    <action selector="descriptionTextFieldEditingChanged:" destination="xJE-RJ-PWq" eventType="editingChanged" id="64s-g6-1TQ"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Earned Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f14-mz-kcq">
                                 <rect key="frame" x="140" y="355" width="97" height="21"/>
