@@ -426,7 +426,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     //-----------------------------------------------------
     
     @IBAction func signUpAction(_ sender: Any) {
-        if let name = nameTextField.text, let surname = surnameTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let badge = badgeTextField.text  {
+        if let name = nameTextField.text, let surname = surnameTextField.text, let email = emailTextField.text?.lowercased(), let password = passwordTextField.text, let badge = badgeTextField.text  {
             
             if name.isEmpty || password.isEmpty || email.isEmpty || password.isEmpty {
                 AlertController.showAlert(inViewController: self, title: "Missing Info", message: "Fill all fields")
