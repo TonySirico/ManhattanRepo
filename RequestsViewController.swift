@@ -36,8 +36,12 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell" , for: indexPath) as? RequestCell
         
         cell!.nameSurname.text = FriendSystem.system.requestList[indexPath.row].name + " " + FriendSystem.system.requestList[indexPath.row].surname
-        cell!.timeRequested.text = String(FriendSystem.system.requestList[indexPath.row].requestTime) + " TimeCoins"
+        let credits = FriendSystem.system.requestList[indexPath.row].requestTime
+        let hoursCoins = (credits!/60) % 24
+        let minutesCoins = credits! % 60
+        //cell!.timeRequested.text = String(FriendSystem.system.requestList[indexPath.row].requestTime) + " TimeCoins"
 //        cell!.dateLabel.text = FriendSystem.system.requestList[indexPath.row].requestDate
+        cell!.timeRequested.text = String(format: "%02d:%02d", hoursCoins, minutesCoins)
         cell!.skillRequested.text = FriendSystem.system.requestList[indexPath.row].requestDescription
 
         
@@ -49,6 +53,8 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         requestTableView.dataSource = self
         requestTableView.delegate = self
@@ -177,6 +183,8 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
         
         //popup
         let popUpViewController = UIStoryboard(name: "Requests", bundle: nil).instantiateViewController(withIdentifier: "descriptionPopUp") as! PopUpViewController
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         self.addChildViewController(popUpViewController)
         popUpViewController.view.frame = self.view.frame
         self.view.addSubview(popUpViewController.view)

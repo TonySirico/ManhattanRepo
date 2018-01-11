@@ -18,7 +18,11 @@ class PopUpViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:0.8)
         
-        descriptionTextView.text = RequestDescription.shared.description
+        if RequestDescription.shared.description != " " {
+            descriptionTextView.text = RequestDescription.shared.description
+        } else {
+            descriptionTextView.text = "No description for this task."
+        }
         
         popUpCentralView.layer.cornerRadius = 20.0
         

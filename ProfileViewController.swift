@@ -486,6 +486,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     func startLoadingIndicator() {
         
+        
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(blurEffectView)

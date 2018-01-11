@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-v7-B1F" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-v7-B1F" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
                                 <rect key="frame" x="128" y="498" width="120" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login"/>
@@ -26,14 +26,14 @@
                                     <action selector="loginTapped:" destination="4HG-Gb-B2G" eventType="touchUpInside" id="gNs-aD-9rr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EQ-9Z-NW9">
-                                <rect key="frame" x="112" y="571" width="152" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.59215686274509804" green="0.76862745098039209" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbl-nF-ltb">
+                                <rect key="frame" x="112" y="539" width="152" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Forgot the Password?">
+                                    <color key="titleColor" red="0.59215686270000001" green="0.76862745099999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Dwx-Pk-NBg" kind="show" id="APZ-zf-gq1"/>
+                                    <segue destination="wg9-LV-W8o" kind="show" id="evD-OC-Hh0"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="renTimeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-ZF-5on" userLabel="appLogo" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
@@ -43,13 +43,13 @@
                                     <constraint firstAttribute="height" constant="200" id="kkA-Sl-31o"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-mt-WkX" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-mt-WkX" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                 <rect key="frame" x="62" y="377" width="250" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-g5-GrC" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-g5-GrC" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                 <rect key="frame" x="62" y="415" width="250" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -62,13 +62,25 @@
                                     <constraint firstAttribute="height" constant="26" id="cTr-Vc-cC7"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EQ-9Z-NW9">
+                                <rect key="frame" x="112" y="597" width="152" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.59215686274509804" green="0.76862745098039209" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Dwx-Pk-NBg" kind="show" id="APZ-zf-gq1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="FWR-iN-VPf" secondAttribute="trailing" constant="102" id="5dH-cm-ye6"/>
                             <constraint firstItem="M1P-mt-WkX" firstAttribute="top" secondItem="FWR-iN-VPf" secondAttribute="bottom" constant="24" id="6Zl-ma-XQc"/>
                             <constraint firstItem="M1P-mt-WkX" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="62" id="7K5-Op-um6"/>
+                            <constraint firstItem="Bbl-nF-ltb" firstAttribute="leading" secondItem="7EQ-9Z-NW9" secondAttribute="leading" id="ALW-pN-d2x"/>
                             <constraint firstItem="1mP-g5-GrC" firstAttribute="top" secondItem="M1P-mt-WkX" secondAttribute="bottom" constant="8" id="BJr-g2-azw"/>
+                            <constraint firstItem="Bbl-nF-ltb" firstAttribute="trailing" secondItem="7EQ-9Z-NW9" secondAttribute="trailing" id="GfS-ZL-dd2"/>
                             <constraint firstItem="BKk-v7-B1F" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="128" id="IR9-ft-fUh"/>
                             <constraint firstItem="LDE-J0-tRY" firstAttribute="bottom" secondItem="7EQ-9Z-NW9" secondAttribute="bottom" constant="66" id="Mfp-71-Mzl"/>
                             <constraint firstItem="9lV-ZF-5on" firstAttribute="leading" secondItem="LDE-J0-tRY" secondAttribute="leading" constant="88" id="MpJ-UK-5fk"/>
@@ -76,6 +88,7 @@
                             <constraint firstItem="FWR-iN-VPf" firstAttribute="top" secondItem="9lV-ZF-5on" secondAttribute="bottom" constant="17" id="Tvi-zA-crr"/>
                             <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="7EQ-9Z-NW9" secondAttribute="trailing" constant="111" id="UmS-Oe-bik"/>
                             <constraint firstItem="M1P-mt-WkX" firstAttribute="top" secondItem="FWR-iN-VPf" secondAttribute="bottom" constant="24" id="X5m-xI-NCR"/>
+                            <constraint firstItem="Bbl-nF-ltb" firstAttribute="top" secondItem="BKk-v7-B1F" secondAttribute="bottom" constant="8" symbolic="YES" id="b57-QI-TRx"/>
                             <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="9lV-ZF-5on" secondAttribute="trailing" constant="87" id="bGH-Dd-Em1"/>
                             <constraint firstItem="9lV-ZF-5on" firstAttribute="top" secondItem="LDE-J0-tRY" secondAttribute="top" constant="46" id="dGv-GJ-LBN"/>
                             <constraint firstItem="LDE-J0-tRY" firstAttribute="trailing" secondItem="M1P-mt-WkX" secondAttribute="trailing" constant="63" id="fFT-05-7qa"/>
@@ -102,6 +115,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I7-ME-zMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3154.4000000000001" y="71.514242878560722"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="UrJ-j2-hKS">
+            <objects>
+                <viewController id="wg9-LV-W8o" customClass="ForgotPasswordViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6NJ-dd-1RE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2X-hQ-Iud" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="15" y="247" width="344" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7nN-fH-sNT"/>
+                                    <constraint firstAttribute="width" constant="344" id="B9L-Ug-CaN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type your email below to recover your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mie-bA-1Sl">
+                                <rect key="frame" x="16" y="141" width="343" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="O9d-7V-b8P"/>
+                                    <constraint firstAttribute="width" constant="343" id="c6y-D2-TlT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LA-C4-P9d" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="97.5" y="346" width="180" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="9Ev-la-pKr"/>
+                                    <constraint firstAttribute="width" constant="180" id="fa7-Cs-gJ0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <state key="normal" title="Recover Password"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="4HG-Gb-B2G" eventType="touchUpInside" id="jx0-WK-6Jz"/>
+                                    <action selector="sendRecoverEmail:" destination="wg9-LV-W8o" eventType="touchUpInside" id="y37-rI-qno"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="q2X-hQ-Iud" firstAttribute="top" secondItem="Mie-bA-1Sl" secondAttribute="bottom" constant="20" id="ErV-Jk-39S"/>
+                            <constraint firstItem="q2X-hQ-Iud" firstAttribute="top" secondItem="Mie-bA-1Sl" secondAttribute="bottom" constant="20" id="ZAc-Ti-yz5"/>
+                            <constraint firstItem="Vrj-Kt-rdE" firstAttribute="trailing" secondItem="q2X-hQ-Iud" secondAttribute="trailing" constant="16" id="aOo-f0-uMB"/>
+                            <constraint firstItem="q2X-hQ-Iud" firstAttribute="leading" secondItem="Vrj-Kt-rdE" secondAttribute="leading" constant="15" id="aQ1-Gc-8Ov"/>
+                            <constraint firstItem="9LA-C4-P9d" firstAttribute="top" secondItem="q2X-hQ-Iud" secondAttribute="bottom" constant="69" id="fG1-HP-0g2"/>
+                            <constraint firstItem="Mie-bA-1Sl" firstAttribute="top" secondItem="Vrj-Kt-rdE" secondAttribute="top" constant="77" id="odu-8a-ulj"/>
+                            <constraint firstItem="9LA-C4-P9d" firstAttribute="centerX" secondItem="6NJ-dd-1RE" secondAttribute="centerX" id="pgn-qk-JPV"/>
+                            <constraint firstItem="Vrj-Kt-rdE" firstAttribute="trailing" secondItem="Mie-bA-1Sl" secondAttribute="trailing" constant="16" id="tuP-4F-cnA"/>
+                            <constraint firstItem="Mie-bA-1Sl" firstAttribute="leading" secondItem="Vrj-Kt-rdE" secondAttribute="leading" constant="16" id="wvh-zx-Ssq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vrj-Kt-rdE"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="klS-xC-vEh" appends="YES" id="FDo-lW-j1U"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="q2X-hQ-Iud" id="09L-qY-zbd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lQL-AZ-WkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="klS-xC-vEh">
+                    <connections>
+                        <action selector="tapGesture:" destination="wg9-LV-W8o" id="5AW-NG-4a3"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-4260" y="1272.4137931034484"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="KLM-SU-pCT">
@@ -306,7 +392,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2770.4000000000001" y="1190.1049475262371"/>
+            <point key="canvasLocation" x="-2543" y="1192"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NO1-Yz-DKK">
@@ -402,6 +488,6 @@
         <image name="renTimeLogo" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JAH-un-G18"/>
+        <segue reference="q5t-Tu-Z7a"/>
     </inferredMetricsTieBreakers>
 </document>

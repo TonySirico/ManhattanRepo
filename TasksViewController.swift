@@ -237,9 +237,27 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
-    //Custom Animation Function on UIImageView
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0 {
+            
+            let selectedIndexPath = tableView.indexPathForSelectedRow
+            let selectedCell = tableView.cellForRow(at: selectedIndexPath!) as! OnGoingTaskCell
+            RequestDescription.shared.description = selectedCell.skillRequestedLabel.text!
+            //popup
+            let popUpViewController = UIStoryboard(name: "Requests", bundle: nil).instantiateViewController(withIdentifier: "descriptionPopUp") as! PopUpViewController
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+            self.addChildViewController(popUpViewController)
+            popUpViewController.view.frame = self.view.frame
+            self.view.addSubview(popUpViewController.view)
+            popUpViewController.didMove(toParentViewController: self)
+            
+            
+        }
+        
+        
+    }
     
     //TableView Custom Header
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

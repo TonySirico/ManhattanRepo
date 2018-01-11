@@ -9,7 +9,7 @@ class User {
     var requestTime: Int!
     var requestDescription: String!
     var requestDate: String!
-    var descriptions: String!
+    var descriptions: String = ""
     var bool: Bool?
     
     init(userEmail: String, userID: String) {

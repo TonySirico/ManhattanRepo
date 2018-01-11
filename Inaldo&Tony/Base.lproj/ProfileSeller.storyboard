@@ -145,7 +145,7 @@
                                                     <action selector="timeSliderValueChanged:" destination="xJE-RJ-PWq" eventType="valueChanged" id="d3x-X9-cgO"/>
                                                 </connections>
                                             </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requested TimeCoins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kML-Lh-hdn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requested minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kML-Lh-hdn">
                                                 <rect key="frame" x="12" y="609" width="172" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="172" id="qgU-Sc-ucu"/>

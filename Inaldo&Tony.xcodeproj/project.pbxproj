@@ -19,10 +19,12 @@
 		0A75D55B1FFE4F32001939EF /* requestDescriptionSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */; };
 		0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */; };
 		0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAE99D1FE186770022E7F5 /* RoundButton.swift */; };
+		0AC3A33A2006B20500A00C29 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AC3A3392006B20500A00C29 /* GoogleService-Info.plist */; };
 		0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A41FE122C0003774B1 /* LoginViewController.swift */; };
 		0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A61FE1235F003774B1 /* SignupViewController.swift */; };
 		0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */; };
 		0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02AA1FE14279003774B1 /* RoundImageView.swift */; };
+		0AFD72692007827C00451CFD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD72682007827C00451CFD /* ForgotPasswordViewController.swift */; };
 		3242DB601FE910D3001D936B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242DB5F1FE910D3001D936B /* Singleton.swift */; };
 		3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3242DB661FE919E3001D936B /* ProfileSeller.storyboard */; };
 		3242DB6A1FE91CDE001D936B /* ProfileSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */; };
@@ -38,7 +40,6 @@
 		32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */; };
 		32E80C501FDE943F0006EF76 /* Inaldo_TonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */; };
 		32E80C5B1FDE943F0006EF76 /* Inaldo_TonyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */; };
-		65ABBFAA1FFE8D65000F3DDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65ABBFA91FFE8D65000F3DDD /* GoogleService-Info.plist */; };
 		CE6F58F5BA82160FD678F239 /* Pods_Inaldo_Tony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,10 +73,12 @@
 		0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDescriptionSingleton.swift; sourceTree = "<group>"; };
 		0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextField.swift; sourceTree = "<group>"; };
 		0ABAE99D1FE186770022E7F5 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		0AC3A3392006B20500A00C29 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0ACC02A41FE122C0003774B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0ACC02A61FE1235F003774B1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0ACC02AA1FE14279003774B1 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		0AFD72682007827C00451CFD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3242DB5F1FE910D3001D936B /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3242DB671FE919E3001D936B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/ProfileSeller.storyboard"; sourceTree = "<group>"; };
 		3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSellerViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +101,6 @@
 		32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyUITests.swift; sourceTree = "<group>"; };
 		32E80C5C1FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inaldo_Tony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		65ABBFA91FFE8D65000F3DDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.debug.xcconfig"; sourceTree = "<group>"; };
 		B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,15 +176,16 @@
 		32E80C391FDE943F0006EF76 /* Inaldo&Tony */ = {
 			isa = PBXGroup;
 			children = (
+				0AC3A3392006B20500A00C29 /* GoogleService-Info.plist */,
 				32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */,
 				32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */,
 				32E80C3C1FDE943F0006EF76 /* ViewController.swift */,
 				32E80C3E1FDE943F0006EF76 /* Main.storyboard */,
+				0AFD72682007827C00451CFD /* ForgotPasswordViewController.swift */,
 				0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */,
 				0ACC02A61FE1235F003774B1 /* SignupViewController.swift */,
 				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
 				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
-				65ABBFA91FFE8D65000F3DDD /* GoogleService-Info.plist */,
 				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
 				32E80C461FDE943F0006EF76 /* Info.plist */,
 			);
@@ -336,11 +339,11 @@
 			files = (
 				32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */,
 				32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */,
+				0AC3A33A2006B20500A00C29 /* GoogleService-Info.plist in Resources */,
 				32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */,
 				0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */,
 				0057E3F61FDEA07B005F68D7 /* Requests.storyboard in Resources */,
 				0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */,
-				65ABBFAA1FFE8D65000F3DDD /* GoogleService-Info.plist in Resources */,
 				0057E3F41FDEA03A005F68D7 /* Home.storyboard in Resources */,
 				3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */,
 			);
@@ -429,6 +432,7 @@
 			files = (
 				0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */,
 				324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */,
+				0AFD72692007827C00451CFD /* ForgotPasswordViewController.swift in Sources */,
 				0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */,
 				0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */,
 				0A75D5551FFE3EA5001939EF /* RoundedUITextView.swift in Sources */,
@@ -639,10 +643,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2U9U5N4EH;
+				DEVELOPMENT_TEAM = X8PFEAAF6X;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prov;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,10 +659,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2U9U5N4EH;
+				DEVELOPMENT_TEAM = X8PFEAAF6X;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manhattanchallenge.prov;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

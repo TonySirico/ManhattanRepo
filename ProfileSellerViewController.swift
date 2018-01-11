@@ -71,8 +71,14 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
   
     @IBAction func timeSliderValueChanged(_ sender: UISlider) {
         
-        let value = Int(sender.value)
-        timeTextField.text = "\(value)"
+        let roundedValue = round(sender.value / 15) * 15
+        sender.value = roundedValue
+        
+        //let value = Int(sender.value)
+        
+        let myValue = Int(roundedValue)
+        
+        timeTextField.text = "\(myValue)"
     }
     
     
@@ -82,7 +88,7 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
         let date = NSDate(timeIntervalSince1970: self.interval)
         
         let requestAlert = UIAlertController(title: "Request Sent!", message: "Request sent successfully to \(self.nameSurname.text!).", preferredStyle: .alert)
-        requestAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+        requestAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             self.performSegue(withIdentifier: "unwindToHome", sender: self)
         }))
         
@@ -94,7 +100,11 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
             
             if timeCoins >= timeRequests {
                 let uidRef = Database.database().reference().child("users").child(self.uid!)
-                FriendSystem.system.sendRequestToUser(self.userID, timeRequests, "\(date)", descriptionRequests)
+                if descriptionRequests == "Tap to write a description for the request" {
+                    FriendSystem.system.sendRequestToUser(self.userID, timeRequests, "\(date)", " ")
+                } else {
+                    FriendSystem.system.sendRequestToUser(self.userID, timeRequests, "\(date)", descriptionRequests)
+                }
                 uidRef.child("timeCoins").setValue(timeCoins-timeRequests)
                 self.present(requestAlert, animated: true)
                 
@@ -246,7 +256,9 @@ class ProfileSellerViewController: UIViewController, UITextFieldDelegate, UIText
         
         //Slider
         timeTextField.text = "30"
+        timeSlider.minimumValue = 15
         timeSlider.value = 30
+        
         
 
        
