@@ -16,10 +16,9 @@
 		0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */; };
 		0A75D5551FFE3EA5001939EF /* RoundedUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */; };
 		0A75D5591FFE46DA001939EF /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D5581FFE46DA001939EF /* PopUpViewController.swift */; };
-		0A75D55B1FFE4F32001939EF /* requestDescriptionSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */; };
+		0A75D55B1FFE4F32001939EF /* RequestDescriptionSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75D55A1FFE4F32001939EF /* RequestDescriptionSingleton.swift */; };
 		0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */; };
 		0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAE99D1FE186770022E7F5 /* RoundButton.swift */; };
-		0AC3A33A2006B20500A00C29 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AC3A3392006B20500A00C29 /* GoogleService-Info.plist */; };
 		0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A41FE122C0003774B1 /* LoginViewController.swift */; };
 		0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A61FE1235F003774B1 /* SignupViewController.swift */; };
 		0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */; };
@@ -34,13 +33,13 @@
 		32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */; };
 		32B2BEB41FEAB29800D7D8CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2BEB31FEAB29800D7D8CC /* User.swift */; };
 		32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */; };
-		32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3C1FDE943F0006EF76 /* ViewController.swift */; };
 		32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C3E1FDE943F0006EF76 /* Main.storyboard */; };
 		32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C411FDE943F0006EF76 /* Assets.xcassets */; };
 		32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */; };
 		32E80C501FDE943F0006EF76 /* Inaldo_TonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */; };
 		32E80C5B1FDE943F0006EF76 /* Inaldo_TonyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */; };
 		CE6F58F5BA82160FD678F239 /* Pods_Inaldo_Tony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */; };
+		DD8A328B200E141600FE95E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8A328A200E141500FE95E1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +69,9 @@
 		0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeRoundedUITextField.swift; sourceTree = "<group>"; };
 		0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextView.swift; sourceTree = "<group>"; };
 		0A75D5581FFE46DA001939EF /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
-		0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestDescriptionSingleton.swift; sourceTree = "<group>"; };
+		0A75D55A1FFE4F32001939EF /* RequestDescriptionSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDescriptionSingleton.swift; sourceTree = "<group>"; };
 		0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextField.swift; sourceTree = "<group>"; };
 		0ABAE99D1FE186770022E7F5 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		0AC3A3392006B20500A00C29 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0ACC02A41FE122C0003774B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0ACC02A61FE1235F003774B1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 		32B2BEB31FEAB29800D7D8CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inaldo&Tony.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32E80C3C1FDE943F0006EF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		32E80C3F1FDE943F0006EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32E80C411FDE943F0006EF76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32E80C441FDE943F0006EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,6 +100,7 @@
 		3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inaldo_Tony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.debug.xcconfig"; sourceTree = "<group>"; };
 		B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.release.xcconfig"; sourceTree = "<group>"; };
+		DD8A328A200E141500FE95E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,25 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				3242DB5F1FE910D3001D936B /* Singleton.swift */,
-				0A75D55A1FFE4F32001939EF /* requestDescriptionSingleton.swift */,
+				0A75D55A1FFE4F32001939EF /* RequestDescriptionSingleton.swift */,
 				32B2BEB31FEAB29800D7D8CC /* User.swift */,
-				3242DB661FE919E3001D936B /* ProfileSeller.storyboard */,
-				3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */,
-				0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */,
-				0A75D5581FFE46DA001939EF /* PopUpViewController.swift */,
-				324910C91FDEA1D9004FF991 /* ProfileViewController.swift */,
-				0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */,
-				324910C71FDEA1C7004FF991 /* TasksViewController.swift */,
-				0057E3F51FDEA07B005F68D7 /* Requests.storyboard */,
-				324910C51FDEA1B8004FF991 /* RequestsViewController.swift */,
-				0057E3F21FDEA03A005F68D7 /* Home.storyboard */,
-				0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */,
-				0ACC02AA1FE14279003774B1 /* RoundImageView.swift */,
-				0ABAE99D1FE186770022E7F5 /* RoundButton.swift */,
-				0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */,
-				0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */,
-				0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */,
-				0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */,
+				32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */,
+				DD8A328E200E149E00FE95E1 /* CustomUI */,
+				DD8A328D200E147B00FE95E1 /* Storyboad */,
+				DD8A328C200E142F00FE95E1 /* ViewController */,
 				32E80C391FDE943F0006EF76 /* Inaldo&Tony */,
 				32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */,
 				32E80C591FDE943F0006EF76 /* Inaldo&TonyUITests */,
@@ -176,17 +161,9 @@
 		32E80C391FDE943F0006EF76 /* Inaldo&Tony */ = {
 			isa = PBXGroup;
 			children = (
-				0AC3A3392006B20500A00C29 /* GoogleService-Info.plist */,
+				DD8A328A200E141500FE95E1 /* GoogleService-Info.plist */,
 				32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */,
-				32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */,
-				32E80C3C1FDE943F0006EF76 /* ViewController.swift */,
-				32E80C3E1FDE943F0006EF76 /* Main.storyboard */,
-				0AFD72682007827C00451CFD /* ForgotPasswordViewController.swift */,
-				0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */,
-				0ACC02A61FE1235F003774B1 /* SignupViewController.swift */,
-				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
 				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
-				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
 				32E80C461FDE943F0006EF76 /* Info.plist */,
 			);
 			path = "Inaldo&Tony";
@@ -225,6 +202,50 @@
 				B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD8A328C200E142F00FE95E1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				324910C91FDEA1D9004FF991 /* ProfileViewController.swift */,
+				324910C51FDEA1B8004FF991 /* RequestsViewController.swift */,
+				0AFD72682007827C00451CFD /* ForgotPasswordViewController.swift */,
+				0A75D5581FFE46DA001939EF /* PopUpViewController.swift */,
+				324910C71FDEA1C7004FF991 /* TasksViewController.swift */,
+				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
+				0ACC02A61FE1235F003774B1 /* SignupViewController.swift */,
+				0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */,
+				3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DD8A328D200E147B00FE95E1 /* Storyboad */ = {
+			isa = PBXGroup;
+			children = (
+				0057E3F51FDEA07B005F68D7 /* Requests.storyboard */,
+				0057E3F21FDEA03A005F68D7 /* Home.storyboard */,
+				32E80C3E1FDE943F0006EF76 /* Main.storyboard */,
+				0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */,
+				0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */,
+				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
+				3242DB661FE919E3001D936B /* ProfileSeller.storyboard */,
+			);
+			path = Storyboad;
+			sourceTree = "<group>";
+		};
+		DD8A328E200E149E00FE95E1 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */,
+				0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */,
+				0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */,
+				0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */,
+				0ABAE99D1FE186770022E7F5 /* RoundButton.swift */,
+				0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */,
+				0ACC02AA1FE14279003774B1 /* RoundImageView.swift */,
+			);
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,11 +360,11 @@
 			files = (
 				32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */,
 				32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */,
-				0AC3A33A2006B20500A00C29 /* GoogleService-Info.plist in Resources */,
 				32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */,
 				0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */,
 				0057E3F61FDEA07B005F68D7 /* Requests.storyboard in Resources */,
 				0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */,
+				DD8A328B200E141600FE95E1 /* GoogleService-Info.plist in Resources */,
 				0057E3F41FDEA03A005F68D7 /* Home.storyboard in Resources */,
 				3242DB681FE919E3001D936B /* ProfileSeller.storyboard in Resources */,
 			);
@@ -437,14 +458,13 @@
 				0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */,
 				0A75D5551FFE3EA5001939EF /* RoundedUITextView.swift in Sources */,
 				3242DB601FE910D3001D936B /* Singleton.swift in Sources */,
-				32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */,
 				0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */,
 				32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */,
 				0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */,
 				3242DB6A1FE91CDE001D936B /* ProfileSellerViewController.swift in Sources */,
 				32B2BEB01FEA84F300D7D8CC /* AlertController.swift in Sources */,
 				324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */,
-				0A75D55B1FFE4F32001939EF /* requestDescriptionSingleton.swift in Sources */,
+				0A75D55B1FFE4F32001939EF /* RequestDescriptionSingleton.swift in Sources */,
 				0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */,
 				324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */,
 				0A75D5591FFE46DA001939EF /* PopUpViewController.swift in Sources */,
@@ -643,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X8PFEAAF6X;
+				DEVELOPMENT_TEAM = 885XTY2NH9;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
@@ -659,7 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X8PFEAAF6X;
+				DEVELOPMENT_TEAM = 885XTY2NH9;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
