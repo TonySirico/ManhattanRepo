@@ -85,16 +85,16 @@
 		324910C91FDEA1D9004FF991 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		32B2BEAF1FEA84F200D7D8CC /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		32B2BEB31FEAB29800D7D8CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inaldo&Tony.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E80C371FDE943F0006EF76 /* renTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E80C3F1FDE943F0006EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32E80C411FDE943F0006EF76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32E80C441FDE943F0006EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32E80C461FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32E80C4B1FDE943F0006EF76 /* Inaldo&TonyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inaldo&TonyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E80C4B1FDE943F0006EF76 /* renTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = renTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyTests.swift; sourceTree = "<group>"; };
 		32E80C511FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32E80C561FDE943F0006EF76 /* Inaldo&TonyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inaldo&TonyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E80C561FDE943F0006EF76 /* renTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = renTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyUITests.swift; sourceTree = "<group>"; };
 		32E80C5C1FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inaldo_Tony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,9 +139,9 @@
 				DD8A328E200E149E00FE95E1 /* CustomUI */,
 				DD8A328D200E147B00FE95E1 /* Storyboad */,
 				DD8A328C200E142F00FE95E1 /* ViewController */,
-				32E80C391FDE943F0006EF76 /* Inaldo&Tony */,
-				32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */,
-				32E80C591FDE943F0006EF76 /* Inaldo&TonyUITests */,
+				32E80C391FDE943F0006EF76 /* renTime */,
+				32E80C4E1FDE943F0006EF76 /* renTimeTests */,
+				32E80C591FDE943F0006EF76 /* renTimeUITests */,
 				32E80C381FDE943F0006EF76 /* Products */,
 				8F3C296A9B899E0255AFECA4 /* Pods */,
 				8661779AE53F60A95F7C241D /* Frameworks */,
@@ -151,14 +151,14 @@
 		32E80C381FDE943F0006EF76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */,
-				32E80C4B1FDE943F0006EF76 /* Inaldo&TonyTests.xctest */,
-				32E80C561FDE943F0006EF76 /* Inaldo&TonyUITests.xctest */,
+				32E80C371FDE943F0006EF76 /* renTime.app */,
+				32E80C4B1FDE943F0006EF76 /* renTimeTests.xctest */,
+				32E80C561FDE943F0006EF76 /* renTimeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32E80C391FDE943F0006EF76 /* Inaldo&Tony */ = {
+		32E80C391FDE943F0006EF76 /* renTime */ = {
 			isa = PBXGroup;
 			children = (
 				DD8A328A200E141500FE95E1 /* GoogleService-Info.plist */,
@@ -166,25 +166,25 @@
 				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
 				32E80C461FDE943F0006EF76 /* Info.plist */,
 			);
-			path = "Inaldo&Tony";
+			path = renTime;
 			sourceTree = "<group>";
 		};
-		32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */ = {
+		32E80C4E1FDE943F0006EF76 /* renTimeTests */ = {
 			isa = PBXGroup;
 			children = (
 				32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */,
 				32E80C511FDE943F0006EF76 /* Info.plist */,
 			);
-			path = "Inaldo&TonyTests";
+			path = renTimeTests;
 			sourceTree = "<group>";
 		};
-		32E80C591FDE943F0006EF76 /* Inaldo&TonyUITests */ = {
+		32E80C591FDE943F0006EF76 /* renTimeUITests */ = {
 			isa = PBXGroup;
 			children = (
 				32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */,
 				32E80C5C1FDE943F0006EF76 /* Info.plist */,
 			);
-			path = "Inaldo&TonyUITests";
+			path = renTimeUITests;
 			sourceTree = "<group>";
 		};
 		8661779AE53F60A95F7C241D /* Frameworks */ = {
@@ -251,9 +251,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32E80C361FDE943F0006EF76 /* Inaldo&Tony */ = {
+		32E80C361FDE943F0006EF76 /* renTime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32E80C5F1FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&Tony" */;
+			buildConfigurationList = 32E80C5F1FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "renTime" */;
 			buildPhases = (
 				1E101EA052EF542EC21B2EE6 /* [CP] Check Pods Manifest.lock */,
 				32E80C331FDE943F0006EF76 /* Sources */,
@@ -266,14 +266,14 @@
 			);
 			dependencies = (
 			);
-			name = "Inaldo&Tony";
+			name = renTime;
 			productName = "Inaldo&Tony";
-			productReference = 32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */;
+			productReference = 32E80C371FDE943F0006EF76 /* renTime.app */;
 			productType = "com.apple.product-type.application";
 		};
-		32E80C4A1FDE943F0006EF76 /* Inaldo&TonyTests */ = {
+		32E80C4A1FDE943F0006EF76 /* renTimeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32E80C621FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyTests" */;
+			buildConfigurationList = 32E80C621FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "renTimeTests" */;
 			buildPhases = (
 				32E80C471FDE943F0006EF76 /* Sources */,
 				32E80C481FDE943F0006EF76 /* Frameworks */,
@@ -284,14 +284,14 @@
 			dependencies = (
 				32E80C4D1FDE943F0006EF76 /* PBXTargetDependency */,
 			);
-			name = "Inaldo&TonyTests";
+			name = renTimeTests;
 			productName = "Inaldo&TonyTests";
-			productReference = 32E80C4B1FDE943F0006EF76 /* Inaldo&TonyTests.xctest */;
+			productReference = 32E80C4B1FDE943F0006EF76 /* renTimeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		32E80C551FDE943F0006EF76 /* Inaldo&TonyUITests */ = {
+		32E80C551FDE943F0006EF76 /* renTimeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32E80C651FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyUITests" */;
+			buildConfigurationList = 32E80C651FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "renTimeUITests" */;
 			buildPhases = (
 				32E80C521FDE943F0006EF76 /* Sources */,
 				32E80C531FDE943F0006EF76 /* Frameworks */,
@@ -302,9 +302,9 @@
 			dependencies = (
 				32E80C581FDE943F0006EF76 /* PBXTargetDependency */,
 			);
-			name = "Inaldo&TonyUITests";
+			name = renTimeUITests;
 			productName = "Inaldo&TonyUITests";
-			productReference = 32E80C561FDE943F0006EF76 /* Inaldo&TonyUITests.xctest */;
+			productReference = 32E80C561FDE943F0006EF76 /* renTimeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -333,7 +333,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 32E80C321FDE943F0006EF76 /* Build configuration list for PBXProject "Inaldo&Tony" */;
+			buildConfigurationList = 32E80C321FDE943F0006EF76 /* Build configuration list for PBXProject "renTime" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -346,9 +346,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32E80C361FDE943F0006EF76 /* Inaldo&Tony */,
-				32E80C4A1FDE943F0006EF76 /* Inaldo&TonyTests */,
-				32E80C551FDE943F0006EF76 /* Inaldo&TonyUITests */,
+				32E80C361FDE943F0006EF76 /* renTime */,
+				32E80C4A1FDE943F0006EF76 /* renTimeTests */,
+				32E80C551FDE943F0006EF76 /* renTimeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,12 +496,12 @@
 /* Begin PBXTargetDependency section */
 		32E80C4D1FDE943F0006EF76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 32E80C361FDE943F0006EF76 /* Inaldo&Tony */;
+			target = 32E80C361FDE943F0006EF76 /* renTime */;
 			targetProxy = 32E80C4C1FDE943F0006EF76 /* PBXContainerItemProxy */;
 		};
 		32E80C581FDE943F0006EF76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 32E80C361FDE943F0006EF76 /* Inaldo&Tony */;
+			target = 32E80C361FDE943F0006EF76 /* renTime */;
 			targetProxy = 32E80C571FDE943F0006EF76 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -664,7 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 885XTY2NH9;
-				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/renTime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -680,7 +680,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 885XTY2NH9;
-				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/renTime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -701,7 +701,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inaldo&Tony.app/Inaldo&Tony";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/renTime.app/renTime";
 			};
 			name = Debug;
 		};
@@ -717,7 +717,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inaldo&Tony.app/Inaldo&Tony";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/renTime.app/renTime";
 			};
 			name = Release;
 		};
@@ -754,7 +754,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32E80C321FDE943F0006EF76 /* Build configuration list for PBXProject "Inaldo&Tony" */ = {
+		32E80C321FDE943F0006EF76 /* Build configuration list for PBXProject "renTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32E80C5D1FDE943F0006EF76 /* Debug */,
@@ -763,7 +763,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32E80C5F1FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&Tony" */ = {
+		32E80C5F1FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "renTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32E80C601FDE943F0006EF76 /* Debug */,
@@ -772,7 +772,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32E80C621FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyTests" */ = {
+		32E80C621FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "renTimeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32E80C631FDE943F0006EF76 /* Debug */,
@@ -781,7 +781,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32E80C651FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "Inaldo&TonyUITests" */ = {
+		32E80C651FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "renTimeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32E80C661FDE943F0006EF76 /* Debug */,
