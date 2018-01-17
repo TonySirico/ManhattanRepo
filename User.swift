@@ -1,5 +1,4 @@
 import Foundation
-//utente
 class User {
     
     var name: String!
