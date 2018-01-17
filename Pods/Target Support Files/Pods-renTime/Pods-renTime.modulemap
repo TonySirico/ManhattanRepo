@@ -1,0 +1,6 @@
+framework module Pods_renTime {
+  umbrella header "Pods-renTime-umbrella.h"
+
+  export *
+  module * { export * }
+}
