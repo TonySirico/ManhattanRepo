@@ -10,7 +10,3 @@
 #endif
 #endif
 
-
-FOUNDATION_EXPORT double Pods_Inaldo_TonyVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Inaldo_TonyVersionString[];
-
