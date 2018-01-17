@@ -5,8 +5,7 @@
 //
 //  Created by Inaldo Ramos Ribeiro on 11/12/2017.
 //  Copyright © 2017 Antonio Sirica. All rights reserved.
-//
-//dio cane 
+
 import UIKit
 import Firebase
 

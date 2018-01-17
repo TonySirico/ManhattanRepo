@@ -7,9 +7,10 @@
 //
 
 import XCTest
-@testable import Inaldo_Tony
+@testable import renTime
 
-class Inaldo_TonyTests: XCTestCase {
+
+class renTimeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

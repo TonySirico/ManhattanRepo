@@ -36,9 +36,10 @@
 		32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C3E1FDE943F0006EF76 /* Main.storyboard */; };
 		32E80C421FDE943F0006EF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C411FDE943F0006EF76 /* Assets.xcassets */; };
 		32E80C451FDE943F0006EF76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */; };
-		32E80C501FDE943F0006EF76 /* Inaldo_TonyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */; };
+		32E80C501FDE943F0006EF76 /* renTimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C4F1FDE943F0006EF76 /* renTimeTest.swift */; };
 		32E80C5B1FDE943F0006EF76 /* Inaldo_TonyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */; };
-		CE6F58F5BA82160FD678F239 /* Pods_Inaldo_Tony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */; };
+		61D35A61E597449481ED505C /* Pods_renTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9834C05B3C15C713F298 /* Pods_renTime.framework */; };
+		BA73F84EFFFAB644C9FEA438 /* Pods_renTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E42411974791D8315B8E474 /* Pods_renTimeTests.framework */; };
 		DD8A328B200E141600FE95E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8A328A200E141500FE95E1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		0057E3F81FDEA0A2005F68D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/Tasks.storyboard"; sourceTree = "<group>"; };
 		0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0984B50B90F748D983C491EC /* Pods-renTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-renTime/Pods-renTime.debug.xcconfig"; sourceTree = "<group>"; };
 		0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonFilled.swift; sourceTree = "<group>"; };
 		0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeRoundedUITextField.swift; sourceTree = "<group>"; };
 		0A75D5541FFE3EA5001939EF /* RoundedUITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0ACC02AA1FE14279003774B1 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		0AFD72682007827C00451CFD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		0BCC9834C05B3C15C713F298 /* Pods_renTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_renTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D4724E1EAACCEAAE71FA3CD /* Pods-renTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renTimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-renTimeTests/Pods-renTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3242DB5F1FE910D3001D936B /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3242DB671FE919E3001D936B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/ProfileSeller.storyboard"; sourceTree = "<group>"; };
 		3242DB691FE91CDE001D936B /* ProfileSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSellerViewController.swift; sourceTree = "<group>"; };
@@ -92,15 +96,18 @@
 		32E80C441FDE943F0006EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32E80C461FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E80C4B1FDE943F0006EF76 /* renTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = renTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyTests.swift; sourceTree = "<group>"; };
+		32E80C4F1FDE943F0006EF76 /* renTimeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = renTimeTest.swift; sourceTree = "<group>"; };
 		32E80C511FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E80C561FDE943F0006EF76 /* renTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = renTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E80C5A1FDE943F0006EF76 /* Inaldo_TonyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inaldo_TonyUITests.swift; sourceTree = "<group>"; };
 		32E80C5C1FDE943F0006EF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inaldo_Tony.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E2E74479F75F2B62DBB628F /* Pods-renTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-renTime/Pods-renTime.release.xcconfig"; sourceTree = "<group>"; };
+		9E42411974791D8315B8E474 /* Pods_renTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_renTimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.debug.xcconfig"; sourceTree = "<group>"; };
 		B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inaldo&Tony.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony.release.xcconfig"; sourceTree = "<group>"; };
 		DD8A328A200E141500FE95E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB5C2096D9A47B0641102082 /* Pods-renTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-renTimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-renTimeTests/Pods-renTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6F58F5BA82160FD678F239 /* Pods_Inaldo_Tony.framework in Frameworks */,
+				61D35A61E597449481ED505C /* Pods_renTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA73F84EFFFAB644C9FEA438 /* Pods_renTimeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +180,7 @@
 		32E80C4E1FDE943F0006EF76 /* renTimeTests */ = {
 			isa = PBXGroup;
 			children = (
-				32E80C4F1FDE943F0006EF76 /* Inaldo_TonyTests.swift */,
+				32E80C4F1FDE943F0006EF76 /* renTimeTest.swift */,
 				32E80C511FDE943F0006EF76 /* Info.plist */,
 			);
 			path = renTimeTests;
@@ -191,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				3717D57F505745697B049FCF /* Pods_Inaldo_Tony.framework */,
+				0BCC9834C05B3C15C713F298 /* Pods_renTime.framework */,
+				9E42411974791D8315B8E474 /* Pods_renTimeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,6 +210,10 @@
 			children = (
 				B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */,
 				B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */,
+				0984B50B90F748D983C491EC /* Pods-renTime.debug.xcconfig */,
+				5E2E74479F75F2B62DBB628F /* Pods-renTime.release.xcconfig */,
+				0D4724E1EAACCEAAE71FA3CD /* Pods-renTimeTests.debug.xcconfig */,
+				FB5C2096D9A47B0641102082 /* Pods-renTimeTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -275,9 +289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32E80C621FDE943F0006EF76 /* Build configuration list for PBXNativeTarget "renTimeTests" */;
 			buildPhases = (
+				D7EB3765C85FB06A7E5EEA9A /* [CP] Check Pods Manifest.lock */,
 				32E80C471FDE943F0006EF76 /* Sources */,
 				32E80C481FDE943F0006EF76 /* Frameworks */,
 				32E80C491FDE943F0006EF76 /* Resources */,
+				D490170C7FD048A0C6025921 /* [CP] Embed Pods Frameworks */,
+				A8D7A6A3257CB3225ABD399E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,7 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A8BD0D64D89A72121A3BDE8E /* [CP] Copy Pods Resources */ = {
@@ -417,7 +434,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renTime/Pods-renTime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8D7A6A3257CB3225ABD399E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renTimeTests/Pods-renTimeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D331A2DA172281B8C63676AF /* [CP] Embed Pods Frameworks */ = {
@@ -441,7 +473,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inaldo&Tony/Pods-Inaldo&Tony-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renTime/Pods-renTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D490170C7FD048A0C6025921 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-renTimeTests/Pods-renTimeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7EB3765C85FB06A7E5EEA9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -479,7 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32E80C501FDE943F0006EF76 /* Inaldo_TonyTests.swift in Sources */,
+				32E80C501FDE943F0006EF76 /* renTimeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,14 +721,14 @@
 		};
 		32E80C601FDE943F0006EF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F9FDF5A07E6D96109A22AD /* Pods-Inaldo&Tony.debug.xcconfig */;
+			baseConfigurationReference = 0984B50B90F748D983C491EC /* Pods-renTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 885XTY2NH9;
 				INFOPLIST_FILE = "$(SRCROOT)/renTime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leobartowski.renTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -675,14 +737,14 @@
 		};
 		32E80C611FDE943F0006EF76 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8633DC027935EB2758DA6CC /* Pods-Inaldo&Tony.release.xcconfig */;
+			baseConfigurationReference = 5E2E74479F75F2B62DBB628F /* Pods-renTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 885XTY2NH9;
 				INFOPLIST_FILE = "$(SRCROOT)/renTime/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davide.prova;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leobartowski.renTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -691,13 +753,14 @@
 		};
 		32E80C631FDE943F0006EF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4724E1EAACCEAAE71FA3CD /* Pods-renTimeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Inaldo&TonyTests/Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.Inaldo-TonyTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -707,13 +770,14 @@
 		};
 		32E80C641FDE943F0006EF76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB5C2096D9A47B0641102082 /* Pods-renTimeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Inaldo&TonyTests/Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.Inaldo-TonyTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
