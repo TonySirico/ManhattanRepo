@@ -10,6 +10,7 @@ import Foundation
 
 
 class RequestDescription {
+    
     static let shared = RequestDescription() // Singleton
     var description: String = ""
     
